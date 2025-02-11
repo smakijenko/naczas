@@ -6,17 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */; };
+		327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327C1EDC2D5BFDB20014D881 /* Assets.xcassets */; };
+		327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C1EDD2D5BFDB20014D881 /* MainView.swift */; };
+		327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C1EDE2D5BFDB20014D881 /* naczasApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		327C1EC92D5BFC390014D881 /* naczas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = naczas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		327C1EDC2D5BFDB20014D881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		327C1EDD2D5BFDB20014D881 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		327C1EDE2D5BFDB20014D881 /* naczasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = naczasApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		327C1ECB2D5BFC390014D881 /* naczas */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = naczas;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		327C1EC62D5BFC390014D881 /* Frameworks */ = {
@@ -32,7 +35,7 @@
 		327C1EC02D5BFC390014D881 = {
 			isa = PBXGroup;
 			children = (
-				327C1ECB2D5BFC390014D881 /* naczas */,
+				327C1EDF2D5BFDB20014D881 /* naczas */,
 				327C1ECA2D5BFC390014D881 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +46,65 @@
 				327C1EC92D5BFC390014D881 /* naczas.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		327C1EDB2D5BFDB20014D881 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		327C1EDF2D5BFDB20014D881 /* naczas */ = {
+			isa = PBXGroup;
+			children = (
+				327C1EDB2D5BFDB20014D881 /* Preview Content */,
+				327C1EDC2D5BFDB20014D881 /* Assets.xcassets */,
+				327C1EDE2D5BFDB20014D881 /* naczasApp.swift */,
+				327C1EE62D5BFDF60014D881 /* Datas */,
+				327C1EE52D5BFDED0014D881 /* Managers */,
+				327C1EE42D5BFDD60014D881 /* Models */,
+				327C1EE72D5BFDFB0014D881 /* Views */,
+				327C1EE82D5BFE030014D881 /* Viewmodels */,
+			);
+			path = naczas;
+			sourceTree = "<group>";
+		};
+		327C1EE42D5BFDD60014D881 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		327C1EE52D5BFDED0014D881 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		327C1EE62D5BFDF60014D881 /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Datas;
+			sourceTree = "<group>";
+		};
+		327C1EE72D5BFDFB0014D881 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				327C1EDD2D5BFDB20014D881 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		327C1EE82D5BFE030014D881 /* Viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Viewmodels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +121,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				327C1ECB2D5BFC390014D881 /* naczas */,
 			);
 			name = naczas;
 			packageProductDependencies = (
@@ -109,6 +168,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */,
+				327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +180,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */,
+				327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
