@@ -8,3 +8,4 @@
 import SwiftUI
 
 let screenSize = UIScreen.main.bounds.size
+let touchVibrates = UIImpactFeedbackGenerator(style: .light)

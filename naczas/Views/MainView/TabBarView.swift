@@ -10,7 +10,6 @@ import SwiftUI
 struct TabBarView: View {
     @StateObject var tabVm = TabBarViewModel()
     @EnvironmentObject var mainVm: MainViewModel
-    let touchVibrates = UIImpactFeedbackGenerator(style: .light)
     var body: some View {
         HStack(spacing: 0){
             tab(iconName: "map", tabName: AvailableTabsInTabBar.Map)
@@ -36,7 +35,7 @@ extension TabBarView {
         return ZStack{
             Button {
                 touchVibrates.impactOccurred()
-                tabVm.selectedTab = tabName
+                tabVm.setSelectedTabAnim(selectedTab: tabName)
                 mainVm.selectedTab = tabName
             } label: {
                 VStack {

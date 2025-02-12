@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class TabBarViewModel: ObservableObject {
     @Published var selectedTab: AvailableTabsInTabBar = .Home
@@ -23,5 +24,11 @@ class TabBarViewModel: ObservableObject {
             return
         }
         tabBarWidth = width
+    }
+    
+    func setSelectedTabAnim(selectedTab: AvailableTabsInTabBar) {
+        withAnimation(.easeInOut(duration: 0.1)) {
+            self.selectedTab = selectedTab
+        }
     }
 }
