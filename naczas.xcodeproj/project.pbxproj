@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3209FEFA2D5D2581001E6458 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FEF92D5D2581001E6458 /* BackgroundView.swift */; };
+		3209FEFE2D5D2611001E6458 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FEFD2D5D2611001E6458 /* MainViewModel.swift */; };
+		3209FF002D5D30F0001E6458 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FEFF2D5D30F0001E6458 /* MapView.swift */; };
+		3209FF042D5D311C001E6458 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF032D5D311C001E6458 /* ScheduleView.swift */; };
+		3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF052D5D316A001E6458 /* TabBarView.swift */; };
+		3209FF0A2D5D3281001E6458 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF092D5D3279001E6458 /* Settings.swift */; };
+		3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */; };
+		3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */; };
 		327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */; };
 		327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327C1EDC2D5BFDB20014D881 /* Assets.xcassets */; };
 		327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C1EDD2D5BFDB20014D881 /* MainView.swift */; };
@@ -14,6 +22,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3209FEF92D5D2581001E6458 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		3209FEFD2D5D2611001E6458 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		3209FEFF2D5D30F0001E6458 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		3209FF032D5D311C001E6458 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		3209FF052D5D316A001E6458 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		3209FF092D5D3279001E6458 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTabsInTabBar.swift; sourceTree = "<group>"; };
 		327C1EC92D5BFC390014D881 /* naczas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = naczas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		327C1EDC2D5BFDB20014D881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +48,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3209FEFB2D5D25AB001E6458 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				3209FEF92D5D2581001E6458 /* BackgroundView.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		3209FEFC2D5D25FC001E6458 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				327C1EDD2D5BFDB20014D881 /* MainView.swift */,
+				3209FF052D5D316A001E6458 /* TabBarView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		3209FF012D5D30F7001E6458 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				3209FEFF2D5D30F0001E6458 /* MapView.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		3209FF022D5D3104001E6458 /* ScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				3209FF032D5D311C001E6458 /* ScheduleView.swift */,
+			);
+			path = ScheduleView;
+			sourceTree = "<group>";
+		};
+		3209FF0B2D5D37EE001E6458 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */,
+				3209FEFD2D5D2611001E6458 /* MainViewModel.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 		327C1EC02D5BFC390014D881 = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +124,7 @@
 				327C1EE52D5BFDED0014D881 /* Managers */,
 				327C1EE42D5BFDD60014D881 /* Models */,
 				327C1EE72D5BFDFB0014D881 /* Views */,
-				327C1EE82D5BFE030014D881 /* Viewmodels */,
+				327C1EE82D5BFE030014D881 /* ViewModels */,
 			);
 			path = naczas;
 			sourceTree = "<group>";
@@ -88,6 +146,8 @@
 		327C1EE62D5BFDF60014D881 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
+				3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */,
+				3209FF092D5D3279001E6458 /* Settings.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -95,16 +155,20 @@
 		327C1EE72D5BFDFB0014D881 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				327C1EDD2D5BFDB20014D881 /* MainView.swift */,
+				3209FEFB2D5D25AB001E6458 /* Widgets */,
+				3209FEFC2D5D25FC001E6458 /* MainView */,
+				3209FF012D5D30F7001E6458 /* MapView */,
+				3209FF022D5D3104001E6458 /* ScheduleView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		327C1EE82D5BFE030014D881 /* Viewmodels */ = {
+		327C1EE82D5BFE030014D881 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3209FF0B2D5D37EE001E6458 /* MainView */,
 			);
-			path = Viewmodels;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,8 +244,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3209FEFA2D5D2581001E6458 /* BackgroundView.swift in Sources */,
+				3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */,
+				3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */,
 				327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */,
+				3209FF0A2D5D3281001E6458 /* Settings.swift in Sources */,
+				3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */,
+				3209FF002D5D30F0001E6458 /* MapView.swift in Sources */,
 				327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */,
+				3209FEFE2D5D2611001E6458 /* MainViewModel.swift in Sources */,
+				3209FF042D5D311C001E6458 /* ScheduleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +395,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,6 +425,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
