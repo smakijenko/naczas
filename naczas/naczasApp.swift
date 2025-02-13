@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct naczasApp: App {
+    @State var showLunchView: Bool = true
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ZStack {
+                MainView()
+                if showLunchView {
+                    LunchView(showLunchView: $showLunchView)
+                        .zIndex(2)
+                        .transition(.opacity)
+                }
+            }
+            .animation(.linear(duration: 0.2), value: showLunchView)
         }
     }
 }
