@@ -8,9 +8,8 @@
 import SwiftUI
 
 class LunchViewModel: ObservableObject {
-    @Published var timer = Timer()
     @Published var busNarrowDegree: CGFloat = 0
-    private let duarationBetweenClicks: CGFloat = 0.85
+    let duarationBetweenClicks: CGFloat = 0.85
     let bgGradientColors = [
         Color(red: 0.0/255.0, green: 82.0/255.0, blue: 212.0/255.0),
         Color(red: 101.0/255.0, green: 199.0/255.0, blue: 247.0/255.0),
@@ -18,35 +17,20 @@ class LunchViewModel: ObservableObject {
     ]
     var elapsedTime: Double = 0
     
-    init() {
-        startTimer()
-    }
-    
-    private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
-            self.elapsedTime += 0.1
-            if self.elapsedTime >= self.duarationBetweenClicks {
-                self.elapsedTime = 0
-                self.addDegree()
-            }
-        }
-    }
-    
-    private func addDegree() {
-        withAnimation(.easeInOut(duration: 0.1)) {
-            busNarrowDegree += 30
+    func addDegree() {
+        if busNarrowDegree < 90 {
             touchVibrates.impactOccurred()
         }
-    }
-    
-    func stopTimer() {
-        timer.invalidate()
+        withAnimation(.easeInOut(duration: 0.1)) {
+            busNarrowDegree += 30
+        }
     }
 }
 
 struct LunchView: View {
     @Binding var showLunchView: Bool
     @StateObject private var lunchVm = LunchViewModel()
+    private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     var body: some View {
         ZStack {
             BackgroundView()
@@ -61,18 +45,22 @@ struct LunchView: View {
                     .scaledToFit()
                     .rotationEffect(Angle(degrees: lunchVm.busNarrowDegree))
             }
-            .frame(width: 175)
+            .frame(width: screenSize.width * 0.35)
             .foregroundStyle(.linearGradient(colors: lunchVm.bgGradientColors, startPoint: .top, endPoint: .bottom))
             .shadow(radius: 10)
         }
-        .onChange(of: lunchVm.busNarrowDegree) {
+        .onReceive(timer, perform: { _ in
+            lunchVm.elapsedTime += 0.1
             if lunchVm.busNarrowDegree >= 90 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                    self.lunchVm.stopTimer()
-                    self.showLunchView = false
-                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                    showLunchView = false
+                })
             }
-        }
+            if lunchVm.elapsedTime >= lunchVm.duarationBetweenClicks {
+                lunchVm.elapsedTime = 0
+                lunchVm.addDegree()
+            }
+        })
     }
 }
 

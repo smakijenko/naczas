@@ -12,11 +12,11 @@ struct TabBarView: View {
     @EnvironmentObject var mainVm: MainViewModel
     var body: some View {
         HStack(spacing: 0){
-            tab(iconName: "map", tabName: AvailableTabsInTabBar.Map)
+            tab(iconName: "map", tabName: AvailableTabsInTabBar.Mapa)
             Spacer()
-            tab(iconName: "house", tabName: AvailableTabsInTabBar.Home)
+            tab(iconName: "house", tabName: AvailableTabsInTabBar.Głowna)
             Spacer()
-            tab(iconName: "calendar.badge.clock", tabName: AvailableTabsInTabBar.Schedule)
+            tab(iconName: "calendar.badge.clock", tabName: AvailableTabsInTabBar.Rozkład)
         }
         .frame(width: tabVm.tabBarWidth)
     }

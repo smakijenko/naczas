@@ -13,10 +13,10 @@ struct MainView: View {
         ZStack {
             BackgroundView()
             VStack {
-                if mainVm.selectedTab == .Map {
+                if mainVm.selectedTab == .Mapa {
                     MapView()
                 }
-                else if mainVm.selectedTab == .Schedule {
+                else if mainVm.selectedTab == .Rozkład {
                     ScheduleView()
                 }
                 else {

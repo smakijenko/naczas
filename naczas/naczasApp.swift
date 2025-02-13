@@ -13,11 +13,14 @@ struct naczasApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                MainView()
                 if showLunchView {
                     LunchView(showLunchView: $showLunchView)
                         .zIndex(2)
                         .transition(.opacity)
+                }
+                else {
+                    MainView()
+                        .zIndex(1)
                 }
             }
             .animation(.linear(duration: 0.2), value: showLunchView)

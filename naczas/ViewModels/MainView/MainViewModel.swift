@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
 
 class MainViewModel: ObservableObject {
-    @Published var selectedTab: AvailableTabsInTabBar = .Home
+    @Published var selectedTab: AvailableTabsInTabBar = .Głowna
 }

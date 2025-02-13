@@ -6,6 +6,6 @@
 //
 
 enum AvailableTabsInTabBar: String {
-    case Map, Home, Schedule
+    case Mapa, Głowna, Rozkład
     var name: String { rawValue }
 }
