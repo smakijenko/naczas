@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-    @Published var selectedTab: AvailableTabsInTabBar = .Głowna
+    @Published var selectedTab: AvailableTabsInTabBar = .Rozkład
 }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class TabBarViewModel: ObservableObject {
-    @Published var selectedTab: AvailableTabsInTabBar = .Głowna
+    @Published var selectedTab: AvailableTabsInTabBar = .Rozkład
     var tabBarWidth: CGFloat = 0
     let tabBarHeight: CGFloat = 50
     

@@ -19,15 +19,13 @@ struct MainView: View {
                 else if mainVm.selectedTab == .Rozkład {
                     ScheduleView()
                 }
-                else {
-                    Spacer()
-                }
                 TabBarView()
             }
             .transition(.opacity)
             .animation(.linear(duration: 0.1), value: mainVm.selectedTab)
             .environmentObject(mainVm)
         }
+        .ignoresSafeArea()
     }
 }
 

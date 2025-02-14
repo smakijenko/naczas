@@ -11,14 +11,11 @@ struct TabBarView: View {
     @StateObject var tabVm = TabBarViewModel()
     @EnvironmentObject var mainVm: MainViewModel
     var body: some View {
-        HStack(spacing: 0){
+        HStack(spacing: 0) {
             tab(iconName: "map", tabName: AvailableTabsInTabBar.Mapa)
-            Spacer()
-            tab(iconName: "house", tabName: AvailableTabsInTabBar.Głowna)
-            Spacer()
             tab(iconName: "calendar.badge.clock", tabName: AvailableTabsInTabBar.Rozkład)
         }
-        .frame(width: tabVm.tabBarWidth)
+        .frame(width: tabVm.tabBarWidth, height: tabVm.tabBarHeight + 24)
     }
 }
 
@@ -47,7 +44,7 @@ extension TabBarView {
                 }
                 .foregroundStyle(tabName.name == tabVm.selectedTab.name ? .white : .white.opacity(0.3))
                 .scaleEffect(tabName.name == tabVm.selectedTab.name ? 1.2 : 0.9)
-                .frame(width: tabVm.tabBarWidth / 3)
+                .frame(width: tabVm.tabBarWidth / 2)
                 .frame(height: tabVm.tabBarHeight)
             }
         }
