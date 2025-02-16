@@ -12,6 +12,10 @@ class TabBarViewModel: ObservableObject {
     @Published var selectedTab: AvailableTabsInTabBar = .Rozkład
     var tabBarWidth: CGFloat = 0
     let tabBarHeight: CGFloat = 50
+    let tabBarGradientColors = [
+        Color(red: 19.0/255.0, green: 32.0/255.0, blue: 39.0/255.0),
+        Color(red: 16.0/255.0, green: 27.0/255.0, blue: 33.0/255.0)
+    ]
     
     init() {
         adjustTabBarSize()

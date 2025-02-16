@@ -11,9 +11,9 @@ struct ScheduleView: View {
     @EnvironmentObject var mainVm: MainViewModel
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
-            Text("Schedule View")
+            BackgroundView()
         }
+        .ignoresSafeArea()
     }
 }
 

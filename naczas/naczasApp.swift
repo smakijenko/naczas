@@ -23,6 +23,7 @@ struct naczasApp: App {
                         .zIndex(1)
                 }
             }
+            .preferredColorScheme(.dark)
             .animation(.linear(duration: 0.2), value: showLunchView)
         }
     }

@@ -13,15 +13,17 @@ struct TabBarView: View {
     var body: some View {
         HStack(spacing: 0) {
             tab(iconName: "map", tabName: AvailableTabsInTabBar.Mapa)
+            Divider()
             tab(iconName: "calendar.badge.clock", tabName: AvailableTabsInTabBar.Rozkład)
         }
-        .frame(width: tabVm.tabBarWidth, height: tabVm.tabBarHeight + 24)
+        .background(LinearGradient(colors: tabVm.tabBarGradientColors, startPoint: .top, endPoint: .bottom))
+        .frame(height: tabVm.tabBarHeight + 35)
     }
 }
 
 #Preview {
     ZStack {
-        Color.black.ignoresSafeArea()
+        Color.white.ignoresSafeArea()
         TabBarView()
             .environmentObject(MainViewModel())
     }
@@ -44,8 +46,9 @@ extension TabBarView {
                 }
                 .foregroundStyle(tabName.name == tabVm.selectedTab.name ? .white : .white.opacity(0.3))
                 .scaleEffect(tabName.name == tabVm.selectedTab.name ? 1.2 : 0.9)
-                .frame(width: tabVm.tabBarWidth / 2)
+                .frame(width: screenSize.width / 2)
                 .frame(height: tabVm.tabBarHeight)
+                .offset(y: -10)
             }
         }
     }

@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MapView: View {
     @EnvironmentObject var mainVm: MainViewModel
+    let mapView = MKMapView()
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
-            Text("Map View")
+            Map()
         }
+        .ignoresSafeArea()
     }
 }
 
