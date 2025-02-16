@@ -9,14 +9,10 @@ import Foundation
 import SwiftUI
 
 class CityPickerViewModel: ObservableObject {
-    @Published var selectedCity: AvailableCities = .Warszawa
+    @Published var selectedCity: AvailableCitiesToPick = .Warszawa
     @Published var showCitiesList: Bool = false
-    @Published var unselectedCities: [AvailableCities] = []
-    enum AvailableCities: String, CaseIterable{
-        case Warszawa, Kraków, Gdańsk, Łódź
-        var name: String { rawValue }
-    }
-    let selectedCitySize: CGFloat = 70
+    @Published var unselectedCities: [AvailableCitiesToPick] = []
+    let selectedCitySize: CGFloat = 65
     let maximumCitiesScrollWidth: CGFloat = 190
     
     init() {
@@ -31,7 +27,7 @@ class CityPickerViewModel: ObservableObject {
     
     func updateUnselectedCities() {
         unselectedCities.removeAll()
-        for city in AvailableCities.allCases {
+        for city in AvailableCitiesToPick.allCases {
             unselectedCities.append(city)
         }
         unselectedCities.removeAll { $0 == selectedCity }
