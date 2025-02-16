@@ -16,6 +16,9 @@
 		3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */; };
 		3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */; };
 		3209FF112D5D66E0001E6458 /* LunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF102D5D66E0001E6458 /* LunchView.swift */; };
+		3209FF132D627815001E6458 /* CitiPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF122D627815001E6458 /* CitiPickerView.swift */; };
+		3209FF162D628F89001E6458 /* CityPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF152D628F81001E6458 /* CityPickerViewModel.swift */; };
+		3209FF182D628FB7001E6458 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF172D628FAB001E6458 /* ScheduleViewModel.swift */; };
 		327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */; };
 		327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327C1EDC2D5BFDB20014D881 /* Assets.xcassets */; };
 		327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C1EDD2D5BFDB20014D881 /* MainView.swift */; };
@@ -32,6 +35,9 @@
 		3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTabsInTabBar.swift; sourceTree = "<group>"; };
 		3209FF102D5D66E0001E6458 /* LunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchView.swift; sourceTree = "<group>"; };
+		3209FF122D627815001E6458 /* CitiPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiPickerView.swift; sourceTree = "<group>"; };
+		3209FF152D628F81001E6458 /* CityPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerViewModel.swift; sourceTree = "<group>"; };
+		3209FF172D628FAB001E6458 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		327C1EC92D5BFC390014D881 /* naczas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = naczas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		327C1EDC2D5BFDB20014D881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				3209FF032D5D311C001E6458 /* ScheduleView.swift */,
+				3209FF122D627815001E6458 /* CitiPickerView.swift */,
 			);
 			path = ScheduleView;
 			sourceTree = "<group>";
@@ -87,10 +94,19 @@
 		3209FF0B2D5D37EE001E6458 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */,
 				3209FEFD2D5D2611001E6458 /* MainViewModel.swift */,
+				3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		3209FF142D628F5B001E6458 /* ScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				3209FF172D628FAB001E6458 /* ScheduleViewModel.swift */,
+				3209FF152D628F81001E6458 /* CityPickerViewModel.swift */,
+			);
+			path = ScheduleView;
 			sourceTree = "<group>";
 		};
 		327C1EC02D5BFC390014D881 = {
@@ -170,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				3209FF0B2D5D37EE001E6458 /* MainView */,
+				3209FF142D628F5B001E6458 /* ScheduleView */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -249,6 +266,8 @@
 			files = (
 				3209FEFA2D5D2581001E6458 /* BackgroundView.swift in Sources */,
 				3209FF112D5D66E0001E6458 /* LunchView.swift in Sources */,
+				3209FF162D628F89001E6458 /* CityPickerViewModel.swift in Sources */,
+				3209FF182D628FB7001E6458 /* ScheduleViewModel.swift in Sources */,
 				3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */,
 				3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */,
 				327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */,
@@ -256,6 +275,7 @@
 				3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */,
 				3209FF002D5D30F0001E6458 /* MapView.swift in Sources */,
 				327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */,
+				3209FF132D627815001E6458 /* CitiPickerView.swift in Sources */,
 				3209FEFE2D5D2611001E6458 /* MainViewModel.swift in Sources */,
 				3209FF042D5D311C001E6458 /* ScheduleView.swift in Sources */,
 			);

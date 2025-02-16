@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct ScheduleView: View {
-    @EnvironmentObject var mainVm: MainViewModel
     var body: some View {
         ZStack {
             BackgroundView()
+            VStack {
+                HStack {
+                    CityPickerView()
+                        .padding()
+                    Spacer()
+                }
+                Spacer()
+            }
         }
-        .ignoresSafeArea()
     }
 }
 
 #Preview {
     ScheduleView()
-        .environmentObject(MainViewModel())
 }

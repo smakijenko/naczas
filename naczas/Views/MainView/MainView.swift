@@ -12,20 +12,21 @@ struct MainView: View {
     var body: some View {
         ZStack {
             BackgroundView()
-            VStack(spacing: 0) {
                 if mainVm.selectedTab == .Mapa {
                     MapView()
                 }
                 else if mainVm.selectedTab == .Rozkład {
                     ScheduleView()
                 }
+            VStack {
+                Spacer()
                 TabBarView()
             }
             .ignoresSafeArea()
-            .transition(.opacity)
-            .animation(.linear(duration: 0.1), value: mainVm.selectedTab)
-            .environmentObject(mainVm)
         }
+        .transition(.opacity)
+        .animation(.linear(duration: 0.1), value: mainVm.selectedTab)
+        .environmentObject(mainVm)
     }
 }
 

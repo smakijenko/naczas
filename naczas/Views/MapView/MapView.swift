@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    @EnvironmentObject var mainVm: MainViewModel
     let mapView = MKMapView()
     var body: some View {
         ZStack {
@@ -21,5 +20,4 @@ struct MapView: View {
 
 #Preview {
     MapView()
-        .environmentObject(MainViewModel())
 }
