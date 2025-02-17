@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct ScheduleView: View {
+    @State private var isCityPickerShown: Bool = false
     var body: some View {
         ZStack {
             BackgroundView()
             VStack {
                 HStack {
-                    CityPickerView()
-                        .padding()
+                    CityPickerView(isCityPickerShown: $isCityPickerShown)
+                        .padding(.leading)
                     Spacer()
+                    LineSearcherView(isCityPickerShown: $isCityPickerShown)
+                        .padding(.trailing)
                 }
                 Spacer()
             }

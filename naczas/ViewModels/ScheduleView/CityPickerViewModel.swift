@@ -12,19 +12,11 @@ class CityPickerViewModel: ObservableObject {
     @Published var selectedCity: AvailableCitiesToPick = .Warszawa
     @Published var showCitiesList: Bool = false
     @Published var unselectedCities: [AvailableCitiesToPick] = []
-    let selectedCitySize: CGFloat = 65
-    let maximumCitiesScrollWidth: CGFloat = 190
     
     init() {
         updateUnselectedCities()
     }
-    
-    func toogleCityList() {
-        withAnimation(.easeInOut(duration: 0.2)) {
-            showCitiesList.toggle()
-        }
-    }
-    
+
     func updateUnselectedCities() {
         unselectedCities.removeAll()
         for city in AvailableCitiesToPick.allCases {

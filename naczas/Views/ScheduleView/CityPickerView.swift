@@ -9,25 +9,29 @@ import SwiftUI
 
 struct CityPickerView: View {
     @StateObject private var cityVm = CityPickerViewModel()
+    @Binding var isCityPickerShown: Bool
     var body: some View {
         HStack(spacing: 0) {
             Button {
-                cityVm.toogleCityList()
+                touchVibrates.impactOccurred()
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    isCityPickerShown.toggle()
+                }
             } label: {
                 selectedCityIcon(imgName: cityVm.selectedCity.name + "Logo")
             }
-            if cityVm.showCitiesList {
+            if isCityPickerShown {
                 cities
             }
         }
-        .background(.gray.opacity(0.2))
+        .background(.gray.opacity(0.3))
         .cornerRadius(10)
         .shadow(radius: 3)
     }
 }
 
 #Preview {
-    CityPickerView()
+    CityPickerView(isCityPickerShown: .constant(true))
 }
 
 extension CityPickerView {
@@ -36,10 +40,10 @@ extension CityPickerView {
             Image(imgName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: cityVm.selectedCitySize - 10, height: cityVm.selectedCitySize - 10)
+                .frame(width: translucentTileSize - 10, height: translucentTileSize - 10)
                 .opacity(cityVm.showCitiesList ? 0.3 : 1)
         }
-        .frame(width: cityVm.selectedCitySize, height: cityVm.selectedCitySize)
+        .frame(width: translucentTileSize, height: translucentTileSize)
         .animation(.none, value: cityVm.showCitiesList)
     }
     
@@ -51,14 +55,16 @@ extension CityPickerView {
                     ForEach(cityVm.unselectedCities, id: \.self) { city in
                         Button {
                             cityVm.selectedCity = city
-                            cityVm.toogleCityList()
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                isCityPickerShown.toggle()
+                            }
                             cityVm.updateUnselectedCities()
                         } label: {
                             HStack {
                                 Image(city.name + "Logo")
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(width: cityVm.selectedCitySize - 20, height: cityVm.selectedCitySize - 20)
+                                    .frame(width: translucentTileSize - 25, height: translucentTileSize - 25)
                                 Text(city.name)
                                     .foregroundStyle(.white)
                                     .font(.system(size: 25))
@@ -69,6 +75,7 @@ extension CityPickerView {
             }
             Spacer()
         }
-        .frame(width: cityVm.maximumCitiesScrollWidth, height: cityVm.selectedCitySize)
+        .frame(maxWidth: .infinity)
+        .frame(height: translucentTileSize)
     }
 }

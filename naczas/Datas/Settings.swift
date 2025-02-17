@@ -9,3 +9,4 @@ import SwiftUI
 
 let screenSize = UIScreen.main.bounds.size
 let touchVibrates = UIImpactFeedbackGenerator(style: .light)
+let translucentTileSize: CGFloat = 65
