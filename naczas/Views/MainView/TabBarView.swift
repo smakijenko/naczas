@@ -44,7 +44,7 @@ extension TabBarView {
                     Text(tabName.name)
                         .font(.system(size: 13))
                 }
-                .foregroundStyle(tabName.name == tabVm.selectedTab.name ? .white : .white.opacity(0.3))
+                .foregroundStyle(tabName.name == tabVm.selectedTab.name ? .white : dimmedWhiteColor)
                 .scaleEffect(tabName.name == tabVm.selectedTab.name ? 1.2 : 0.9)
                 .frame(width: screenSize.width / 2)
                 .frame(height: tabVm.tabBarHeight)

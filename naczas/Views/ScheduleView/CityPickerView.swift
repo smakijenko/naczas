@@ -24,7 +24,7 @@ struct CityPickerView: View {
                 cities
             }
         }
-        .background(.gray.opacity(0.3))
+        .background(customTranslucentMaterial)
         .cornerRadius(10)
         .shadow(radius: 3)
     }

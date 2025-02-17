@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct naczasApp: App {
-    @State var showLunchView: Bool = true
+    @State var showLunchView: Bool = false
     var body: some Scene {
         WindowGroup {
             ZStack {

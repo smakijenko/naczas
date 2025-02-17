@@ -10,6 +10,7 @@ import SwiftUI
 struct LineSearcherView: View {
     @StateObject private var searchVm = LineSearcherViewModel()
     @Binding var isCityPickerShown: Bool
+    @Binding var searchedText: String
     var body: some View {
         HStack(spacing: 0) {
             if !isCityPickerShown {
@@ -24,14 +25,14 @@ struct LineSearcherView: View {
                 loupeIcon
             }
         }
-        .background(.gray.opacity(0.3))
+        .background(customTranslucentMaterial)
         .cornerRadius(10)
         .shadow(radius: 3)
     }
 }
 
 #Preview {
-    LineSearcherView(isCityPickerShown: .constant(false))
+    LineSearcherView(isCityPickerShown: .constant(false), searchedText: .constant(""))
 }
 
 extension LineSearcherView {
@@ -46,7 +47,7 @@ extension LineSearcherView {
     private var searchField: some View {
         HStack {
             Spacer()
-            TextField("Numer lini...", text: $searchVm.searchText)
+            TextField("Numer lini...", text: $searchedText)
                 .padding()
             Divider()
         }
