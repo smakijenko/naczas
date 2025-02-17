@@ -15,7 +15,14 @@ struct LineSearcherView: View {
             if !isCityPickerShown {
                 searchField
             }
-            loupeIcon
+            Button {
+                touchVibrates.impactOccurred()
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    isCityPickerShown = false
+                }
+            } label: {
+                loupeIcon
+            }
         }
         .background(.gray.opacity(0.3))
         .cornerRadius(10)
@@ -40,7 +47,6 @@ extension LineSearcherView {
         HStack {
             Spacer()
             TextField("Numer lini...", text: $searchVm.searchText)
-                .keyboardType(.numberPad)
                 .padding()
             Divider()
         }
