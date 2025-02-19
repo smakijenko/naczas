@@ -35,14 +35,6 @@ extension TransportTypePickerView {
             touchVibrates.impactOccurred()
             typeVm.changeSelectedType(type: type)
             transportType = type
-            Task {
-                do {
-                    print(try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Autobusy))
-                }
-                catch {
-                    print(error)
-                }
-            }
         } label: {
             HStack {
                 Image(systemName: sf)
