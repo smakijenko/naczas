@@ -166,7 +166,6 @@
 		327C1EDB2D5BFDB20014D881 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				32DF13692D6691CC00714876 /* Dev.xcconfig */,
 				327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -176,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				32DF136B2D66924C00714876 /* Info.plist */,
+				32DF13692D6691CC00714876 /* Dev.xcconfig */,
 				327C1EDB2D5BFDB20014D881 /* Preview Content */,
 				327C1EDC2D5BFDB20014D881 /* Assets.xcassets */,
 				327C1EDE2D5BFDB20014D881 /* naczasApp.swift */,

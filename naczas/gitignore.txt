@@ -1,6 +1,0 @@
-Dev.xcconfig
-Info.plist
-
-DerivedData/
-*.xcworkspace
-*.xcuserstate
