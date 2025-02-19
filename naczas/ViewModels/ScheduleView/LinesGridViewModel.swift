@@ -9,21 +9,25 @@ import Foundation
 import SwiftUI
 
 class LinesGridViewModel: ObservableObject {
-    @Published var lines: [Int] = []
+    @Published var lines: [String] = allBusLines
     @Published var columns: [GridItem] = Array(repeating: GridItem(.flexible()), count: 5)
     @Published var searchedText: String = ""
     
-    init() {
-        for x in 1...189 {
-            lines.append(x)
+    func resetLinesContainer(transportType: AvailableTransportTypes) {
+        lines.removeAll()
+        if transportType == .Autobusy {
+            lines = allBusLines
+        }
+        else {
+            lines = allTramsLines
         }
     }
     
-    func giveSearchedLines() -> [Int] {
+    func giveSearchedLines() -> [String] {
         guard !searchedText.isEmpty else { return lines}
-        var searchedLines:[Int] = []
+        var searchedLines:[String] = []
         for line in lines {
-            if String(line).contains(searchedText) {
+            if line.contains(searchedText) {
                 searchedLines.append(line)
             }
         }

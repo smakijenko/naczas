@@ -21,6 +21,7 @@ struct LineSearcherView: View {
                 withAnimation(.easeInOut(duration: 0.2)) {
                     isCityPickerShown = false
                 }
+                searchedText = ""
             } label: {
                 loupeIcon
             }
@@ -37,11 +38,12 @@ struct LineSearcherView: View {
 
 extension LineSearcherView {
     private var loupeIcon: some View {
-        Image(systemName: "magnifyingglass")
+        Image(systemName: searchedText.isEmpty ? "magnifyingglass" : "xmark")
             .font(.system(size: 35))
             .foregroundColor(.white)
             .frame(width: translucentTileSize, height: translucentTileSize)
             .animation(.none, value: searchVm.isSearching)
+            .animation(.none, value: searchedText.isEmpty)
     }
     
     private var searchField: some View {

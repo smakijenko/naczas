@@ -10,6 +10,7 @@ import SwiftUI
 struct ScheduleView: View {
     @State private var isCityPickerShown: Bool = false
     @State private var searchedText: String = ""
+    @State private var transportType: AvailableTransportTypes = .Autobusy
     var body: some View {
         ZStack {
             BackgroundView()
@@ -21,9 +22,11 @@ struct ScheduleView: View {
                     LineSearcherView(isCityPickerShown: $isCityPickerShown, searchedText: $searchedText)
                         .padding(.trailing)
                 }
-                TransportTypePickerView()
+                TransportTypePickerView(transportType: $transportType)
                     .padding(.horizontal)
-                LinesGridView(searchedText: $searchedText)
+                LegendView()
+                    .padding(.horizontal)
+                LinesGridView(searchedText: $searchedText, transportType: $transportType)
                 Rectangle()
                     .foregroundStyle(.clear)
                     .frame(width: screenSize.width, height: 85)

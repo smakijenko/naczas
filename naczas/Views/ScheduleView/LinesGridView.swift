@@ -10,6 +10,7 @@ import SwiftUI
 struct LinesGridView: View {
     @StateObject var gridVm = LinesGridViewModel()
     @Binding var searchedText: String
+    @Binding var transportType: AvailableTransportTypes
     var body: some View {
         ScrollView() {
             LazyVGrid(columns: gridVm.columns, alignment: .center) {
@@ -23,6 +24,9 @@ struct LinesGridView: View {
             }
         }
         .frame(maxWidth: screenSize.width)
+        .onChange(of: transportType) {
+            gridVm.resetLinesContainer(transportType: transportType)
+        }
         .onChange(of: searchedText) {
             gridVm.searchedText = searchedText
         }
@@ -30,5 +34,5 @@ struct LinesGridView: View {
 }
 
 #Preview {
-    LinesGridView(searchedText: .constant(""))
+    LinesGridView(searchedText: .constant(""), transportType: .constant(.Autobusy))
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TransportTypePickerView: View {
     @StateObject var typeVm = TransportTypePickerViewModel()
+    @Binding var transportType: AvailableTransportTypes
     var body: some View {
         ZStack {
             HStack {
@@ -25,7 +26,7 @@ struct TransportTypePickerView: View {
 }
 
 #Preview {
-    TransportTypePickerView()
+    TransportTypePickerView(transportType: .constant(.Autobusy))
 }
 
 extension TransportTypePickerView {
@@ -33,6 +34,15 @@ extension TransportTypePickerView {
         Button {
             touchVibrates.impactOccurred()
             typeVm.changeSelectedType(type: type)
+            transportType = type
+            Task {
+                do {
+                    print(try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Autobusy))
+                }
+                catch {
+                    print(error)
+                }
+            }
         } label: {
             HStack {
                 Image(systemName: sf)

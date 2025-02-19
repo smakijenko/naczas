@@ -31,6 +31,13 @@
 		32DF134F2D63C29900714876 /* AvailableTransportTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF134E2D63C28F00714876 /* AvailableTransportTypes.swift */; };
 		32DF13532D63CE5C00714876 /* LinesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13522D63CE5C00714876 /* LinesGridView.swift */; };
 		32DF13552D63CE8E00714876 /* LinesGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13542D63CE8D00714876 /* LinesGridViewModel.swift */; };
+		32DF13592D64F0FC00714876 /* AvailableLinesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13582D64F0CF00714876 /* AvailableLinesModel.swift */; };
+		32DF135D2D665AB100714876 /* AllBusLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF135C2D665AAB00714876 /* AllBusLines.swift */; };
+		32DF135F2D66611A00714876 /* AllTramsLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF135E2D66611300714876 /* AllTramsLines.swift */; };
+		32DF13612D66872B00714876 /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13602D66872B00714876 /* LegendView.swift */; };
+		32DF13642D668A7700714876 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13632D668A7100714876 /* Glow.swift */; };
+		32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13652D668ED000714876 /* AvailableLinesManager.swift */; };
+		32DF136A2D6691CC00714876 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 32DF13692D6691CC00714876 /* Dev.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +66,14 @@
 		32DF134E2D63C28F00714876 /* AvailableTransportTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTransportTypes.swift; sourceTree = "<group>"; };
 		32DF13522D63CE5C00714876 /* LinesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesGridView.swift; sourceTree = "<group>"; };
 		32DF13542D63CE8D00714876 /* LinesGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesGridViewModel.swift; sourceTree = "<group>"; };
+		32DF13582D64F0CF00714876 /* AvailableLinesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLinesModel.swift; sourceTree = "<group>"; };
+		32DF135C2D665AAB00714876 /* AllBusLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBusLines.swift; sourceTree = "<group>"; };
+		32DF135E2D66611300714876 /* AllTramsLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTramsLines.swift; sourceTree = "<group>"; };
+		32DF13602D66872B00714876 /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
+		32DF13632D668A7100714876 /* Glow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
+		32DF13652D668ED000714876 /* AvailableLinesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLinesManager.swift; sourceTree = "<group>"; };
+		32DF13692D6691CC00714876 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
+		32DF136B2D66924C00714876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +120,7 @@
 				3209FF122D627815001E6458 /* CityPickerView.swift */,
 				32DF13442D63248D00714876 /* LineSearcherView.swift */,
 				32DF13482D63B8C400714876 /* TransportTypePickerView.swift */,
+				32DF13602D66872B00714876 /* LegendView.swift */,
 				32DF13522D63CE5C00714876 /* LinesGridView.swift */,
 			);
 			path = ScheduleView;
@@ -150,6 +166,7 @@
 		327C1EDB2D5BFDB20014D881 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				32DF13692D6691CC00714876 /* Dev.xcconfig */,
 				327C1EDA2D5BFDB20014D881 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -158,9 +175,11 @@
 		327C1EDF2D5BFDB20014D881 /* naczas */ = {
 			isa = PBXGroup;
 			children = (
+				32DF136B2D66924C00714876 /* Info.plist */,
 				327C1EDB2D5BFDB20014D881 /* Preview Content */,
 				327C1EDC2D5BFDB20014D881 /* Assets.xcassets */,
 				327C1EDE2D5BFDB20014D881 /* naczasApp.swift */,
+				32DF13622D668A5800714876 /* Extensions */,
 				327C1EE62D5BFDF60014D881 /* Datas */,
 				327C1EE52D5BFDED0014D881 /* Managers */,
 				327C1EE42D5BFDD60014D881 /* Models */,
@@ -173,6 +192,10 @@
 		327C1EE42D5BFDD60014D881 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				32DF13582D64F0CF00714876 /* AvailableLinesModel.swift */,
+				32DF134E2D63C28F00714876 /* AvailableTransportTypes.swift */,
+				3209FF192D62919C001E6458 /* CitiesToPick.swift */,
+				3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +203,7 @@
 		327C1EE52D5BFDED0014D881 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				32DF13652D668ED000714876 /* AvailableLinesManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -187,9 +211,8 @@
 		327C1EE62D5BFDF60014D881 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
-				32DF134E2D63C28F00714876 /* AvailableTransportTypes.swift */,
-				3209FF192D62919C001E6458 /* CitiesToPick.swift */,
-				3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */,
+				32DF135E2D66611300714876 /* AllTramsLines.swift */,
+				32DF135C2D665AAB00714876 /* AllBusLines.swift */,
 				3209FF092D5D3279001E6458 /* Settings.swift */,
 			);
 			path = Datas;
@@ -213,6 +236,14 @@
 				3209FF142D628F5B001E6458 /* ScheduleView */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		32DF13622D668A5800714876 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				32DF13632D668A7100714876 /* Glow.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +309,7 @@
 			files = (
 				327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */,
 				327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */,
+				32DF136A2D6691CC00714876 /* Dev.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DF13552D63CE8E00714876 /* LinesGridViewModel.swift in Sources */,
+				32DF13612D66872B00714876 /* LegendView.swift in Sources */,
 				3209FEFA2D5D2581001E6458 /* BackgroundView.swift in Sources */,
 				3209FF112D5D66E0001E6458 /* LunchView.swift in Sources */,
 				32DF13532D63CE5C00714876 /* LinesGridView.swift in Sources */,
@@ -299,12 +332,17 @@
 				3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */,
 				3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */,
 				327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */,
+				32DF135F2D66611A00714876 /* AllTramsLines.swift in Sources */,
 				3209FF0A2D5D3281001E6458 /* Settings.swift in Sources */,
+				32DF13642D668A7700714876 /* Glow.swift in Sources */,
+				32DF135D2D665AB100714876 /* AllBusLines.swift in Sources */,
 				3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */,
+				32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */,
 				3209FF002D5D30F0001E6458 /* MapView.swift in Sources */,
 				327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */,
 				3209FF1A2D6291A2001E6458 /* CitiesToPick.swift in Sources */,
 				3209FF132D627815001E6458 /* CityPickerView.swift in Sources */,
+				32DF13592D64F0FC00714876 /* AvailableLinesModel.swift in Sources */,
 				32DF134F2D63C29900714876 /* AvailableTransportTypes.swift in Sources */,
 				32DF13492D63B8C400714876 /* TransportTypePickerView.swift in Sources */,
 				3209FEFE2D5D2611001E6458 /* MainViewModel.swift in Sources */,
@@ -318,6 +356,7 @@
 /* Begin XCBuildConfiguration section */
 		327C1ED52D5BFC3A0014D881 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32DF13692D6691CC00714876 /* Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -381,6 +420,7 @@
 		};
 		327C1ED62D5BFC3A0014D881 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32DF13692D6691CC00714876 /* Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -446,6 +486,7 @@
 				DEVELOPMENT_TEAM = W6VR3Y8SL4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = naczas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -476,6 +517,7 @@
 				DEVELOPMENT_TEAM = W6VR3Y8SL4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = naczas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
