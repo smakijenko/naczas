@@ -1,0 +1,10 @@
+//
+//  Dev.xcconfig
+//  naczas
+//
+//  Created by Stanisław Makijenko on 19/02/2025.
+//
+
+// Configuration settings file format documentation can be found at:
+
+API_KEY = 5c08b938-c371-41d6-b27a-e55b6d846b8b
