@@ -15,11 +15,7 @@ struct LinesGridView: View {
         ScrollView() {
             LazyVGrid(columns: gridVm.columns, alignment: .center) {
                 ForEach(gridVm.giveSearchedLines(), id: \.self) { line in
-                    Text("\(line)")
-                        .frame(width: 50, height: 40)
-                        .background(customTranslucentMaterial)
-                        .cornerRadius(10)
-                        .shadow(radius: 3)
+                    createLineTile(line: line, transportType: transportType)
                 }
             }
         }
@@ -35,4 +31,14 @@ struct LinesGridView: View {
 
 #Preview {
     LinesGridView(searchedText: .constant(""), transportType: .constant(.Autobusy))
+}
+
+extension LinesGridView {
+    private func createLineTile(line: String, transportType: AvailableTransportTypes) -> some View {
+        return Text(line)
+            .frame(width: 50, height: 40)
+            .background(customTranslucentMaterial)
+            .cornerRadius(10)
+            .shadow(color: gridVm.checkIfLineAvailable(line: line, transportType: transportType), radius: 5)
+    }
 }

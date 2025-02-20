@@ -23,7 +23,7 @@ class AvailableLinesManager {
         var uniqueLines: Set<String> = []
         for line in allAvailableLines {
             guard let timeBetween = differenceBetweenDate(lastUpdateString: line.Time) else { continue }
-            if timeBetween > 5 {
+            if timeBetween < 5 {
                 uniqueLines.insert(line.Lines)
             }
         }
