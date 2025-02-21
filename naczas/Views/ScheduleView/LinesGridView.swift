@@ -26,6 +26,9 @@ struct LinesGridView: View {
         .onChange(of: searchedText) {
             gridVm.searchedText = searchedText
         }
+        .sheet(isPresented: $gridVm.isSheetShown) {
+            LineStopsView()
+        }
     }
 }
 
@@ -35,10 +38,15 @@ struct LinesGridView: View {
 
 extension LinesGridView {
     private func createLineTile(line: String, transportType: AvailableTransportTypes) -> some View {
-        return Text(line)
-            .frame(width: 50, height: 40)
-            .background(customTranslucentMaterial)
-            .cornerRadius(10)
-            .shadow(color: gridVm.checkIfLineAvailable(line: line, transportType: transportType), radius: 5)
+        return Button {
+            gridVm.isSheetShown.toggle()
+        } label: {
+            Text(line)
+                .foregroundStyle(.white)
+                .frame(width: 50, height: 40)
+                .background(customTranslucentMaterial)
+                .cornerRadius(10)
+                .shadow(color: gridVm.checkIfLineAvailable(line: line, transportType: transportType), radius: 5)
+        }
     }
 }

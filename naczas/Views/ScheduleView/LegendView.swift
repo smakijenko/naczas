@@ -19,6 +19,7 @@ struct LegendView: View {
                 Text("- Brak pojazdów")
             }
         }
+        .foregroundStyle(.white)
         .font(.system(size: 17))
         .frame(maxWidth: .infinity)
         .frame(height: translucentTileSize / 2)

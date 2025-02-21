@@ -7,12 +7,21 @@
 
 
 struct AvailableLineInfoModel: Codable {
-    let Lines: String
-    let Lon: Double
-    let VehicleNumber: String
-    let Time: String
-    let Lat: Double
-    let Brigade: String
+    let lines: String
+    let lon: Double
+    let vehicleNumber: String
+    let time: String
+    let lat: Double
+    let brigade: String
+    
+    enum CodingKeys: String, CodingKey {
+        case lines = "Lines"
+        case lon = "Lon"
+        case vehicleNumber = "VehicleNumber"
+        case time = "Time"
+        case lat = "Lat"
+        case brigade = "Brigade"
+    }
 }
 
 struct AvailableLinesApiResponse: Codable {

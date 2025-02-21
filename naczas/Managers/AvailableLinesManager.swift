@@ -10,6 +10,7 @@ import Foundation
 class AvailableLinesManager {
     // Type: 1 - Buses, 2 - Trams
     func fetchAllAvailableLines(type: String) async throws -> [AvailableLineInfoModel] {
+        print("Started fetching all available lines.")
         guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else { return [] }
         guard let url = URL(string: "https://api.um.warszawa.pl/api/action/busestrams_get/?resource_id=%20f2e5503e927d-4ad3-9500-4ab9e55deb59&apikey=\(apiKey)&type=\(type)") else { return []}
         let (data, _) = try await URLSession.shared.data(from: url)
@@ -18,13 +19,13 @@ class AvailableLinesManager {
     }
     
     func provideOnlineUniqueLines(transportType: AvailableTransportTypes) async throws -> [String] {
-        print("start")
+        print("Started providing unique lines.")
         let allAvailableLines = try await fetchAllAvailableLines(type: transportType == .Autobusy ? "1" : "2")
         var uniqueLines: Set<String> = []
         for line in allAvailableLines {
-            guard let timeBetween = differenceBetweenDate(lastUpdateString: line.Time) else { continue }
+            guard let timeBetween = differenceBetweenDate(lastUpdateString: line.time) else { continue }
             if timeBetween < 5 {
-                uniqueLines.insert(line.Lines)
+                uniqueLines.insert(line.lines)
             }
         }
         return Array(uniqueLines)
