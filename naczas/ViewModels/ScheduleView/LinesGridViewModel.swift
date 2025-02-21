@@ -17,7 +17,7 @@ class LinesGridViewModel: ObservableObject {
     @Published var isSheetShown: Bool = false
     
     init() {
-        loadAvailableLines()
+//        loadAvailableLines()
     }
     
     func resetLinesContainer(transportType: AvailableTransportTypes) {

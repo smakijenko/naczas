@@ -39,7 +39,15 @@ struct LinesGridView: View {
 extension LinesGridView {
     private func createLineTile(line: String, transportType: AvailableTransportTypes) -> some View {
         return Button {
-            gridVm.isSheetShown.toggle()
+//            gridVm.isSheetShown.toggle()
+            Task {
+                do {
+                    _ = try await LinesScheduleManager().fetchAllSchedules()
+                }
+                catch {
+                    print("Error: \(error)")
+                }
+            }
         } label: {
             Text(line)
                 .foregroundStyle(.white)

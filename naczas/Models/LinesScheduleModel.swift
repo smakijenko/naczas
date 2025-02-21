@@ -6,15 +6,7 @@
 //
 
 struct LinesScheduleApiResponse: Codable {
-    let result: [String: Line]
-}
-
-struct Line: Codable {
-    let routes: [String: Route]
-}
-
-struct Route: Codable {
-    let stops: [String: StopInfoModel]
+    let result: [String: [String: [String: StopInfoModel]]]
 }
 
 struct StopInfoModel: Codable {
