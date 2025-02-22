@@ -214,8 +214,8 @@
 		327C1EE52D5BFDED0014D881 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				32DF13702D68A25300714876 /* LinesScheduleManager.swift */,
 				32DF13652D668ED000714876 /* AvailableLinesManager.swift */,
+				32DF13702D68A25300714876 /* LinesScheduleManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";

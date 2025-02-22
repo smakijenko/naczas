@@ -42,7 +42,8 @@ extension LinesGridView {
 //            gridVm.isSheetShown.toggle()
             Task {
                 do {
-                    _ = try await LinesScheduleManager().fetchAllSchedules()
+                    let line = "189"
+                    _ = try await LinesScheduleManager().provideAllRoutsForLine(line: line)
                 }
                 catch {
                     print("Error: \(error)")

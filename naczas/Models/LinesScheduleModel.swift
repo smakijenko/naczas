@@ -24,3 +24,9 @@ struct StopInfoModel: Codable {
         case nrPrzystanku = "nr_przystanku"
     }
 }
+
+struct LineRouteModel: Codable {
+    let routeName: String
+    let stops: [StopInfoModel]
+    let stopsNum: Int
+}

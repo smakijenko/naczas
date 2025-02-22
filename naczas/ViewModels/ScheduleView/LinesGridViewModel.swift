@@ -59,13 +59,11 @@ class LinesGridViewModel: ObservableObject {
                     if !availableBusLines.isEmpty && !availableTramsLines.isEmpty {
                         isDataLoaded = true
                     }
-                    else {
-                        try await Task.sleep(nanoseconds: 1_000_000_000)
-                    }
                 }
                 catch {
                     print("Error: \(error)")
                 }
+                try await Task.sleep(nanoseconds: 1_250_000_000)
             }
         }
     }

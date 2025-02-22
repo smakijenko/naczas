@@ -16,4 +16,30 @@ class LinesScheduleManager {
         let decodedSchedules = try JSONDecoder().decode(LinesScheduleApiResponse.self, from: data)
         return decodedSchedules.result
     }
+    
+    func provideAllRoutsForLine(line: String) async throws -> [LineRouteModel] {
+        var lineRoutes: [LineRouteModel] = []
+        let schedules = try await fetchAllSchedules()
+        if let route = schedules[line] {
+            for (routeName, stops) in route {
+                var routeStops: [StopInfoModel] = []
+                for (stopID, stopInfo) in stops {
+                    routeStops.append(StopInfoModel(
+                        odleglosc: stopInfo.odleglosc,
+                        ulicaID: stopInfo.ulicaID,
+                        nrZespolu: stopInfo.nrZespolu,
+                        typ: stopInfo.typ,
+                        nrPrzystanku: stopInfo.nrPrzystanku
+                    ))
+                }
+                let sortedRouteStops = routeStops.sorted(by: {$0.odleglosc < $1.odleglosc})
+                lineRoutes.append(LineRouteModel (
+                    routeName: routeName,
+                    stops: sortedRouteStops,
+                    stopsNum: routeStops.count
+                ))
+            }
+        }
+        return lineRoutes
+    }
 }
