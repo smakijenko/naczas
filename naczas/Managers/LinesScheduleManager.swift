@@ -23,7 +23,7 @@ class LinesScheduleManager {
         if let route = schedules[line] {
             for (routeName, stops) in route {
                 var routeStops: [StopInfoModel] = []
-                for (stopID, stopInfo) in stops {
+                for (_, stopInfo) in stops {
                     routeStops.append(StopInfoModel(
                         odleglosc: stopInfo.odleglosc,
                         ulicaID: stopInfo.ulicaID,

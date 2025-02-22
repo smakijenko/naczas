@@ -8,26 +8,34 @@
 import SwiftUI
 
 struct LegendView: View {
+    @Binding var isOnlineTransportLoaded: Bool
     var body: some View {
-        HStack(spacing: 10) {
-            HStack {
-                shiningLine(color: .green)
-                Text("- W ruchu")
+        ZStack {
+            if isOnlineTransportLoaded {
+                HStack(spacing: 10) {
+                    HStack {
+                        shiningLine(color: .green)
+                        Text("- W ruchu")
+                    }
+                    HStack {
+                        shiningLine(color: .red)
+                        Text("- Brak pojazdów")
+                    }
+                }
+                .foregroundStyle(.white)
+                .font(.system(size: 17))
             }
-            HStack {
-                shiningLine(color: .red)
-                Text("- Brak pojazdów")
+            else {
+                ProgressView()
             }
         }
-        .foregroundStyle(.white)
-        .font(.system(size: 17))
         .frame(maxWidth: .infinity)
         .frame(height: translucentTileSize / 2)
     }
 }
 
 #Preview {
-    LegendView()
+    LegendView(isOnlineTransportLoaded: .constant(false))
 }
 
 extension LegendView {

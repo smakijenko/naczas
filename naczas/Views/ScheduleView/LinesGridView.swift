@@ -11,6 +11,7 @@ struct LinesGridView: View {
     @StateObject var gridVm = LinesGridViewModel()
     @Binding var searchedText: String
     @Binding var transportType: AvailableTransportTypes
+    @Binding var isOnlineTransportLoaded: Bool
     var body: some View {
         ScrollView() {
             LazyVGrid(columns: gridVm.columns, alignment: .center) {
@@ -26,36 +27,33 @@ struct LinesGridView: View {
         .onChange(of: searchedText) {
             gridVm.searchedText = searchedText
         }
-        .sheet(isPresented: $gridVm.isSheetShown) {
-            LineStopsView()
+        .onChange(of: gridVm.isOnlineDataLoaded) {
+            isOnlineTransportLoaded = true
         }
     }
 }
 
 #Preview {
-    LinesGridView(searchedText: .constant(""), transportType: .constant(.Autobusy))
+    LinesGridView(searchedText: .constant(""), transportType: .constant(.Autobusy), isOnlineTransportLoaded: .constant(false))
 }
 
 extension LinesGridView {
     private func createLineTile(line: String, transportType: AvailableTransportTypes) -> some View {
-        return Button {
-//            gridVm.isSheetShown.toggle()
-            Task {
-                do {
-                    let line = "189"
-                    _ = try await LinesScheduleManager().provideAllRoutsForLine(line: line)
-                }
-                catch {
-                    print("Error: \(error)")
-                }
+        return ZStack {
+            Button {
+                gridVm.isSheetShown.toggle()
+                gridVm.selectedLine = line
+            } label: {
+                Text(line)
+                    .foregroundStyle(.white)
+                    .frame(width: 50, height: 40)
+                    .background(customTranslucentMaterial)
+                    .cornerRadius(10)
+                    .shadow(color: gridVm.checkIfLineAvailable(line: line, transportType: transportType), radius: 5)
             }
-        } label: {
-            Text(line)
-                .foregroundStyle(.white)
-                .frame(width: 50, height: 40)
-                .background(customTranslucentMaterial)
-                .cornerRadius(10)
-                .shadow(color: gridVm.checkIfLineAvailable(line: line, transportType: transportType), radius: 5)
+        }
+        .sheet(isPresented: $gridVm.isSheetShown) {
+            LineStopsView(line: $gridVm.selectedLine)
         }
     }
 }

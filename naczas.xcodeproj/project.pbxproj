@@ -130,7 +130,6 @@
 				32DF13482D63B8C400714876 /* TransportTypePickerView.swift */,
 				32DF13602D66872B00714876 /* LegendView.swift */,
 				32DF13522D63CE5C00714876 /* LinesGridView.swift */,
-				32DF136C2D689F0E00714876 /* LineStopsView.swift */,
 			);
 			path = ScheduleView;
 			sourceTree = "<group>";
@@ -152,7 +151,6 @@
 				32DF13462D6324A900714876 /* LineSearcherViewModel.swift */,
 				32DF134A2D63B8D200714876 /* TransportTypePickerViewModel.swift */,
 				32DF13542D63CE8D00714876 /* LinesGridViewModel.swift */,
-				32DF136E2D689F1400714876 /* LineStopsViewModel.swift */,
 			);
 			path = ScheduleView;
 			sourceTree = "<group>";
@@ -236,6 +234,7 @@
 				3209FEFC2D5D25FC001E6458 /* MainView */,
 				3209FF012D5D30F7001E6458 /* MapView */,
 				3209FF022D5D3104001E6458 /* ScheduleView */,
+				32DF13752D69C1F000714876 /* LinesStopsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,6 +244,7 @@
 			children = (
 				3209FF0B2D5D37EE001E6458 /* MainView */,
 				3209FF142D628F5B001E6458 /* ScheduleView */,
+				32DF13762D69C21100714876 /* LinesStopsView */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -264,6 +264,22 @@
 				3209FF092D5D3279001E6458 /* Settings.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		32DF13752D69C1F000714876 /* LinesStopsView */ = {
+			isa = PBXGroup;
+			children = (
+				32DF136C2D689F0E00714876 /* LineStopsView.swift */,
+			);
+			path = LinesStopsView;
+			sourceTree = "<group>";
+		};
+		32DF13762D69C21100714876 /* LinesStopsView */ = {
+			isa = PBXGroup;
+			children = (
+				32DF136E2D689F1400714876 /* LineStopsViewModel.swift */,
+			);
+			path = LinesStopsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

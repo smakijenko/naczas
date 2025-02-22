@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct LineStopsView: View {
+    @StateObject var stopsVm = LineStopsViewModel()
+    @Binding var line: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(line)
     }
 }
 
 #Preview {
-    LineStopsView()
+    LineStopsView(line: .constant("189"))
 }

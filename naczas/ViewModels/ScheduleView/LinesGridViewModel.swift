@@ -15,9 +15,11 @@ class LinesGridViewModel: ObservableObject {
     @Published var availableBusLines: Set<String> = []
     @Published var availableTramsLines: Set<String> = []
     @Published var isSheetShown: Bool = false
+    var isOnlineDataLoaded: Bool = false
+    var selectedLine = ""
     
     init() {
-//        loadAvailableLines()
+        loadAvailableLines()
     }
     
     func resetLinesContainer(transportType: AvailableTransportTypes) {
@@ -48,7 +50,7 @@ class LinesGridViewModel: ObservableObject {
             while !isDataLoaded {
                 do {
                     triesCount += 1
-                    if triesCount >= 10 { break }
+                    if triesCount > 10 { break }
                     print("Attempt: \(triesCount)")
                     let buses = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Autobusy)
                     let trams = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Tramwaje)
@@ -58,6 +60,7 @@ class LinesGridViewModel: ObservableObject {
                     }
                     if !availableBusLines.isEmpty && !availableTramsLines.isEmpty {
                         isDataLoaded = true
+                        isOnlineDataLoaded = true
                     }
                 }
                 catch {

@@ -11,6 +11,7 @@ struct ScheduleView: View {
     @State private var isCityPickerShown: Bool = false
     @State private var searchedText: String = ""
     @State private var transportType: AvailableTransportTypes = .Autobusy
+    @State private var isOnlineTransportLoaded: Bool = false
     var body: some View {
         ZStack {
             BackgroundView()
@@ -24,9 +25,9 @@ struct ScheduleView: View {
                 }
                 TransportTypePickerView(transportType: $transportType)
                     .padding(.horizontal)
-                LegendView()
+                LegendView(isOnlineTransportLoaded: $isOnlineTransportLoaded)
                     .padding(.horizontal)
-                LinesGridView(searchedText: $searchedText, transportType: $transportType)
+                LinesGridView(searchedText: $searchedText, transportType: $transportType, isOnlineTransportLoaded: $isOnlineTransportLoaded)
                 Rectangle()
                     .foregroundStyle(.clear)
                     .frame(width: screenSize.width, height: 85)
