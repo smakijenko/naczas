@@ -31,6 +31,8 @@ struct LegendView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: translucentTileSize / 2)
+        .transition(.opacity)
+        .animation(.linear(duration: 0.3), value: isOnlineTransportLoaded)
     }
 }
 

@@ -50,13 +50,18 @@ class LinesGridViewModel: ObservableObject {
             while !isDataLoaded {
                 do {
                     triesCount += 1
-                    if triesCount > 10 { break }
+                    if triesCount > 10 {
+                        // Handle alert saying that it was not possible to fetch available transports
+                        break
+                    }
                     print("Attempt: \(triesCount)")
                     let buses = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Autobusy)
                     let trams = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Tramwaje)
                     await MainActor.run {
-                        availableBusLines = Set(buses)
-                        availableTramsLines = Set(trams)
+                        if !buses.isEmpty && !trams.isEmpty {
+                            availableBusLines = Set(buses)
+                            availableTramsLines = Set(trams)
+                        }
                     }
                     if !availableBusLines.isEmpty && !availableTramsLines.isEmpty {
                         isDataLoaded = true

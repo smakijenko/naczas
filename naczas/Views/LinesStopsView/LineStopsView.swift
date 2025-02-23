@@ -10,8 +10,23 @@ import SwiftUI
 struct LineStopsView: View {
     @StateObject var stopsVm = LineStopsViewModel()
     @Binding var line: String
+    
     var body: some View {
-        Text(line)
+        ZStack {
+            BackgroundView()
+            VStack {
+                HStack {
+                    RoutePickerView(areRoutesLoaded: $stopsVm.areRoutesLoaded)
+                        .padding()
+                    Spacer()
+                }
+                Spacer()
+            }
+        }
+        .environmentObject(stopsVm)
+        .onAppear {
+            stopsVm.fetchRoutes(line: line)
+        }
     }
 }
 

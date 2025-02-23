@@ -42,6 +42,10 @@
 		32DF136F2D689F1900714876 /* LineStopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF136E2D689F1400714876 /* LineStopsViewModel.swift */; };
 		32DF13712D68A25D00714876 /* LinesScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13702D68A25300714876 /* LinesScheduleManager.swift */; };
 		32DF13742D68A2DC00714876 /* LinesScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13732D68A2D200714876 /* LinesScheduleModel.swift */; };
+		32DF13782D69D8A300714876 /* RoutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13772D69D8A300714876 /* RoutePickerView.swift */; };
+		32DF137A2D69DFD700714876 /* RoutePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13792D69DFD000714876 /* RoutePickerViewModel.swift */; };
+		32DF137C2D6B213800714876 /* DefaultInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF137B2D6B212400714876 /* DefaultInstances.swift */; };
+		32DF13812D6B367B00714876 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 32DF13802D6B367B00714876 /* Shimmer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +86,9 @@
 		32DF136E2D689F1400714876 /* LineStopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopsViewModel.swift; sourceTree = "<group>"; };
 		32DF13702D68A25300714876 /* LinesScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesScheduleManager.swift; sourceTree = "<group>"; };
 		32DF13732D68A2D200714876 /* LinesScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesScheduleModel.swift; sourceTree = "<group>"; };
+		32DF13772D69D8A300714876 /* RoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePickerView.swift; sourceTree = "<group>"; };
+		32DF13792D69DFD000714876 /* RoutePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePickerViewModel.swift; sourceTree = "<group>"; };
+		32DF137B2D6B212400714876 /* DefaultInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInstances.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DF13812D6B367B00714876 /* Shimmer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +229,7 @@
 		327C1EE62D5BFDF60014D881 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
+				32DF137B2D6B212400714876 /* DefaultInstances.swift */,
 				32DF135E2D66611300714876 /* AllTramsLines.swift */,
 				32DF135C2D665AAB00714876 /* AllBusLines.swift */,
 			);
@@ -270,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				32DF136C2D689F0E00714876 /* LineStopsView.swift */,
+				32DF13772D69D8A300714876 /* RoutePickerView.swift */,
 			);
 			path = LinesStopsView;
 			sourceTree = "<group>";
@@ -278,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				32DF136E2D689F1400714876 /* LineStopsViewModel.swift */,
+				32DF13792D69DFD000714876 /* RoutePickerViewModel.swift */,
 			);
 			path = LinesStopsView;
 			sourceTree = "<group>";
@@ -299,6 +310,7 @@
 			);
 			name = naczas;
 			packageProductDependencies = (
+				32DF13802D6B367B00714876 /* Shimmer */,
 			);
 			productName = naczas;
 			productReference = 327C1EC92D5BFC390014D881 /* naczas.app */;
@@ -328,6 +340,9 @@
 			);
 			mainGroup = 327C1EC02D5BFC390014D881;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				32DF137F2D6B367B00714876 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 327C1ECA2D5BFC390014D881 /* Products */;
 			projectDirPath = "";
@@ -368,6 +383,8 @@
 				3209FF182D628FB7001E6458 /* ScheduleViewModel.swift in Sources */,
 				3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */,
 				3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */,
+				32DF137A2D69DFD700714876 /* RoutePickerViewModel.swift in Sources */,
+				32DF137C2D6B213800714876 /* DefaultInstances.swift in Sources */,
 				32DF13742D68A2DC00714876 /* LinesScheduleModel.swift in Sources */,
 				327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */,
 				32DF135F2D66611A00714876 /* AllTramsLines.swift in Sources */,
@@ -376,6 +393,7 @@
 				32DF135D2D665AB100714876 /* AllBusLines.swift in Sources */,
 				32DF136D2D689F0E00714876 /* LineStopsView.swift in Sources */,
 				3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */,
+				32DF13782D69D8A300714876 /* RoutePickerView.swift in Sources */,
 				32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */,
 				3209FF002D5D30F0001E6458 /* MapView.swift in Sources */,
 				327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */,
@@ -599,6 +617,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32DF137F2D6B367B00714876 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32DF13802D6B367B00714876 /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32DF137F2D6B367B00714876 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 327C1EC12D5BFC390014D881 /* Project object */;
 }
