@@ -52,6 +52,7 @@ class LinesGridViewModel: ObservableObject {
                     triesCount += 1
                     if triesCount > 10 {
                         // Handle alert saying that it was not possible to fetch available transports
+                        print("Error while fetching available transports.")
                         break
                     }
                     print("Attempt: \(triesCount)")

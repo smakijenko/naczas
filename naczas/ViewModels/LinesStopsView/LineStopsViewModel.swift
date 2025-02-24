@@ -20,7 +20,8 @@ class LineStopsViewModel: ObservableObject {
                 do {
                     triesCount += 1
                     if triesCount > 10 {
-                        // Handle alert saying that it was not possible to fetch give line routes
+                        // Handle alert saying that it was not possible to fetch given line routes
+                        print("Error while fetching given line routes.")
                         break
                     }
                     print("Attempt: \(triesCount)")
