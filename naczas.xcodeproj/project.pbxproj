@@ -46,6 +46,7 @@
 		32DF137A2D69DFD700714876 /* RoutePickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13792D69DFD000714876 /* RoutePickerViewModel.swift */; };
 		32DF137C2D6B213800714876 /* DefaultInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF137B2D6B212400714876 /* DefaultInstances.swift */; };
 		32DF13812D6B367B00714876 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 32DF13802D6B367B00714876 /* Shimmer */; };
+		32DF138D2D6C55FE00714876 /* MyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF138C2D6C55FE00714876 /* MyErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		32DF13772D69D8A300714876 /* RoutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePickerView.swift; sourceTree = "<group>"; };
 		32DF13792D69DFD000714876 /* RoutePickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePickerViewModel.swift; sourceTree = "<group>"; };
 		32DF137B2D6B212400714876 /* DefaultInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInstances.swift; sourceTree = "<group>"; };
+		32DF138C2D6C55FE00714876 /* MyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 		327C1EE52D5BFDED0014D881 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				32DF138C2D6C55FE00714876 /* MyErrors.swift */,
 				32DF13652D668ED000714876 /* AvailableLinesManager.swift */,
 				32DF13702D68A25300714876 /* LinesScheduleManager.swift */,
 			);
@@ -404,6 +407,7 @@
 				32DF13492D63B8C400714876 /* TransportTypePickerView.swift in Sources */,
 				3209FEFE2D5D2611001E6458 /* MainViewModel.swift in Sources */,
 				32DF13712D68A25D00714876 /* LinesScheduleManager.swift in Sources */,
+				32DF138D2D6C55FE00714876 /* MyErrors.swift in Sources */,
 				32DF13472D6324B100714876 /* LineSearcherViewModel.swift in Sources */,
 				3209FF042D5D311C001E6458 /* ScheduleView.swift in Sources */,
 			);
