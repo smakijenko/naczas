@@ -17,11 +17,7 @@ class LinesGridViewModel: ObservableObject {
     @Published var isSheetShown: Bool = false
     var isOnlineDataLoaded: Bool = false
     var selectedLine = ""
-    
-    init() {
-        loadAvailableLines()
-    }
-    
+
     func resetLinesContainer(transportType: AvailableTransportTypes) {
         lines.removeAll()
         switch transportType {
@@ -43,40 +39,38 @@ class LinesGridViewModel: ObservableObject {
         return searchedLines
     }
     
-    func loadAvailableLines() {
-        Task {
-            var isDataLoaded: Bool = false
-            var triesCount: Int = 0
-            while !isDataLoaded {
-                do {
-                    triesCount += 1
-                    if triesCount > 10 {
-                        // Handle alert saying that it was not possible to fetch available transports
-                        print("Error while fetching available transports.")
-                        break
-                    }
-                    print("Attempt: \(triesCount)")
-                    let buses = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Autobusy)
-                    let trams = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Tramwaje)
-                    await MainActor.run {
-                        if !buses.isEmpty && !trams.isEmpty {
-                            availableBusLines = Set(buses)
-                            availableTramsLines = Set(trams)
-                        }
-                    }
-                    if !availableBusLines.isEmpty && !availableTramsLines.isEmpty {
-                        isDataLoaded = true
-                        isOnlineDataLoaded = true
-                    }
-                }
-                catch {
-                    print("Error: \(error)")
-                }
-                try await Task.sleep(nanoseconds: 1_250_000_000)
+    func loadAvailableLines() async throws {
+        var isDataLoaded: Bool = false
+        var triesCount: Int = 0
+        while !isDataLoaded {
+            triesCount += 1
+            if triesCount > 10 {
+                print("Error while fetching available transports.")
+                throw MyError.tooManyAttemptsWhileFetchingAllLines
             }
+            print("Attempt: \(triesCount)")
+            do {
+                let buses = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Autobusy)
+                let trams = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Tramwaje)
+                await MainActor.run {
+                    if !buses.isEmpty && !trams.isEmpty {
+                        availableBusLines = Set(buses)
+                        availableTramsLines = Set(trams)
+                    }
+                }
+                if !availableBusLines.isEmpty && !availableTramsLines.isEmpty {
+                    isDataLoaded = true
+                    isOnlineDataLoaded = true
+                }
+            }
+            catch {
+                print("Attempt \(triesCount) failed with error: \(error)")
+                // Still trying to provide all available lines
+            }
+            try await Task.sleep(nanoseconds: 1_250_000_000)
         }
     }
-
+    
     
     func checkIfLineAvailable(line: String, transportType: AvailableTransportTypes) -> Color {
         var blurColor: Color = .clear

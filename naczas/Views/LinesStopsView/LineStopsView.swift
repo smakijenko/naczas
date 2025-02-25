@@ -25,7 +25,15 @@ struct LineStopsView: View {
         }
         .environmentObject(stopsVm)
         .onAppear {
-            stopsVm.fetchRoutes(line: line)
+            Task {
+                do {
+                    try await stopsVm.fetchMainRoutes(line: line)
+                }
+                catch {
+                    print("Alert: Could not fetch main routes.")
+                    // Handle alert saying that it was not possible to fetch main routes.
+                }
+            }
         }
     }
 }

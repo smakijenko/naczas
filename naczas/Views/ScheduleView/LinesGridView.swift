@@ -30,6 +30,17 @@ struct LinesGridView: View {
         .onChange(of: gridVm.isOnlineDataLoaded) {
             isOnlineTransportLoaded = true
         }
+        .onAppear {
+            Task {
+                do {
+                    try await gridVm.loadAvailableLines()
+                }
+                catch {
+                    print("Alert: Could not fetch all available lines.")
+                    // Handle alert saying that it was not possible to fetch all available lines.
+                }
+            }
+        }
     }
 }
 

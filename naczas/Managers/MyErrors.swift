@@ -11,6 +11,8 @@ enum MyError: Error, LocalizedError, Equatable {
     case noLine
     case wrongKey
     case wrongURL
+    case tooManyAttemptsWhileFetchingMainRoutes
+    case tooManyAttemptsWhileFetchingAllLines
     var errorDescription: String? {
         switch self {
         case .noLine:
@@ -19,6 +21,11 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: Given API key is wrong."
         case .wrongURL:
             return "Error: Given URL is wrong."
+        case .tooManyAttemptsWhileFetchingMainRoutes:
+            return "Error: Too many attempts while fetching main routes."
+        case .tooManyAttemptsWhileFetchingAllLines:
+            return "Error: Too many attempts while fetching all available lines."
+
         }
     }
 }
