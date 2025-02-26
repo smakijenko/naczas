@@ -6,10 +6,10 @@
 //
 
 struct LinesScheduleApiResponse: Codable {
-    let result: [String: [String: [String: StopInfoModel]]]
+    let result: [String: [String: [String: RouteStopInfoModel]]]
 }
 
-struct StopInfoModel: Codable {
+struct RouteStopInfoModel: Codable {
     let odleglosc: Int
     let ulicaID: String
     let nrZespolu: String
@@ -27,6 +27,6 @@ struct StopInfoModel: Codable {
 
 struct LineRouteModel: Codable {
     let routeName: String
-    let stops: [StopInfoModel]
+    let stops: [RouteStopInfoModel]
     let stopsNum: Int
 }
