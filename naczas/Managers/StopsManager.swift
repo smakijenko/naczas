@@ -5,13 +5,12 @@
 //  Created by Stanisław Makijenko on 25/02/2025.
 //
 
-//https://api.um.warszawa.pl/api/action/dbstore_get/?id=ab75c33d-3a26-4342-b36a-6e5fef0a3ac3&apikey=5c08b938-c371-41d6-b27a-e55b6d846b8b
-
 import Foundation
 
 class StopsManager {
-    func fetchAllStops() async throws -> [StopInfoModel]{
+    func fetchAllStops() async throws -> [StopInfoKeyModel : StopInfoValueModel]{
         var allStops: [StopInfoModel] = []
+        var allStopsDict: [StopInfoKeyModel : StopInfoValueModel] = [:]
         print("Started fetching all stops.")
         guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else { throw MyError.wrongKey }
         guard let url = URL(string: "https://api.um.warszawa.pl/api/action/dbstore_get/?id=ab75c33d-3a26-4342-b36a-6e5fef0a3ac3&apikey=\(apiKey)") else { throw MyError.wrongURL }
@@ -22,17 +21,50 @@ class StopsManager {
             for value in stop.values {
                 stopDict[value.key] = value.value
             }
-            allStops.append(StopInfoModel (
+//            allStops.append(StopInfoModel (
+//                zespol: stopDict["zespol"] ?? "",
+//                slupek: stopDict["slupek"] ?? "",
+//                nazwaZespolu: stopDict["nazwa_zespolu"] ?? "",
+//                idUlicy: stopDict["id_ulicy"] ?? "",
+//                szerGeo: stopDict["szer_geo"] ?? "",
+//                dlugGeo: stopDict["dlug_geo"] ?? "",
+//                kierunek: stopDict["kierunek"] ?? "",
+//                obowiazujeOd: stopDict["obowiazuje_od"] ?? ""
+//            ))
+            allStopsDict[StopInfoKeyModel (
                 zespol: stopDict["zespol"] ?? "",
-                slupek: stopDict["slupek"] ?? "",
-                nazwaZespolu: stopDict["nazwa_zespolu"] ?? "",
                 idUlicy: stopDict["id_ulicy"] ?? "",
+                slupek: stopDict["slupek"] ?? ""
+            )] = StopInfoValueModel(
+                nazwaZespolu: stopDict["nazwa_zespolu"] ?? "",
                 szerGeo: stopDict["szer_geo"] ?? "",
                 dlugGeo: stopDict["dlug_geo"] ?? "",
                 kierunek: stopDict["kierunek"] ?? "",
                 obowiazujeOd: stopDict["obowiazuje_od"] ?? ""
-            ))
+            )
         }
-        return allStops
+        return allStopsDict
+    }
+    
+    func provideStopsForRoute(route: LineRouteModel) async throws -> [String] {
+        var stops: [String] = []
+        do {
+            let allStopsDict = try await fetchAllStops()
+            for stop in route.stops {
+                let key = StopInfoKeyModel (
+                    zespol: stop.nrZespolu,
+                    idUlicy: stop.ulicaID,
+                    slupek: stop.nrPrzystanku
+                )
+                if let value = allStopsDict[key] {
+                    stops.append(value.nazwaZespolu + " " + key.slupek)
+                }
+                else { stops.append("Nieznany") }
+            }
+        }
+        catch {
+            print(error)
+        }
+        return stops
     }
 }

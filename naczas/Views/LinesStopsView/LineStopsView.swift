@@ -28,6 +28,8 @@ struct LineStopsView: View {
             Task {
                 do {
                     try await stopsVm.fetchMainRoutes(line: line)
+                    print("Zaczynam dekodować przystanki")
+                    print(try await StopsManager().provideStopsForRoute(route: stopsVm.selectedRoute))
                 }
                 catch {
                     print("Alert: Could not fetch main routes.")
@@ -39,5 +41,5 @@ struct LineStopsView: View {
 }
 
 #Preview {
-    LineStopsView(line: .constant("189"))
+    LineStopsView(line: .constant("9"))
 }

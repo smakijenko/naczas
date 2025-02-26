@@ -26,8 +26,8 @@ class LineStopsViewModel: ObservableObject {
                 let routes = try await LinesScheduleManager().provideAllRoutsForLine(line: line)
                 await MainActor.run {
                     if !routes.isEmpty {
-                        lineRoutes = routes
-                        selectedRoute = routes.first!
+                        lineRoutes = routes.sorted(by: {$0.stopsNum > $1.stopsNum})
+                        selectedRoute = lineRoutes.first!
                         areRoutesLoaded = true
                     }
                 }
