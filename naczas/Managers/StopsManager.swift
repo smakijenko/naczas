@@ -9,7 +9,6 @@ import Foundation
 
 class StopsManager {
     func fetchAllStops() async throws -> [StopInfoKeyModel : StopInfoValueModel]{
-        var allStops: [StopInfoModel] = []
         var allStopsDict: [StopInfoKeyModel : StopInfoValueModel] = [:]
         print("Started fetching all stops.")
         guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else { throw MyError.wrongKey }
@@ -21,16 +20,6 @@ class StopsManager {
             for value in stop.values {
                 stopDict[value.key] = value.value
             }
-//            allStops.append(StopInfoModel (
-//                zespol: stopDict["zespol"] ?? "",
-//                slupek: stopDict["slupek"] ?? "",
-//                nazwaZespolu: stopDict["nazwa_zespolu"] ?? "",
-//                idUlicy: stopDict["id_ulicy"] ?? "",
-//                szerGeo: stopDict["szer_geo"] ?? "",
-//                dlugGeo: stopDict["dlug_geo"] ?? "",
-//                kierunek: stopDict["kierunek"] ?? "",
-//                obowiazujeOd: stopDict["obowiazuje_od"] ?? ""
-//            ))
             allStopsDict[StopInfoKeyModel (
                 zespol: stopDict["zespol"] ?? "",
                 idUlicy: stopDict["id_ulicy"] ?? "",
