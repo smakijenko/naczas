@@ -36,6 +36,12 @@ extension TabBarView {
                 touchVibrates.impactOccurred()
                 tabVm.setSelectedTabAnim(selectedTab: tabName)
                 mainVm.selectedTab = tabName
+                Task {
+                    try await GlobalCoreDataManager.shared.updateLineRoutesAndStops()
+                    for line in GlobalCoreDataManager.shared.linesRoutes {
+                        print(line.lineName)
+                    }
+                }
             } label: {
                 VStack {
                     Image(systemName: iconName)

@@ -5,6 +5,8 @@
 //  Created by Stanisław Makijenko on 21/02/2025.
 //
 
+import SwiftData
+
 struct LinesScheduleApiResponse: Codable {
     let result: [String: [String: [String: RouteStopInfoModel]]]
 }
@@ -29,4 +31,20 @@ struct LineRouteModel: Codable {
     let routeName: String
     let stops: [RouteStopInfoModel]
     let stopsNum: Int
+}
+
+struct LineRoutesModel: Codable {
+    let lineName: String
+    let routes: [LineRouteModel]
+}
+
+@Model
+class LineRoutsEntity {
+    var lineName: String
+    var routes: [LineRouteModel]
+
+    init(lineName: String, routes: [LineRouteModel]) {
+        self.lineName = lineName
+        self.routes = routes
+    }
 }

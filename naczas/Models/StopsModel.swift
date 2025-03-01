@@ -5,7 +5,7 @@
 //  Created by Stanisław Makijenko on 25/02/2025.
 //
 
-import Foundation
+import SwiftData
 
 struct AllStopsApiResponse: Codable {
     let result: [StopValuesModel]
@@ -47,6 +47,17 @@ struct StopInfoValueModel: Codable {
     let dlugGeo: String
     let kierunek: String
     let obowiazujeOd: String
+}
+
+@Model
+class StopEntity {
+    var stopKeys: StopInfoKeyModel
+    var stopValues: StopInfoValueModel
+
+    init(stopKeys: StopInfoKeyModel, stopValues: StopInfoValueModel) {
+        self.stopKeys = stopKeys
+        self.stopValues = stopValues
+    }
 }
 
 //}

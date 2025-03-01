@@ -13,6 +13,7 @@ enum MyError: Error, LocalizedError, Equatable {
     case wrongURL
     case tooManyAttemptsWhileFetchingMainRoutes
     case tooManyAttemptsWhileFetchingAllLines
+    case unableToLoadCoreData
     var errorDescription: String? {
         switch self {
         case .noLine:
@@ -25,7 +26,8 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: Too many attempts while fetching main routes."
         case .tooManyAttemptsWhileFetchingAllLines:
             return "Error: Too many attempts while fetching all available lines."
-
+        case .unableToLoadCoreData:
+            return "Error: It was not possible to load CoreData."
         }
     }
 }
