@@ -44,31 +44,43 @@ class LinesScheduleManager {
     }
     
     func provideAllRoutsForLines() async throws -> [LineRoutesModel] {
+        print("Started fetching all routes for all lines.")
         var routesForAllLines: [LineRoutesModel] = []
-        print("Started fetching all routes for all lines")
-        let schedules = try await fetchAllSchedules()
-        for (line, routes) in schedules {
-            var lineRoutes: [LineRouteModel] = []
-            for (routeName, stops) in routes {
-                var routeStops: [RouteStopInfoModel] = []
-                for (_, stopInfo) in stops {
-                    routeStops.append(RouteStopInfoModel(
-                        odleglosc: stopInfo.odleglosc,
-                        ulicaID: stopInfo.ulicaID,
-                        nrZespolu: stopInfo.nrZespolu,
-                        typ: stopInfo.typ,
-                        nrPrzystanku: stopInfo.nrPrzystanku
-                    ))
+        for attempt in 1 ... 10  {
+            print("Attempt: \(attempt)")
+            do {
+                let schedules = try await fetchAllSchedules()
+                for (line, routes) in schedules {
+                    var lineRoutes: [LineRouteModel] = []
+                    for (routeName, stops) in routes {
+                        var routeStops: [RouteStopInfoModel] = []
+                        for (_, stopInfo) in stops {
+                            routeStops.append(RouteStopInfoModel(
+                                odleglosc: stopInfo.odleglosc,
+                                ulicaID: stopInfo.ulicaID,
+                                nrZespolu: stopInfo.nrZespolu,
+                                typ: stopInfo.typ,
+                                nrPrzystanku: stopInfo.nrPrzystanku
+                            ))
+                        }
+                        let sortedRouteStops = routeStops.sorted(by: {$0.odleglosc < $1.odleglosc})
+                        lineRoutes.append(LineRouteModel (
+                            routeName: routeName,
+                            stops: sortedRouteStops,
+                            stopsNum: routeStops.count
+                        ))
+                    }
+                    routesForAllLines.append(LineRoutesModel(lineName: line, routes: lineRoutes))
                 }
-                let sortedRouteStops = routeStops.sorted(by: {$0.odleglosc < $1.odleglosc})
-                lineRoutes.append(LineRouteModel (
-                    routeName: routeName,
-                    stops: sortedRouteStops,
-                    stopsNum: routeStops.count
-                ))
+                if !routesForAllLines.isEmpty {
+                    return routesForAllLines
+                }
+            } catch {
+                print("Attempt \(attempt) failed with error: \(error)")
+                // Still trying to provide all routes for all lines.
             }
-            routesForAllLines.append(LineRoutesModel(lineName: line, routes: lineRoutes))
+            try await Task.sleep(nanoseconds: 1_250_000_000)
         }
-        return routesForAllLines
+        throw MyError.tooManyAttemptsWhileFetchingAllRoutesForAllLines
     }
 }

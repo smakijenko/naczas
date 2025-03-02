@@ -13,7 +13,15 @@ enum MyError: Error, LocalizedError, Equatable {
     case wrongURL
     case tooManyAttemptsWhileFetchingMainRoutes
     case tooManyAttemptsWhileFetchingAllLines
-    case unableToLoadCoreData
+    
+    case tooManyAttemptsWhileFetchingAllStops
+    case tooManyAttemptsWhileFetchingAllRoutesForAllLines
+    case unableToAddEntities
+    case unableToFetchEntitiesFromDB
+    
+    case containerMainContextNotFound
+    case unableToInitializeContainer
+    case unableToLoadSwiftData
     var errorDescription: String? {
         switch self {
         case .noLine:
@@ -26,7 +34,23 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: Too many attempts while fetching main routes."
         case .tooManyAttemptsWhileFetchingAllLines:
             return "Error: Too many attempts while fetching all available lines."
-        case .unableToLoadCoreData:
+            
+            
+        case .tooManyAttemptsWhileFetchingAllStops:
+            return "Error: Too many attempts while fetching all stops."
+        case .tooManyAttemptsWhileFetchingAllRoutesForAllLines:
+            return "Error: Too many attempts while fetching all routes for all lines."
+        case .unableToAddEntities:
+            return "Error: It was not possible to add entities."
+        case .unableToFetchEntitiesFromDB:
+            return "Error: It was not possible to fetch entities."
+            
+            
+        case .containerMainContextNotFound:
+            return "Error: It was not possible to find container's main context."
+        case .unableToInitializeContainer:
+            return "Error: It was not possible initialize container."
+        case .unableToLoadSwiftData:
             return "Error: It was not possible to load CoreData."
         }
     }

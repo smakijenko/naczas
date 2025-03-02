@@ -10,44 +10,49 @@ import SwiftUI
 @MainActor
 class GlobalCoreDataManager {
     static let shared = GlobalCoreDataManager()
-    private let container: ModelContainer
+    private let container: ModelContainer?
+    @Published var alertMessage: String = ""
+    @Published var showAlertDBInitializationProblem: Bool = false
+    @Published var isDataLoaded: Bool = false
     @Published var linesRoutes: [LineRoutsEntity] = []
     @Published var stops: [StopEntity] = []
     
     private init() {
         do {
-            let schema = Schema([LineRoutsEntity.self])
+            let schema = Schema([LineRoutsEntity.self, StopEntity.self])
             let config = ModelConfiguration(isStoredInMemoryOnly: false)
             container = try ModelContainer(for: schema, configurations: config)
         } catch {
-            fatalError("Błąd inicjalizacji bazy danych: \(error)")
+            print(MyError.unableToInitializeContainer.errorDescription ?? "")
+            container = nil
+            showAlertDBInitializationProblem.toggle()
+            // Handle alert in view
         }
     }
     
-    func updateLineRoutesAndStops() async throws {
+    func updateLineRoutesAndStops() async {
         do {
             if try areLineRoutsEntitiesInDB() {
                 print("There are LineRouts entities already in the database.")
-                linesRoutes = fetchLinesRoutes()
+                linesRoutes = try fetchLinesRoutes()
             }
             else {
                 print("There are no LineRouts entities already in the database.")
                 try await addLinesRoutes()
-                linesRoutes = fetchLinesRoutes()
+                linesRoutes = try fetchLinesRoutes()
             }
             
             if try areStopsEntitiesInDB() {
                 print("There are Stops entities already in the database.")
-                stops = fetchStops()
+                stops = try fetchStops()
             }
             else {
                 print("There are no Stops entities already in the database.")
                 try await addStops()
-                stops = fetchStops()
+                stops = try fetchStops()
             }
         } catch {
             print("Błąd zapisu: \(error)")
-            throw error
         }
     }
 }
@@ -56,7 +61,11 @@ class GlobalCoreDataManager {
 extension GlobalCoreDataManager
 {
     func addLinesRoutes() async throws {
-        let context = container.mainContext
+        print("Started adding LineRouts entities")
+        guard let context = container?.mainContext else {
+            print("addLinesRoutes: " + MyError.containerMainContextNotFound.localizedDescription)
+            throw MyError.containerMainContextNotFound
+        }
         do {
             let linesRoutes = try await LinesScheduleManager().provideAllRoutsForLines()
             for lineRoutes in linesRoutes {
@@ -64,77 +73,95 @@ extension GlobalCoreDataManager
                 context.insert(newLineRoutes)
             }
             try context.save()
-        } catch {
-            print("Błąd zapisu: \(error)")
+        }
+        catch {
+            print("addLinesRoutes: " + MyError.unableToAddEntities.localizedDescription)
+            throw MyError.unableToAddEntities
         }
     }
     
-    func fetchLinesRoutes() -> [LineRoutsEntity] {
-        let context = container.mainContext
+    func fetchLinesRoutes() throws -> [LineRoutsEntity] {
+        guard let context = container?.mainContext else {
+            print("fetchLinesRoutes: " + MyError.containerMainContextNotFound.localizedDescription)
+            throw MyError.containerMainContextNotFound
+        }
         let descriptor = FetchDescriptor<LineRoutsEntity>()
         do {
             return try context.fetch(descriptor)
         } catch {
-            print("Błąd pobierania danych: \(error)")
-            return []
+            print("fetchLinesRoutes: " + MyError.unableToFetchEntitiesFromDB.localizedDescription)
+            throw MyError.unableToFetchEntitiesFromDB
         }
     }
     
     func areLineRoutsEntitiesInDB() throws -> Bool {
-        let context = container.mainContext
+        guard let context = container?.mainContext else {
+            print("areLineRoutsEntitiesInDB: " + MyError.containerMainContextNotFound.localizedDescription)
+            throw MyError.containerMainContextNotFound
+        }
         let descriptor = FetchDescriptor<LineRoutsEntity>()
         do {
             let entities = try context.fetch(descriptor)
             if entities.isEmpty { return false }
         } catch {
-            print("Błąd pobierania danych z Swift Data: \(error)")
-            throw URLError(.badServerResponse)
+            print("areLineRoutsEntitiesInDB: " + MyError.unableToLoadSwiftData.localizedDescription)
+            throw MyError.unableToLoadSwiftData
         }
         return true
     }
-    
 }
 
 // Methodes for StopsEnities
 extension GlobalCoreDataManager
 {
     func addStops() async throws {
-        let context = container.mainContext
+        print("Started adding Stops entities.")
+        guard let context = container?.mainContext else {
+            print("addStops: " + MyError.containerMainContextNotFound.localizedDescription)
+            throw MyError.containerMainContextNotFound
+        }
         do {
-            let stops = try await StopsManager().fetchAllStops()
+            let stops = try await StopsManager().provideAllStopsInDict()
             for (key, value) in stops {
                 let newStopEntity = StopEntity(stopKeys: key, stopValues: value)
                 context.insert(newStopEntity)
             }
             try context.save()
-        } catch {
-            print("Błąd zapisu: \(error)")
+        }
+        catch {
+            print("addStops: " + MyError.unableToAddEntities.localizedDescription)
+            throw MyError.unableToAddEntities
         }
     }
     
-    func fetchStops() -> [StopEntity] {
-        let context = container.mainContext
+    func fetchStops() throws -> [StopEntity] {
+        guard let context = container?.mainContext else {
+            print("fetchStops: " + MyError.containerMainContextNotFound.localizedDescription)
+            throw MyError.containerMainContextNotFound
+        }
         let descriptor = FetchDescriptor<StopEntity>()
         do {
             return try context.fetch(descriptor)
         } catch {
-            print("Błąd pobierania danych: \(error)")
-            return []
+            print("fetchStops: " + MyError.unableToFetchEntitiesFromDB.localizedDescription)
+            throw MyError.unableToFetchEntitiesFromDB
         }
     }
     
     func areStopsEntitiesInDB() throws -> Bool {
-        let context = container.mainContext
+        guard let context = container?.mainContext else {
+            print("areStopsEntitiesInDB: " + MyError.containerMainContextNotFound.localizedDescription)
+            throw MyError.containerMainContextNotFound
+        }
         let descriptor = FetchDescriptor<StopEntity>()
         do {
             let entities = try context.fetch(descriptor)
             if entities.isEmpty { return false }
         } catch {
-            print("Błąd pobierania danych z Swift Data: \(error)")
-            throw error
+            print("areStopsEntitiesInDB: " + MyError.unableToLoadSwiftData.localizedDescription)
+            throw MyError.unableToLoadSwiftData
         }
         return true
     }
-    
 }
 
