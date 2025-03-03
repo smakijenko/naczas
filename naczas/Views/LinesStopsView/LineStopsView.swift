@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LineStopsView: View {
+    @EnvironmentObject var manager: GlobalDataManager
     @StateObject var stopsVm = LineStopsViewModel()
     @Binding var line: String
     
@@ -27,9 +28,9 @@ struct LineStopsView: View {
         .onAppear {
             Task {
                 do {
-                    try await stopsVm.fetchMainRoutes(line: line)
-                    print("Zaczynam dekodować przystanki")
-                    print(try await StopsManager().provideStopsForRoute(route: stopsVm.selectedRoute))
+                    stopsVm.provideMainRouteForLineFromDB(line: line, entities: manager.linesRoutes)
+                    print("Decoding stops for line: \(line)")
+                    print(try await StopsManager().decodeRouteStops(route: stopsVm.selectedRoute))
                 }
                 catch {
                     print("Alert: Could not fetch main routes.")
@@ -37,9 +38,15 @@ struct LineStopsView: View {
                 }
             }
         }
+        .onChange(of: stopsVm.selectedRoute.routeName) {
+            Task {
+                print(try await StopsManager().decodeRouteStops(route: stopsVm.selectedRoute))
+            }
+        }
     }
 }
 
 #Preview {
-    LineStopsView(line: .constant("9"))
+    LineStopsView(line: .constant("189"))
+        .environmentObject(GlobalDataManager())
 }

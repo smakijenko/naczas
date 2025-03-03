@@ -13,8 +13,8 @@ class TabBarViewModel: ObservableObject {
     var tabBarWidth: CGFloat = 0
     let tabBarHeight: CGFloat = 50
     let tabBarGradientColors = [
-        Color(red: 31.0/255.0, green: 46.0/255.0, blue: 54.0/255.0),
-        Color(red: 16.0/255.0, green: 27.0/255.0, blue: 33.0/255.0)
+        Color(red: 39.0/255.0, green: 40.0/255.0, blue: 41.0/255.0),
+        Color(red: 35.0/255.0, green: 37.0/255.0, blue: 38.0/255.0)
     ]
     
     init() {

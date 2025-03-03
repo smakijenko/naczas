@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LinesGridView: View {
+    @EnvironmentObject var manager: GlobalDataManager
     @StateObject var gridVm = LinesGridViewModel()
     @Binding var searchedText: String
     @Binding var transportType: AvailableTransportTypes
@@ -46,12 +47,14 @@ struct LinesGridView: View {
 
 #Preview {
     LinesGridView(searchedText: .constant(""), transportType: .constant(.Autobusy), isOnlineTransportLoaded: .constant(false))
+        .environmentObject(GlobalDataManager())
 }
 
 extension LinesGridView {
     private func createLineTile(line: String, transportType: AvailableTransportTypes) -> some View {
         return ZStack {
             Button {
+                guard manager.isDatasAvailable else { return }
                 gridVm.isSheetShown.toggle()
                 gridVm.selectedLine = line
             } label: {

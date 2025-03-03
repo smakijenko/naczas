@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct naczasApp: App {
+    @StateObject private var manager = GlobalDataManager.shared
     @State var showLunchView: Bool = false
     var body: some Scene {
         WindowGroup {
@@ -23,6 +24,7 @@ struct naczasApp: App {
                         .zIndex(1)
                 }
             }
+            .environmentObject(manager)
             .preferredColorScheme(.dark)
             .animation(.linear(duration: 0.2), value: showLunchView)
         }

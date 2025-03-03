@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class RoutePickerViewModel: ObservableObject {
-    @Published var isRoutesListShown: Bool = false
+    @Published var isRoutesListShown: Bool = true
     
     func showRoutesList() {
         withAnimation(.easeInOut(duration: 0.2)) {

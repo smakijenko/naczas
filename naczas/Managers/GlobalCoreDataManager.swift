@@ -1,5 +1,5 @@
 //
-//  GlobalCoreDataManager.swift
+//  GlobalDataManager.swift
 //  naczas
 //
 //  Created by Stanisław Makijenko on 01/03/2025.
@@ -8,25 +8,28 @@ import SwiftData
 import SwiftUI
 
 @MainActor
-class GlobalCoreDataManager {
-    static let shared = GlobalCoreDataManager()
-    private let container: ModelContainer?
-    @Published var alertMessage: String = ""
-    @Published var showAlertDBInitializationProblem: Bool = false
-    @Published var isDataLoaded: Bool = false
+class GlobalDataManager: ObservableObject {
+    @Published var showSwiftDataIssueAlert: Bool = false
+    @Published var isDatasAvailable: Bool = false
     @Published var linesRoutes: [LineRoutsEntity] = []
     @Published var stops: [StopEntity] = []
+    static let shared = GlobalDataManager()
+    private let container: ModelContainer?
+    let swiftDataIssuealertMessage: String = "Wystąpił problem z załadowaniem danych. Spróbuj ponownie lub zrestartuj aplikacje."
     
-    private init() {
+    
+    init() {
         do {
             let schema = Schema([LineRoutsEntity.self, StopEntity.self])
             let config = ModelConfiguration(isStoredInMemoryOnly: false)
             container = try ModelContainer(for: schema, configurations: config)
         } catch {
-            print(MyError.unableToInitializeContainer.errorDescription ?? "")
+            print(MyError.unableToInitializeContainer.localizedDescription)
             container = nil
-            showAlertDBInitializationProblem.toggle()
-            // Handle alert in view
+            showSwiftDataIssueAlert = true
+        }
+        Task {
+//            await updateLineRoutesAndStops()
         }
     }
     
@@ -51,14 +54,21 @@ class GlobalCoreDataManager {
                 try await addStops()
                 stops = try fetchStops()
             }
+            print("Swift Data was fetched successfully.")
+            isDatasAvailable = true
         } catch {
-            print("Błąd zapisu: \(error)")
+            showSwiftDataIssueAlert = true
         }
+    }
+    
+    func retryUpdate() async {
+        showSwiftDataIssueAlert = false
+        await updateLineRoutesAndStops()
     }
 }
 
 // Methodes for LineRoutesEntities
-extension GlobalCoreDataManager
+extension GlobalDataManager
 {
     func addLinesRoutes() async throws {
         print("Started adding LineRouts entities")
@@ -112,7 +122,7 @@ extension GlobalCoreDataManager
 }
 
 // Methodes for StopsEnities
-extension GlobalCoreDataManager
+extension GlobalDataManager
 {
     func addStops() async throws {
         print("Started adding Stops entities.")

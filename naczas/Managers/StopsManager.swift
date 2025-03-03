@@ -17,7 +17,8 @@ class StopsManager {
         return decodedAllStops.result
     }
     
-    func provideStopsForRoute(route: LineRouteModel) async throws -> [String] {
+    func decodeRouteStops(route: LineRouteModel) async throws -> [String] {
+        print("Decoding stops for route: \(route.routeName)")
         var stops: [String] = []
         do {
             let allStopsDict = try await provideAllStopsInDict()
@@ -28,9 +29,16 @@ class StopsManager {
                     slupek: stop.nrPrzystanku
                 )
                 if let value = allStopsDict[key] {
-                    stops.append(value.nazwaZespolu + " " + key.slupek)
+                    stops.append(value.nazwaZespolu)
                 }
-                else { stops.append("Nieznany") }
+                else {
+                    if let value = unknownStops[key] {
+                        stops.append(value.nazwaZespolu)
+                    }
+                    else {
+                        stops.append("Nieznany")
+                    }
+                }
             }
         }
         catch {

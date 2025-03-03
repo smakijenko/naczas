@@ -11,6 +11,7 @@ let screenSize = UIScreen.main.bounds.size
 let touchVibrates = UIImpactFeedbackGenerator(style: .light)
 let translucentTileSize: CGFloat = 65
 let customTranslucentMaterial: Color = .gray.opacity(0.3)
+let customThinTranslucentMaterial: Color = .gray.opacity(0.6)
 let dimmedWhiteColor: Color = .white.opacity(0.3)
 
 func differenceBetweenDate(lastUpdateString: String) -> Double? {

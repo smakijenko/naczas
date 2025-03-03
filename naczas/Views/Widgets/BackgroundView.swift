@@ -9,10 +9,8 @@ import SwiftUI
 
 class BackgroundViewModel: ObservableObject {
     let bgGradientColors = [
-        Color(red: 61.0/255.0, green: 110.0/255.0, blue: 148.0/255.0),
-        Color(red: 70.0/255.0, green: 107.0/255.0, blue: 120.0/255.0),
-        Color(red: 15.0/255.0, green: 32.0/255.0, blue: 39.0/255.0)
-        
+        Color(red: 67.0/255.0, green: 70.0/255.0, blue: 71.0/255.0),
+        Color(red: 35.0/255.0, green: 37.0/255.0, blue: 38.0/255.0)
     ]
 }
 

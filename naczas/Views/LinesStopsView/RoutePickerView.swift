@@ -63,17 +63,22 @@ extension RoutePickerView {
         return VStack {
             Divider()
             ScrollView(showsIndicators: false) {
-                VStack(spacing: 10) {
+                VStack(spacing: 0) {
                     ForEach(stopsVm.lineRoutes, id: \.routeName) { route in
-                        Text(route.routeName)
-                            .font(.system(size: 24))
-                            .foregroundStyle(.white)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.1)
+                        Button {
+                            stopsVm.selectedRoute = route
+//                            routesVm.isRoutesListShown = false
+                        } label: {
+                            Text(route.routeName)
+                                .font(.system(size: 15)) // 24
+                                .foregroundStyle(.white)
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.1)
+                        }
                     }
                 }
             }
         }
-        .frame(width: translucentTileSize * 2, height: translucentTileSize * 3)
+        .frame(width: translucentTileSize * 2, height: translucentTileSize * 10)
     }
 }

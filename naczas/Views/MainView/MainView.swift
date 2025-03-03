@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var manager: GlobalDataManager
     @StateObject var mainVm = MainViewModel()
     var body: some View {
         ZStack {
@@ -27,9 +28,25 @@ struct MainView: View {
         .transition(.opacity)
         .animation(.linear(duration: 0.1), value: mainVm.selectedTab)
         .environmentObject(mainVm)
+        .task {
+            await manager.updateLineRoutesAndStops()
+        }
+        .alert(isPresented: $manager.showSwiftDataIssueAlert) {
+            Alert(
+                title: Text("Błąd!"),
+                message: Text(manager.swiftDataIssuealertMessage),
+                primaryButton: .default(Text("Spróbuj ponownie"), action: {
+                    Task {
+                        await manager.retryUpdate()
+                    }
+                }),
+                secondaryButton: .cancel(Text("Ok"))
+                )
+        }
     }
 }
 
 #Preview {
     MainView()
+        .environmentObject(GlobalDataManager())
 }
