@@ -35,6 +35,8 @@ class GlobalDataManager: ObservableObject {
     
     func updateLineRoutesAndStops() async {
         do {
+            try deleteAllLineRoutsEntities()
+            try deleteAllStopsEntities()
             if try areLineRoutsEntitiesInDB() {
                 print("There are LineRouts entities already in the database.")
                 linesRoutes = try fetchLinesRoutes()
@@ -80,6 +82,12 @@ extension GlobalDataManager
             let linesRoutes = try await LinesScheduleManager().provideAllRoutsForLines()
             for lineRoutes in linesRoutes {
                 let newLineRoutes = LineRoutsEntity(lineName: lineRoutes.lineName, routes: lineRoutes.routes)
+                // Adding custom lineRoutes
+                if let customRoutes = customRoutes[lineRoutes.lineName] {
+                    for route in customRoutes {
+                        newLineRoutes.routes.append(route)
+                    }
+                }
                 context.insert(newLineRoutes)
             }
             try context.save()
@@ -118,6 +126,27 @@ extension GlobalDataManager
             throw MyError.unableToLoadSwiftData
         }
         return true
+    }
+    
+    func deleteAllLineRoutsEntities() throws {
+        guard let context = container?.mainContext else {
+            print("deleteAllLineRoutsEntities: " + MyError.containerMainContextNotFound.localizedDescription)
+            throw MyError.containerMainContextNotFound
+        }
+        
+        let descriptor = FetchDescriptor<LineRoutsEntity>()
+        do {
+            let entities = try context.fetch(descriptor)
+            for entity in entities {
+                context.delete(entity)
+            }
+            
+            try context.save()
+        }
+        catch {
+            print("deleteAllLineRoutsEntities: " + MyError.unableToDeleteEntities.localizedDescription)
+            throw MyError.unableToDeleteEntities
+        }
     }
 }
 
@@ -172,6 +201,27 @@ extension GlobalDataManager
             throw MyError.unableToLoadSwiftData
         }
         return true
+    }
+    
+    func deleteAllStopsEntities() throws {
+        guard let context = container?.mainContext else {
+            print("deleteAllStopsEntities: " + MyError.containerMainContextNotFound.localizedDescription)
+            throw MyError.containerMainContextNotFound
+        }
+        
+        let descriptor = FetchDescriptor<StopEntity>()
+        do {
+            let entities = try context.fetch(descriptor)
+            for entity in entities {
+                context.delete(entity)
+            }
+            
+            try context.save()
+        }
+        catch {
+            print("deleteAllStopsEntities: " + MyError.unableToDeleteEntities.localizedDescription)
+            throw MyError.unableToDeleteEntities
+        }
     }
 }
 

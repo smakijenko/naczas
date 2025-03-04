@@ -7,11 +7,11 @@
 
 import Foundation
 
-let preferredMainRouteForTrams: [String : [PreferredRouteModel]] = [
+let preferredMainRoute: [String : [PreferredRouteModel]] = [
     "1" : [PreferredRouteModel(routeName: "TD-5NAR", direction: "pl.Narutowicza"), PreferredRouteModel(routeName: "TX-A04ZN", direction: "Annopol")],
     "2" : [PreferredRouteModel(routeName: "TX-11WIN", direction: "Winnica"), PreferredRouteModel(routeName: "TX-MML11", direction: "Metro Młociny")],
     "3" : [PreferredRouteModel(routeName: "TP-GCW", direction: "Gocławek"), PreferredRouteModel(routeName: "TP-ANN", direction: "Annopol")],
-    "4" : [PreferredRouteModel(routeName: "Custom4Wyścigi", direction: "Wyścigi"), PreferredRouteModel(routeName: "Custom4ŻerańWschodni", direction: "Żerań Wschodni")],
+    "4" : [PreferredRouteModel(routeName: "TP-WYS", direction: "Wyścigi"), PreferredRouteModel(routeName: "TP-ZEW", direction: "Żerań Wschodni")],
     "6" : [PreferredRouteModel(routeName: "TP-MML", direction: "Metro Młociny"), PreferredRouteModel(routeName: "TP-GCW", direction: "Gocławek")],
     "7" : [PreferredRouteModel(routeName: "Custom7KawęczyńskaBazylika", direction: "Kawęczyńska Bazylika"), PreferredRouteModel(routeName: "Custom7PlNarutowicza", direction: "pl.Narutowicza")],
     "9" : [PreferredRouteModel(routeName: "TP-GCW", direction: "Gocławek"), PreferredRouteModel(routeName: "TP-OKE", direction: "P+R Al.Krakowska")],
@@ -27,7 +27,7 @@ let preferredMainRouteForTrams: [String : [PreferredRouteModel]] = [
     "22" : [PreferredRouteModel(routeName: "TP-PIA", direction: "Piaski"), PreferredRouteModel(routeName: "TP-WIA", direction: "Wiatraczna")],
     "23" : [PreferredRouteModel(routeName: "TP-STA", direction: "Czynszowa"), PreferredRouteModel(routeName: "TP-NBM", direction: "Nowe Bemowo")],
     "24" : [PreferredRouteModel(routeName: "TP-NBM", direction: "Nowe Bemowo"), PreferredRouteModel(routeName: "TP-GCW", direction: "Gocławek")],
-    "25" : [PreferredRouteModel(routeName: "Custom25PlNarutowicza", direction: "pl. Narutowicza"), PreferredRouteModel(routeName: "Custom25Annopol", direction: "Annopol")],
+    "25" : [PreferredRouteModel(routeName: "Custom25PlNarutowicza", direction: "pl.Narutowicza"), PreferredRouteModel(routeName: "Custom25Annopol", direction: "Annopol")],
     "26" : [PreferredRouteModel(routeName: "TP-WIA", direction: "Wiatraczna"), PreferredRouteModel(routeName: "TP-MML", direction: "Metro Młociny")],
     "27" : [PreferredRouteModel(routeName: "TP-MRM", direction: "Metro Marymont"), PreferredRouteModel(routeName: "TP-CMW", direction: "Cm.Wolski")],
     "28" : [PreferredRouteModel(routeName: "TP-DWK", direction: "Dw.Wschodni (Kijowska)"), PreferredRouteModel(routeName: "TP-GOR", direction: "os.Górczewska")],

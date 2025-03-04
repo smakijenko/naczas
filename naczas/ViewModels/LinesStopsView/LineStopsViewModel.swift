@@ -13,13 +13,18 @@ final class LineStopsViewModel: ObservableObject {
     @Published var selectedRoute: LineRouteModel = defaultRoute
     @Published var areRoutesLoaded: Bool = false
     @Published var linesRoutes: [LineRoutsEntity] = []
-
+    
     func provideMainRouteForLineFromDB(line: String, entities: [LineRoutsEntity]) {
-        guard let givenLineEntity = entities.first(where: {$0.lineName == line}) else { return }
-        if !givenLineEntity.routes.isEmpty {
-            lineRoutes = givenLineEntity.routes.sorted(by: {$0.stopsNum > $1.stopsNum})
+        guard let givenLineEntities = entities.first(where: {$0.lineName == line}) else { return }
+        guard !givenLineEntities.routes.isEmpty else { return }
+//        if preferredMainRoute[line] != nil {
+//            lineRoutes = givenLineEntities.routes.sorted(by: {$0.stopsNum > $1.stopsNum})
+//            selectedRoute = givenLineEntities.routes.first(where: {$0.routeName == "Custom25PlNarutowicza"})!
+//        }
+//        else {
+            lineRoutes = givenLineEntities.routes.sorted(by: {$0.stopsNum > $1.stopsNum})
             selectedRoute = lineRoutes.first!
-            areRoutesLoaded = true
-        }
+//        }
+        areRoutesLoaded = true
     }
 }

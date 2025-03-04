@@ -18,10 +18,11 @@ enum MyError: Error, LocalizedError, Equatable {
     case tooManyAttemptsWhileFetchingAllRoutesForAllLines
     case unableToAddEntities
     case unableToFetchEntitiesFromDB
+    case unableToLoadSwiftData
+    case unableToDeleteEntities
     
     case containerMainContextNotFound
     case unableToInitializeContainer
-    case unableToLoadSwiftData
     var errorDescription: String? {
         switch self {
         case .noLine:
@@ -44,14 +45,15 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: It was not possible to add entities."
         case .unableToFetchEntitiesFromDB:
             return "Error: It was not possible to fetch entities."
-            
+        case .unableToLoadSwiftData:
+            return "Error: It was not possible to load SwiftData."
+        case .unableToDeleteEntities:
+            return "Error: It was not possible to delete entities."
             
         case .containerMainContextNotFound:
             return "Error: It was not possible to find container's main context."
         case .unableToInitializeContainer:
             return "Error: It was not possible initialize container."
-        case .unableToLoadSwiftData:
-            return "Error: It was not possible to load CoreData."
         }
     }
 }
