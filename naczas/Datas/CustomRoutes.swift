@@ -467,7 +467,7 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 6027, ulicaID: "0904", nrZespolu: "1138", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 6366, ulicaID: "0904", nrZespolu: "1517", typ: "1", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 6644, ulicaID: "2308", nrZespolu: "1139", typ: "1", nrPrzystanku: "02"),
-            RouteStopInfoModel(odleglosc: 6968, ulicaID: "2308", nrZespolu: "1140", typ: "1", nrPrzystanku: "06"), //metro trocka
+            RouteStopInfoModel(odleglosc: 6968, ulicaID: "2308", nrZespolu: "1140", typ: "1", nrPrzystanku: "06"),
             RouteStopInfoModel(odleglosc: 7561, ulicaID: "0212", nrZespolu: "1213", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 8091, ulicaID: "2104", nrZespolu: "1144", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 8418, ulicaID: "2104", nrZespolu: "1528", typ: "2", nrPrzystanku: "02"),
@@ -558,5 +558,104 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 20404, ulicaID: "1203", nrZespolu: "1001", typ: "1", nrPrzystanku: "08"),
             RouteStopInfoModel(odleglosc: 20936, ulicaID: "1203", nrZespolu: "1028", typ: "4", nrPrzystanku: "13")
         ], stopsNum: 51)
+    ],
+    "127" : [
+        LineRouteModel(routeName: "Custom127UrsusRatusz", stops: [
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0236", nrZespolu: "7100", typ: "3", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 241, ulicaID: "0504", nrZespolu: "7060", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 493, ulicaID: "0504", nrZespolu: "7061", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 865, ulicaID: "0504", nrZespolu: "7062", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 1274, ulicaID: "0504", nrZespolu: "7063", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 1631, ulicaID: "2016", nrZespolu: "7064", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 2106, ulicaID: "1302", nrZespolu: "7065", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 2651, ulicaID: "1207", nrZespolu: "7069", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 3222, ulicaID: "1605", nrZespolu: "7040", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 3598, ulicaID: "0101", nrZespolu: "7033", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 4178, ulicaID: "0101", nrZespolu: "7013", typ: "1", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 4665, ulicaID: "0101", nrZespolu: "7002", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 5382, ulicaID: "0101", nrZespolu: "4052", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 5832, ulicaID: "0101", nrZespolu: "4001", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 6142, ulicaID: "0101", nrZespolu: "4041", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 6608, ulicaID: "0101", nrZespolu: "4042", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 7016, ulicaID: "0101", nrZespolu: "4043", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 7489, ulicaID: "0101", nrZespolu: "4044", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 7994, ulicaID: "0101", nrZespolu: "4045", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 8641, ulicaID: "0101", nrZespolu: "4051", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 9011, ulicaID: "0101", nrZespolu: "4046", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 9581, ulicaID: "0101", nrZespolu: "4047", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 10384, ulicaID: "1841", nrZespolu: "4048", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 10884, ulicaID: "1841", nrZespolu: "4101", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 11202, ulicaID: "2212", nrZespolu: "4102", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 11638, ulicaID: "0322", nrZespolu: "4103", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 12030, ulicaID: "2040", nrZespolu: "4225", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 12603, ulicaID: "0809", nrZespolu: "4213", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 12956, ulicaID: "2105", nrZespolu: "4214", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 13566, ulicaID: "1260", nrZespolu: "4222", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 13997, ulicaID: "1260", nrZespolu: "4223", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 14395, ulicaID: "1260", nrZespolu: "4224", typ: "3", nrPrzystanku: "01")
+            //pkp ursus pln
+            //ursus ratusz
+            // ursus ratusz
+        ], stopsNum: 35),
+        LineRouteModel(routeName: "Custom127Browarna", stops: [
+            //Ursus ratusz
+            //ursus ratusz
+            //plp ursus pln
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "1260", nrZespolu: "4224", typ: "3", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 359, ulicaID: "1260", nrZespolu: "4223", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 649, ulicaID: "1260", nrZespolu: "4222", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 1231, ulicaID: "1260", nrZespolu: "4214", typ: "1", nrPrzystanku: "05"),
+            RouteStopInfoModel(odleglosc: 1931, ulicaID: "2040", nrZespolu: "4225", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 2431, ulicaID: "2212", nrZespolu: "4103", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 2762, ulicaID: "2212", nrZespolu: "4102", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 2962, ulicaID: "1841", nrZespolu: "4101", typ: "1", nrPrzystanku: "03"),
+            RouteStopInfoModel(odleglosc: 3642, ulicaID: "0101", nrZespolu: "4048", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 4275, ulicaID: "0101", nrZespolu: "4047", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 4965, ulicaID: "0101", nrZespolu: "4046", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 5285, ulicaID: "0101", nrZespolu: "4051", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 6123, ulicaID: "0101", nrZespolu: "4045", typ: "1", nrPrzystanku: "05"),
+            RouteStopInfoModel(odleglosc: 6399, ulicaID: "0101", nrZespolu: "4044", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 6789, ulicaID: "0101", nrZespolu: "4043", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 7274, ulicaID: "0101", nrZespolu: "4042", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 7669, ulicaID: "1610", nrZespolu: "4140", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 8354, ulicaID: "0101", nrZespolu: "4001", typ: "1", nrPrzystanku: "03"),
+            RouteStopInfoModel(odleglosc: 8656, ulicaID: "0101", nrZespolu: "4052", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 9310, ulicaID: "0101", nrZespolu: "7002", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 10020, ulicaID: "0101", nrZespolu: "7013", typ: "1", nrPrzystanku: "15"),
+            RouteStopInfoModel(odleglosc: 10357, ulicaID: "0101", nrZespolu: "7033", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 10691, ulicaID: "0011", nrZespolu: "7040", typ: "1", nrPrzystanku: "03"),
+            RouteStopInfoModel(odleglosc: 11506, ulicaID: "1302", nrZespolu: "7066", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 11806, ulicaID: "1302", nrZespolu: "7065", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 12272, ulicaID: "2016", nrZespolu: "7064", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 12442, ulicaID: "0504", nrZespolu: "7063", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 12877, ulicaID: "2209", nrZespolu: "7079", typ: "1", nrPrzystanku: "05"),
+            RouteStopInfoModel(odleglosc: 13087, ulicaID: "2955", nrZespolu: "7079", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 13557, ulicaID: "0504", nrZespolu: "7061", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 14032, ulicaID: "0236", nrZespolu: "7100", typ: "3", nrPrzystanku: "02")
+        ], stopsNum: 1)
+    ],
+    "130" : [
+        LineRouteModel(routeName: "Custom130ECSiekierki", stops: [
+
+        ], stopsNum: 1),
+        LineRouteModel(routeName: "Custom130MetroWilanowska", stops: [
+ 
+        ], stopsNum: 1)
+    ],
+    "131" : [
+        LineRouteModel(routeName: "Custom131DwCentralny", stops: [
+
+        ], stopsNum: 1),
+        LineRouteModel(routeName: "Custom131Sadyba", stops: [
+ 
+        ], stopsNum: 1)
+    ],
+    "139" : [
+        LineRouteModel(routeName: "Custom139OgródBotaniczny", stops: [
+
+        ], stopsNum: 1),
+        LineRouteModel(routeName: "Custom139OsKabaty", stops: [
+ 
+        ], stopsNum: 1)
     ],
 ]
