@@ -87,7 +87,7 @@ let preferredMainRoute: [String : [PreferredRouteModel]] = [
     "158" : [PreferredRouteModel(routeName: "TP-CHR", direction: "CH Reduta"), PreferredRouteModel(routeName: "TP-OST", direction: "Witolin")],
     "159" : [PreferredRouteModel(routeName: "TP-MSI", direction: "Małe Siekierki"), PreferredRouteModel(routeName: "TP-BLC", direction: "CH Blue City")],
     "160" : [PreferredRouteModel(routeName: "TP-DWCT", direction: "Dw.Centralny"), PreferredRouteModel(routeName: "TP-GROT", direction: "Grodzisk")],
-    "161" : [PreferredRouteModel(routeName: "Custom161Olecka", direction: "Olecka"), PreferredRouteModel(routeName: "Custom161ZbójnaGóra", direction: "Zbójna Góra")],
+    "161" : [PreferredRouteModel(routeName: "Custom161Olecka", direction: "Olecka"), PreferredRouteModel(routeName: "TP-ZBG", direction: "Zbójna Góra")],
     "162" : [PreferredRouteModel(routeName: "TP-HAL", direction: "pl.Hallera"), PreferredRouteModel(routeName: "TP-SIE", direction: "EC Siekierki")],
     "163" : [PreferredRouteModel(routeName: "Custom163CentrumOnkologii", direction: "Centrum Onkologii"), PreferredRouteModel(routeName: "Custom163MetroWilanowska", direction: "Metro Wilanowska")],
     "164" : [PreferredRouteModel(routeName: "Custom164KępaZawadowska", direction: "Kępa Zawadowska"), PreferredRouteModel(routeName: "Custom164MetroWilanowska", direction: "Metro Wilanowska")],
