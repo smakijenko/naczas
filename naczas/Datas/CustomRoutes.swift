@@ -1795,12 +1795,12 @@ let customRoutes: [String : [LineRouteModel]] = [
     ],
     "519" : [
         LineRouteModel(routeName: "Custom519Powsin", stops: [
-            //metro wilanowska
-            //podbipiety nz
-            //dolina  sluz
-            //karczocha
-            //patkowskiego
-            //os arbuzowa
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3009", typ: "1", nrPrzystanku: "15"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3037", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3039", typ: "1", nrPrzystanku: "03"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3309", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3040", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3041", typ: "1", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 8823, ulicaID: "0125", nrZespolu: "3042", typ: "1", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 9318, ulicaID: "0125", nrZespolu: "3043", typ: "1", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 9952, ulicaID: "1824", nrZespolu: "3044", typ: "1", nrPrzystanku: "01"),
@@ -1827,21 +1827,20 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 6241, ulicaID: "0125", nrZespolu: "3044", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 6853, ulicaID: "0125", nrZespolu: "3043", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 7388, ulicaID: "2015", nrZespolu: "3042", typ: "1", nrPrzystanku: "54"),
-            //os arbuzowa
-            //patkowskiego
-            //karczocha
-            //dolina sluz
-            //podbipiety nz
-            //metro wil
-            //metro wil
-        ], stopsNum: 1)
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3041", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3040", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3309", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3039", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3037", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3009", typ: "1", nrPrzystanku: "09"),
+        ], stopsNum: 18)
     ],
     "520" : [
         LineRouteModel(routeName: "Custom520Marysin", stops: [
-            //dw cent
-            //centrum
-            //pl kon
-            //metro poli
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "3541", nrZespolu: "7002", typ: "1", nrPrzystanku: "25"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "1503", nrZespolu: "7013", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0003", nrZespolu: "7011", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "2507", nrZespolu: "7006", typ: "1", nrPrzystanku: "07"),
             RouteStopInfoModel(odleglosc: 3551, ulicaID: "0133", nrZespolu: "7009", typ: "1", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 4021, ulicaID: "0133", nrZespolu: "7037", typ: "1", nrPrzystanku: "05"),
             RouteStopInfoModel(odleglosc: 4821, ulicaID: "0133", nrZespolu: "7071", typ: "1", nrPrzystanku: "01"),
@@ -1883,21 +1882,20 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 10333, ulicaID: "0133", nrZespolu: "7037", typ: "1", nrPrzystanku: "06"),
             RouteStopInfoModel(odleglosc: 10815, ulicaID: "0133", nrZespolu: "7009", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 11175, ulicaID: "2507", nrZespolu: "7006", typ: "1", nrPrzystanku: "08"),
-            //pl kon
-            //centrum
-            //dw cent
-            //dw cent
-            //dw cent
-        ], stopsNum: 25)
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0003", nrZespolu: "7011", typ: "1", nrPrzystanku: "08"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0101", nrZespolu: "7013", typ: "1", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0101", nrZespolu: "7002", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "3541", nrZespolu: "7002", typ: "1", nrPrzystanku: "27"),
+        ], stopsNum: 24)
     ],
     "521" : [
         LineRouteModel(routeName: "Custom521Falenica", stops: [
-            //dw cent
-            //centrum
-            //muzeum nar
-            //rondo wasz
-            //grenadierow
-            //wiatraczna
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0601", nrZespolu: "7002", typ: "1", nrPrzystanku: "11"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0101", nrZespolu: "7013", typ: "1", nrPrzystanku: "15"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0101", nrZespolu: "7041", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0117", nrZespolu: "2131", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0151", nrZespolu: "2134", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0802", nrZespolu: "2008", typ: "1", nrPrzystanku: "22"),
             RouteStopInfoModel(odleglosc: 972, ulicaID: "0802", nrZespolu: "2011", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 1583, ulicaID: "0802", nrZespolu: "2012", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 2543, ulicaID: "0802", nrZespolu: "2014", typ: "1", nrPrzystanku: "02"),
@@ -1940,12 +1938,12 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 11314, ulicaID: "0802", nrZespolu: "2014", typ: "1", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 12242, ulicaID: "0802", nrZespolu: "2012", typ: "1", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 12648, ulicaID: "0802", nrZespolu: "2011", typ: "1", nrPrzystanku: "01"),
-            //wiatraczna
-            //grenadierow
-            //rono wasz
-            //muzeum nar
-            //centrum
-            //dw cen
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0007", nrZespolu: "2008", typ: "1", nrPrzystanku: "03"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "1051", nrZespolu: "2134", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0117", nrZespolu: "2131", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0101", nrZespolu: "7041", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0101", nrZespolu: "7013", typ: "1", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0601", nrZespolu: "7002", typ: "1", nrPrzystanku: "12"),
         ], stopsNum: 26)
     ],
 ]
