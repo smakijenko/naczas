@@ -135,4 +135,5 @@ let unknownStops: [StopInfoKeyModel : StopInfoValueModel] = [
     StopInfoKeyModel(zespol: "4044", idUlicy: "0118", slupek: "01") : StopInfoValueModel(nazwaZespolu: "Dw.Zachodni", szerGeo: "52.21819620272356", dlugGeo: "20.967182108498125", kierunek: "Hala Kopińska", obowiazujeOd: "-"),
     StopInfoKeyModel(zespol: "7011", idUlicy: "1503", slupek: "01") : StopInfoValueModel(nazwaZespolu: "Pl.Konstytucji", szerGeo: "52.22226703844662", dlugGeo: "21.015733496595832", kierunek: "Metro Politechnika", obowiazujeOd: "-"),
     StopInfoKeyModel(zespol: "7006", idUlicy: "1503", slupek: "07") : StopInfoValueModel(nazwaZespolu: "Metro Politechniki", szerGeo: "52.219232929018446", dlugGeo: "21.015329477115444", kierunek: "Marszałkowska", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "Syta", idUlicy: "Zaściankowa", slupek: "00") : StopInfoValueModel(nazwaZespolu: "Syta", szerGeo: "52.16568845554231", dlugGeo: "21.10890781349484", kierunek: "Zaściankowa", obowiazujeOd: "-"),
 ]
