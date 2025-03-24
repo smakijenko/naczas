@@ -2005,9 +2005,9 @@ let customRoutes: [String : [LineRouteModel]] = [
     ],
     "714" : [
         LineRouteModel(routeName: "Custom714MetroBemowo", stops: [
-            //klonowa
-            //wrzosowa
-            //debowa
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "Wrzosowa", nrZespolu: "Klonowa", typ: "2", nrPrzystanku: "00"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "1210", nrZespolu: "6180", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "Koczargi", nrZespolu: "Dębowa", typ: "2", nrPrzystanku: "00"),
             RouteStopInfoModel(odleglosc: 0, ulicaID: "0143", nrZespolu: "6152", typ: "3", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 1190, ulicaID: "2526", nrZespolu: "6151", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 1820, ulicaID: "2526", nrZespolu: "6186", typ: "2", nrPrzystanku: "02"),
@@ -2032,7 +2032,7 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 12864, ulicaID: "2526", nrZespolu: "5142", typ: "2", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 13667, ulicaID: "0805", nrZespolu: "5050", typ: "1", nrPrzystanku: "03"),
             RouteStopInfoModel(odleglosc: 14237, ulicaID: "0805", nrZespolu: "5035", typ: "1", nrPrzystanku: "01"),
-            RouteStopInfoModel(odleglosc: 14763, ulicaID: "0805", nrZespolu: "5034", typ: "4", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 14763, ulicaID: "0805", nrZespolu: "5034", typ: "4", nrPrzystanku: "01")
         ], stopsNum: 28),
         LineRouteModel(routeName: "Custom714Klonowa", stops: [
             RouteStopInfoModel(odleglosc: 0, ulicaID: "0805", nrZespolu: "5034", typ: "5", nrPrzystanku: "02"),
@@ -2054,9 +2054,9 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 10598, ulicaID: "0143", nrZespolu: "6826", typ: "2", nrPrzystanku: "04"),
             RouteStopInfoModel(odleglosc: 11168, ulicaID: "0143", nrZespolu: "6153", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 11815, ulicaID: "0143", nrZespolu: "6208", typ: "2", nrPrzystanku: "02"),
-            //debowa
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "Wrzosowa", nrZespolu: "Dębowa", typ: "2", nrPrzystanku: "00"),
             RouteStopInfoModel(odleglosc: 12650, ulicaID: "1210", nrZespolu: "6180", typ: "2", nrPrzystanku: "01"),
-            //klonowa
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "Wrzosowa", nrZespolu: "Klonowa", typ: "2", nrPrzystanku: "00")
         ], stopsNum: 22)
     ],
     "719" : [
