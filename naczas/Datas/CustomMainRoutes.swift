@@ -1,5 +1,5 @@
 //
-//  CustomRoutes.swift
+//  CustomMainRoutes.swift
 //  naczas
 //
 //  Created by Stanisław Makijenko on 03/03/2025.
@@ -2005,7 +2005,34 @@ let customRoutes: [String : [LineRouteModel]] = [
     ],
     "714" : [
         LineRouteModel(routeName: "Custom714MetroBemowo", stops: [
-            
+            //klonowa
+            //wrzosowa
+            //debowa
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0143", nrZespolu: "6152", typ: "3", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 1190, ulicaID: "2526", nrZespolu: "6151", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 1820, ulicaID: "2526", nrZespolu: "6186", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 2616, ulicaID: "0245", nrZespolu: "6184", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 4093, ulicaID: "2822", nrZespolu: "6225", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 4608, ulicaID: "2822", nrZespolu: "6201", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 4973, ulicaID: "2822", nrZespolu: "6108", typ: "2", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 5201, ulicaID: "1547", nrZespolu: "6108", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 5791, ulicaID: "1547", nrZespolu: "6107", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 6761, ulicaID: "2031", nrZespolu: "6148", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 7301, ulicaID: "2031", nrZespolu: "6200", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 8081, ulicaID: "2031", nrZespolu: "6147", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 8881, ulicaID: "1925", nrZespolu: "6115", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 9451, ulicaID: "0903", nrZespolu: "6171", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 10031, ulicaID: "0903", nrZespolu: "6170", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 10281, ulicaID: "0903", nrZespolu: "6172", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 10851, ulicaID: "0903", nrZespolu: "5136", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 11121, ulicaID: "0903", nrZespolu: "5147", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 11534, ulicaID: "0903", nrZespolu: "5083", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 11944, ulicaID: "1409", nrZespolu: "5018", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 12384, ulicaID: "0827", nrZespolu: "5017", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 12864, ulicaID: "2526", nrZespolu: "5142", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 13667, ulicaID: "0805", nrZespolu: "5050", typ: "1", nrPrzystanku: "03"),
+            RouteStopInfoModel(odleglosc: 14237, ulicaID: "0805", nrZespolu: "5035", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 14763, ulicaID: "0805", nrZespolu: "5034", typ: "4", nrPrzystanku: "01"),
         ], stopsNum: 1),
         LineRouteModel(routeName: "Custom714Klonowa", stops: [
             
