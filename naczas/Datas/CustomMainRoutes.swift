@@ -2033,10 +2033,31 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 13667, ulicaID: "0805", nrZespolu: "5050", typ: "1", nrPrzystanku: "03"),
             RouteStopInfoModel(odleglosc: 14237, ulicaID: "0805", nrZespolu: "5035", typ: "1", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 14763, ulicaID: "0805", nrZespolu: "5034", typ: "4", nrPrzystanku: "01"),
-        ], stopsNum: 1),
+        ], stopsNum: 28),
         LineRouteModel(routeName: "Custom714Klonowa", stops: [
-            
-        ], stopsNum: 1)
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0805", nrZespolu: "5034", typ: "5", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 651, ulicaID: "0805", nrZespolu: "5035", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 1390, ulicaID: "0805", nrZespolu: "5050", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 2180, ulicaID: "1862", nrZespolu: "5142", typ: "2", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 2660, ulicaID: "1409", nrZespolu: "5017", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 2970, ulicaID: "1409", nrZespolu: "5018", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 3600, ulicaID: "0903", nrZespolu: "5083", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 4300, ulicaID: "0903", nrZespolu: "6169", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 5170, ulicaID: "0903", nrZespolu: "6170", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 5650, ulicaID: "0903", nrZespolu: "6171", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 5960, ulicaID: "1925", nrZespolu: "6115", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 6920, ulicaID: "2031", nrZespolu: "6147", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 7720, ulicaID: "2031", nrZespolu: "6200", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 8320, ulicaID: "2031", nrZespolu: "6148", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 9040, ulicaID: "1547", nrZespolu: "6107", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 9980, ulicaID: "1547", nrZespolu: "6108", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 10598, ulicaID: "0143", nrZespolu: "6826", typ: "2", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 11168, ulicaID: "0143", nrZespolu: "6153", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 11815, ulicaID: "0143", nrZespolu: "6208", typ: "2", nrPrzystanku: "02"),
+            //debowa
+            RouteStopInfoModel(odleglosc: 12650, ulicaID: "1210", nrZespolu: "6180", typ: "2", nrPrzystanku: "01"),
+            //klonowa
+        ], stopsNum: 22)
     ],
     "719" : [
         LineRouteModel(routeName: "Custom719MetroBemowo", stops: [
@@ -2598,5 +2619,22 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 19403, ulicaID: "0156", nrZespolu: "6061", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 20555, ulicaID: "0156", nrZespolu: "6059", typ: "3", nrPrzystanku: "21")
         ], stopsNum: 38)
+    ],
+    "900" : [
+        LineRouteModel(routeName: "Custom900Winnica", stops: [
+            RouteStopInfoModel(odleglosc: 518, ulicaID: "0342", nrZespolu: "1483", typ: "5", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 1835, ulicaID: "1880", nrZespolu: "1569", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 2307, ulicaID: "1514", nrZespolu: "1025", typ: "1", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 2476, ulicaID: "2108", nrZespolu: "1947", typ: "2", nrPrzystanku: "13"),
+            RouteStopInfoModel(odleglosc: 2745, ulicaID: "2108", nrZespolu: "1947", typ: "1", nrPrzystanku: "03"),
+            RouteStopInfoModel(odleglosc: 2962, ulicaID: "0527", nrZespolu: "1947", typ: "3", nrPrzystanku: "06")
+        ], stopsNum: 6),
+        LineRouteModel(routeName: "Custom900Chlubna", stops: [
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0527", nrZespolu: "1947", typ: "3", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 293, ulicaID: "2108", nrZespolu: "1947", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 840, ulicaID: "1879", nrZespolu: "1025", typ: "1", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 1315, ulicaID: "1880", nrZespolu: "1569", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 2465, ulicaID: "0342", nrZespolu: "1483", typ: "4", nrPrzystanku: "02"),
+        ], stopsNum: 5)
     ],
 ]

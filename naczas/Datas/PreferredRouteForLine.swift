@@ -224,5 +224,10 @@ let preferredMainRoute: [String : [PreferredRouteModel]] = [
     "742" : [PreferredRouteModel(routeName: "Custom742Rynek", direction: "Rynek"), PreferredRouteModel(routeName: "Custom742OsKabaty", direction: "Ursynów Płd.")],
     "743" : [PreferredRouteModel(routeName: "Custom743Gorczewska", direction: "Os.Górczewska"), PreferredRouteModel(routeName: "Custom743Wolica", direction: "Wolica k.Plochocina")],
     "750" : [PreferredRouteModel(routeName: "Custom750Dębina", direction: "Dębina"), PreferredRouteModel(routeName: "Custom750MetroMłociny", direction: "Metro Młociny")],
+    "809" : [PreferredRouteModel(routeName: "TP-KAR", direction: "PKP Jeziorki"), PreferredRouteModel(routeName: "TP-UPD", direction: "Ursynów Płd.")],
+    "815" : [PreferredRouteModel(routeName: "TP-PDN", direction: "Podolszyn"), PreferredRouteModel(routeName: "TP-UPD", direction: "Ursynów Płd.")],
+    "817" : [PreferredRouteModel(routeName: "TX-DWZ", direction: "Dw.Zachodni"), PreferredRouteModel(routeName: "TP-PRU", direction: "Os.Staszica/Pętla")],
+    "850" : [PreferredRouteModel(routeName: "TP-MSL", direction: "Metro Słodowiec"), PreferredRouteModel(routeName: "TP-CYB", direction: "Cybulice Duże")],
+    "850" : [PreferredRouteModel(routeName: "Custom900Winnica", direction: "Winnica"), PreferredRouteModel(routeName: "Custom900Chlubna", direction: "Chlubna")],
 
 ]
