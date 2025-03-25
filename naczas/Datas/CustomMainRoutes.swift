@@ -2718,10 +2718,10 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 280, ulicaID: "0101", nrZespolu: "7002", typ: "1", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 997, ulicaID: "0101", nrZespolu: "4052", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 1427, ulicaID: "0801", nrZespolu: "4001", typ: "2", nrPrzystanku: "04"),
-            //RASZYNSKA
-            //POMNIK LOTNIKA
-            //BANACHA SZPITAL
-            //BANACHA
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "1910", nrZespolu: "4028", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "2802", nrZespolu: "4029", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "0202", nrZespolu: "4030", typ: "2", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "BitwyWaw", nrZespolu: "Banacha", typ: "2", nrPrzystanku: "00"),
             RouteStopInfoModel(odleglosc: 3167, ulicaID: "2524", nrZespolu: "4005", typ: "2", nrPrzystanku: "06"),
             RouteStopInfoModel(odleglosc: 3586, ulicaID: "2524", nrZespolu: "4154", typ: "2", nrPrzystanku: "52"),
             RouteStopInfoModel(odleglosc: 4360, ulicaID: "0118", nrZespolu: "4045", typ: "2", nrPrzystanku: "06"),
