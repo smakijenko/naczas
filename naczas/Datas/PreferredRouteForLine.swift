@@ -251,7 +251,7 @@ let preferredMainRoute: [String : [PreferredRouteModel]] = [
     "N38" : [PreferredRouteModel(routeName: "TP-CEN", direction: "Centrum"), PreferredRouteModel(routeName: "TP-OKE", direction: "P+R Al.Krakowska")],
     "N41" : [PreferredRouteModel(routeName: "TP-MLO", direction: "Młociny-UKSW"), PreferredRouteModel(routeName: "TP-DWC", direction: "Dw.Centralny")],
     "N42" : [PreferredRouteModel(routeName: "TP-GOR", direction: "Os.Górczewska"), PreferredRouteModel(routeName: "TP-DWC76", direction: "Dw.Centralny")],
-    "N43" : [PreferredRouteModel(routeName: "CustomN43Chomiczówka", direction: "Chomiczówka"), PreferredRouteModel(routeName: "CustomN43DwCentralny", direction: "Dw.Centralny")],
+    "N43" : [PreferredRouteModel(routeName: "CustomN43Chomiczówka", direction: "Chomiczówka"), PreferredRouteModel(routeName: "TP-DWC", direction: "Dw.Centralny")],
     "N44" : [PreferredRouteModel(routeName: "TP-ZAZ", direction: "Zajezdnia Żoliborz"), PreferredRouteModel(routeName: "TP-DWC", direction: "Dw.Centralny")],
 
 ]

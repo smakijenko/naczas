@@ -2714,11 +2714,45 @@ let customRoutes: [String : [LineRouteModel]] = [
     ],
     "N43" : [
         LineRouteModel(routeName: "CustomN43Chomiczówka", stops: [
-         
-        ], stopsNum: 1),
-        LineRouteModel(routeName: "CustomN43DwCentralny", stops: [
-         
-        ], stopsNum: 1),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "3541", nrZespolu: "7002", typ: "3", nrPrzystanku: "29"),
+            RouteStopInfoModel(odleglosc: 280, ulicaID: "0101", nrZespolu: "7002", typ: "1", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 997, ulicaID: "0101", nrZespolu: "4052", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 1427, ulicaID: "0801", nrZespolu: "4001", typ: "2", nrPrzystanku: "04"),
+            //RASZYNSKA
+            //POMNIK LOTNIKA
+            //BANACHA SZPITAL
+            //BANACHA
+            RouteStopInfoModel(odleglosc: 3167, ulicaID: "2524", nrZespolu: "4005", typ: "2", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 3586, ulicaID: "2524", nrZespolu: "4154", typ: "2", nrPrzystanku: "52"),
+            RouteStopInfoModel(odleglosc: 4360, ulicaID: "0118", nrZespolu: "4045", typ: "2", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 4820, ulicaID: "0118", nrZespolu: "5097", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 5180, ulicaID: "0118", nrZespolu: "5096", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 5690, ulicaID: "0118", nrZespolu: "5043", typ: "2", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 6060, ulicaID: "0118", nrZespolu: "5007", typ: "2", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 6920, ulicaID: "0805", nrZespolu: "5028", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 7401, ulicaID: "0805", nrZespolu: "5020", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 7770, ulicaID: "0805", nrZespolu: "5030", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 8285, ulicaID: "0805", nrZespolu: "5031", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 8570, ulicaID: "0805", nrZespolu: "5032", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 9112, ulicaID: "0805", nrZespolu: "5194", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 9477, ulicaID: "0805", nrZespolu: "5033", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 9849, ulicaID: "1807", nrZespolu: "5034", typ: "2", nrPrzystanku: "04"),
+            RouteStopInfoModel(odleglosc: 10146, ulicaID: "1807", nrZespolu: "5061", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 10786, ulicaID: "1807", nrZespolu: "5077", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 11332, ulicaID: "1807", nrZespolu: "5063", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 11742, ulicaID: "1807", nrZespolu: "5160", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 12052, ulicaID: "1807", nrZespolu: "5064", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 12412, ulicaID: "1807", nrZespolu: "5161", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 12912, ulicaID: "1807", nrZespolu: "5062", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 13547, ulicaID: "1807", nrZespolu: "5065", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 13871, ulicaID: "0119", nrZespolu: "6047", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 14443, ulicaID: "0119", nrZespolu: "6046", typ: "2", nrPrzystanku: "06"),
+            RouteStopInfoModel(odleglosc: 14731, ulicaID: "2504", nrZespolu: "6023", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 15091, ulicaID: "2504", nrZespolu: "6024", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 15497, ulicaID: "2504", nrZespolu: "6025", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 15844, ulicaID: "0304", nrZespolu: "6026", typ: "2", nrPrzystanku: "05"),
+            RouteStopInfoModel(odleglosc: 16442, ulicaID: "0304", nrZespolu: "6049", typ: "2", nrPrzystanku: "01"),
+            RouteStopInfoModel(odleglosc: 16791, ulicaID: "0304", nrZespolu: "6048", typ: "3", nrPrzystanku: "05")
+        ], stopsNum: 39)
     ],
 ]
-
