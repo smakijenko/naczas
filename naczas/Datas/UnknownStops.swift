@@ -190,5 +190,15 @@ let unknownStops: [StopInfoKeyModel : StopInfoValueModel] = [
     StopInfoKeyModel(zespol: "6002", idUlicy: "0026", slupek: "01") : StopInfoValueModel(nazwaZespolu: "Pl.Inwalidów", szerGeo: "52.26239028006417", dlugGeo: "20.99223128832084", kierunek: "Gen. Zajączka", obowiazujeOd: "-"),
     StopInfoKeyModel(zespol: "7018", idUlicy: "0204", slupek: "04") : StopInfoValueModel(nazwaZespolu: "Muranowska", szerGeo: "52.25404649206558", dlugGeo: "20.998617370350594", kierunek: "Dw.Gdański", obowiazujeOd: "-"),
     StopInfoKeyModel(zespol: "1006", idUlicy: "0012", slupek: "10") : StopInfoValueModel(nazwaZespolu: "Rondo Starzyńskiego", szerGeo: "52.26280733571926", dlugGeo: "21.02209222617392", kierunek: "Golędzinów", obowiazujeOd: "-"),
-    StopInfoKeyModel(zespol: "Pruszkowska", idUlicy: "Mołdawska", slupek: "00") : StopInfoValueModel(nazwaZespolu: "Pruszkowska", szerGeo: "52.20154894886157", dlugGeo: "20.983674944679045", kierunek: "Mołdawska", obowiazujeOd: "-")
+    StopInfoKeyModel(zespol: "Pruszkowska", idUlicy: "Mołdawska", slupek: "00") : StopInfoValueModel(nazwaZespolu: "Pruszkowska", szerGeo: "52.20154894886157", dlugGeo: "20.983674944679045", kierunek: "Mołdawska", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "7002", idUlicy: "0601", slupek: "21") : StopInfoValueModel(nazwaZespolu: "Dw.Centralny", szerGeo: "52.2294770719182", dlugGeo: "21.003485210912014", kierunek: "-", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "1308", idUlicy: "0814", slupek: "02") : StopInfoValueModel(nazwaZespolu: "Kościuszki", szerGeo: "52.41074139753326", dlugGeo: "20.90683124439356", kierunek: "-", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "1562", idUlicy: "2002", slupek: "02") : StopInfoValueModel(nazwaZespolu: "Metro Szwedzka", szerGeo: "52.26336298240598", dlugGeo: "21.04369129948384", kierunek: "Kamienna", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "1070", idUlicy: "2002", slupek: "02") : StopInfoValueModel(nazwaZespolu: "Kamienna", szerGeo: "52.265375919308404", dlugGeo: "21.041444862010394", kierunek: "Rondo Żaba", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "1669", idUlicy: "0919", slupek: "01") : StopInfoValueModel(nazwaZespolu: "Zajezdnia Annopol", szerGeo: "52.302889483661204", dlugGeo: "21.025823026219825", kierunek: "Toruńska", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "7043", idUlicy: "2209", slupek: "02") : StopInfoValueModel(nazwaZespolu: "Nowy Świat", szerGeo: "52.23686981631087", dlugGeo: "21.01676434928923", kierunek: "Metro Świętokszyska", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "7002", idUlicy: "0101", slupek: "27") : StopInfoValueModel(nazwaZespolu: "Dw.Centralny", szerGeo: "52.22926222944072", dlugGeo: "21.00290043974772", kierunek: "-", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "7070", idUlicy: "1405", slupek: "02") : StopInfoValueModel(nazwaZespolu: "Śniegockiej", szerGeo: "52.225472264150554", dlugGeo: "21.034447910911894", kierunek: "Książęca", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "7002", idUlicy: "0101", slupek: "23") : StopInfoValueModel(nazwaZespolu: "Dw.Centralny", szerGeo: "52.22932225788317", dlugGeo: "21.00281781091204", kierunek: "-", obowiazujeOd: "-"),
+
 ]

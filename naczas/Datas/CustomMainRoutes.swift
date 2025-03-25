@@ -2755,4 +2755,28 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 16791, ulicaID: "0304", nrZespolu: "6048", typ: "3", nrPrzystanku: "05")
         ], stopsNum: 39)
     ],
+    "N58" : [
+        LineRouteModel(routeName: "CustomN58Skibińskiego", stops: [
+
+        ], stopsNum: 1),
+        LineRouteModel(routeName: "CustomN58MetroMłociny", stops: [
+            
+        ], stopsNum: 1)
+    ],
+    "N62" : [
+        LineRouteModel(routeName: "CustomN62PKPWołomin", stops: [
+
+        ], stopsNum: 1),
+        LineRouteModel(routeName: "CustomN62DwCentralny", stops: [
+            
+        ], stopsNum: 1)
+    ],
+    "N72" : [
+        LineRouteModel(routeName: "CustomN72StareMiasto", stops: [
+
+        ], stopsNum: 1),
+        LineRouteModel(routeName: "CustomN72DwCentralny", stops: [
+            
+        ], stopsNum: 1)
+    ],
 ]
