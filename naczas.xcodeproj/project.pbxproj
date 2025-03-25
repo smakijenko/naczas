@@ -21,6 +21,7 @@
 		3209FF182D628FB7001E6458 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF172D628FAB001E6458 /* ScheduleViewModel.swift */; };
 		3209FF1A2D6291A2001E6458 /* AvailableCitiesToPick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF192D62919C001E6458 /* AvailableCitiesToPick.swift */; };
 		32498C152D912EB000AC52ED /* CustomMainRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32498C142D912E9F00AC52ED /* CustomMainRoutes.swift */; };
+		3271C8C52D91D9B700369FFA /* SaveToJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3271C8C42D91D9B200369FFA /* SaveToJson.swift */; };
 		32757CC72D728F5F006FA0AB /* GlobalCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CC62D728F5F006FA0AB /* GlobalCoreDataManager.swift */; };
 		32757CD22D74970D006FA0AB /* PreferredRouteForLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CD12D74970D006FA0AB /* PreferredRouteForLine.swift */; };
 		32757CD42D74A160006FA0AB /* UnknownStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CD32D74A160006FA0AB /* UnknownStops.swift */; };
@@ -71,6 +72,7 @@
 		3209FF172D628FAB001E6458 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		3209FF192D62919C001E6458 /* AvailableCitiesToPick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCitiesToPick.swift; sourceTree = "<group>"; };
 		32498C142D912E9F00AC52ED /* CustomMainRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainRoutes.swift; sourceTree = "<group>"; };
+		3271C8C42D91D9B200369FFA /* SaveToJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveToJson.swift; sourceTree = "<group>"; };
 		32757CC62D728F5F006FA0AB /* GlobalCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCoreDataManager.swift; sourceTree = "<group>"; };
 		32757CD12D74970D006FA0AB /* PreferredRouteForLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferredRouteForLine.swift; sourceTree = "<group>"; };
 		32757CD32D74A160006FA0AB /* UnknownStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownStops.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		32DF13722D68A27000714876 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				3271C8C42D91D9B200369FFA /* SaveToJson.swift */,
 				32DF13692D6691CC00714876 /* Dev.xcconfig */,
 				3209FF092D5D3279001E6458 /* Settings.swift */,
 			);
@@ -414,6 +417,7 @@
 				327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */,
 				32DF135F2D66611A00714876 /* AllTramsLines.swift in Sources */,
 				32DF138F2D6E420C00714876 /* StopsManager.swift in Sources */,
+				3271C8C52D91D9B700369FFA /* SaveToJson.swift in Sources */,
 				32757CD22D74970D006FA0AB /* PreferredRouteForLine.swift in Sources */,
 				3209FF0A2D5D3281001E6458 /* Settings.swift in Sources */,
 				32DF13642D668A7700714876 /* Glow.swift in Sources */,
