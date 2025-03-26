@@ -2942,7 +2942,7 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 1038, ulicaID: "1507", nrZespolu: "2360", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 1648, ulicaID: "1507", nrZespolu: "2869", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 2958, ulicaID: "1238", nrZespolu: "2242", typ: "2", nrPrzystanku: "02"),
-            //OS WARSZAWSKA
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "Jarosławska", nrZespolu: "OsWarszawska", typ: "2", nrPrzystanku: "00"),
             RouteStopInfoModel(odleglosc: 7628, ulicaID: "1757", nrZespolu: "2354", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 8668, ulicaID: "1757", nrZespolu: "2353", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 9258, ulicaID: "1757", nrZespolu: "2352", typ: "2", nrPrzystanku: "02"),
