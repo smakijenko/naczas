@@ -200,5 +200,7 @@ let unknownStops: [StopInfoKeyModel : StopInfoValueModel] = [
     StopInfoKeyModel(zespol: "7002", idUlicy: "0101", slupek: "27") : StopInfoValueModel(nazwaZespolu: "Dw.Centralny", szerGeo: "52.22926222944072", dlugGeo: "21.00290043974772", kierunek: "-", obowiazujeOd: "-"),
     StopInfoKeyModel(zespol: "7070", idUlicy: "1405", slupek: "02") : StopInfoValueModel(nazwaZespolu: "Śniegockiej", szerGeo: "52.225472264150554", dlugGeo: "21.034447910911894", kierunek: "Książęca", obowiazujeOd: "-"),
     StopInfoKeyModel(zespol: "7002", idUlicy: "0101", slupek: "23") : StopInfoValueModel(nazwaZespolu: "Dw.Centralny", szerGeo: "52.22932225788317", dlugGeo: "21.00281781091204", kierunek: "-", obowiazujeOd: "-"),
-
+    StopInfoKeyModel(zespol: "ObrońcówWest", idUlicy: "Różana", slupek: "00") : StopInfoValueModel(nazwaZespolu: "Obrońców Westerplatte", szerGeo: "52.311920672644675", dlugGeo: "21.15089614692998", kierunek: "Różana", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "ObrońcówWest", idUlicy: "UrządMiasta", slupek: "00") : StopInfoValueModel(nazwaZespolu: "Obrońców Westerplatte", szerGeo: "52.311817365013724", dlugGeo: "21.151124134799183", kierunek: "Urząd Miasta", obowiazujeOd: "-"),
+    StopInfoKeyModel(zespol: "OsWarszawska", idUlicy: "Jarosławska", slupek: "00") : StopInfoValueModel(nazwaZespolu: "Os.Warszawska", szerGeo: "52.109343354512404", dlugGeo: "21.26464649030676", kierunek: "Jarosławska", obowiazujeOd: "-"),
 ]
