@@ -2805,8 +2805,8 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 17645, ulicaID: "1864", nrZespolu: "1474", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 18143, ulicaID: "1864", nrZespolu: "1495", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 18545, ulicaID: "0926", nrZespolu: "1864", typ: "2", nrPrzystanku: "02"),
-            //rozana
-            //obroncow wester
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "1551", nrZespolu: "1976", typ: "2", nrPrzystanku: "02"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "UrządMiasta", nrZespolu: "ObrońcówWest", typ: "2", nrPrzystanku: "00"),
             RouteStopInfoModel(odleglosc: 23519, ulicaID: "2567", nrZespolu: "1852", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 23825, ulicaID: "2567", nrZespolu: "1778", typ: "2", nrPrzystanku: "02"),
             RouteStopInfoModel(odleglosc: 24303, ulicaID: "2567", nrZespolu: "1940", typ: "2", nrPrzystanku: "02"),
@@ -2835,8 +2835,8 @@ let customRoutes: [String : [LineRouteModel]] = [
             RouteStopInfoModel(odleglosc: 7916, ulicaID: "2567", nrZespolu: "1778", typ: "2", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 8283, ulicaID: "1311", nrZespolu: "1852", typ: "2", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 8684, ulicaID: "1311", nrZespolu: "1851", typ: "2", nrPrzystanku: "02"),
-            //obroncow west
-            //rozana
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "Różana", nrZespolu: "ObrońcówWest", typ: "2", nrPrzystanku: "00"),
+            RouteStopInfoModel(odleglosc: 0, ulicaID: "1551", nrZespolu: "1976", typ: "2", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 13039, ulicaID: "2083", nrZespolu: "1698", typ: "2", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 13767, ulicaID: "2083", nrZespolu: "1340", typ: "2", nrPrzystanku: "01"),
             RouteStopInfoModel(odleglosc: 14234, ulicaID: "2526", nrZespolu: "1211", typ: "2", nrPrzystanku: "01"),
