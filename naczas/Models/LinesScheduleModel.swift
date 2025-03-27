@@ -33,6 +33,20 @@ struct LineRouteModel: Codable {
     let stopsNum: Int
 }
 
+struct CustomRouteStopInfoModel: Codable {
+    let odleglosc: Int
+    let ulicaID: String
+    let nrZespolu: String
+    let typ: String
+    let nrPrzystanku: String
+}
+
+struct LineCustomRouteModel: Codable {
+    let routeName: String
+    let stops: [CustomRouteStopInfoModel]
+    let stopsNum: Int
+}
+
 struct LineRoutesModel: Codable {
     let lineName: String
     let routes: [LineRouteModel]

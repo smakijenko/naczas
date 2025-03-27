@@ -30,7 +30,7 @@
 		327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C1EDD2D5BFDB20014D881 /* MainView.swift */; };
 		327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C1EDE2D5BFDB20014D881 /* naczasApp.swift */; };
 		32A6A0982D95D61800430558 /* CustomRoutesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0972D95D61800430558 /* CustomRoutesManager.swift */; };
-		32A6A09A2D95D66F00430558 /* mainRoutes.json in Resources */ = {isa = PBXBuildFile; fileRef = 32A6A0992D95D66F00430558 /* mainRoutes.json */; };
+		32A6A09A2D95D66F00430558 /* customRoutes.json in Resources */ = {isa = PBXBuildFile; fileRef = 32A6A0992D95D66F00430558 /* customRoutes.json */; };
 		32DF13452D63248D00714876 /* LineSearcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13442D63248D00714876 /* LineSearcherView.swift */; };
 		32DF13472D6324B100714876 /* LineSearcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13462D6324A900714876 /* LineSearcherViewModel.swift */; };
 		32DF13492D63B8C400714876 /* TransportTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13482D63B8C400714876 /* TransportTypePickerView.swift */; };
@@ -83,7 +83,7 @@
 		327C1EDD2D5BFDB20014D881 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		327C1EDE2D5BFDB20014D881 /* naczasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = naczasApp.swift; sourceTree = "<group>"; };
 		32A6A0972D95D61800430558 /* CustomRoutesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoutesManager.swift; sourceTree = "<group>"; };
-		32A6A0992D95D66F00430558 /* mainRoutes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mainRoutes.json; sourceTree = "<group>"; };
+		32A6A0992D95D66F00430558 /* customRoutes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = customRoutes.json; sourceTree = "<group>"; };
 		32DF13442D63248D00714876 /* LineSearcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSearcherView.swift; sourceTree = "<group>"; };
 		32DF13462D6324A900714876 /* LineSearcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSearcherViewModel.swift; sourceTree = "<group>"; };
 		32DF13482D63B8C400714876 /* TransportTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportTypePickerView.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 		327C1EE62D5BFDF60014D881 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
-				32A6A0992D95D66F00430558 /* mainRoutes.json */,
+				32A6A0992D95D66F00430558 /* customRoutes.json */,
 				32DF138C2D6C55FE00714876 /* MyErrors.swift */,
 				32DF137B2D6B212400714876 /* DefaultInstances.swift */,
 				32DF135E2D66611300714876 /* AllTramsLines.swift */,
@@ -390,7 +390,7 @@
 			files = (
 				327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */,
 				327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */,
-				32A6A09A2D95D66F00430558 /* mainRoutes.json in Resources */,
+				32A6A09A2D95D66F00430558 /* customRoutes.json in Resources */,
 				32DF136A2D6691CC00714876 /* Dev.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

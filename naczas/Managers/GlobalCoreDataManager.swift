@@ -83,8 +83,13 @@ extension GlobalDataManager
             for lineRoutes in linesRoutes {
                 let newLineRoutes = LineRoutsEntity(lineName: lineRoutes.lineName, routes: lineRoutes.routes)
                 // Adding custom lineRoutes
-                if let customRoutes = customRoutes[lineRoutes.lineName] {
-                    for route in customRoutes {
+                if let customRoutes = try CustomRoutesManager().fetchRoutesFromJson()[lineRoutes.lineName] {
+                    for customRoute in customRoutes {
+                        let route = LineRouteModel (
+                            routeName: customRoute.routeName,
+                            stops: CustomRoutesManager().convertCustomToNormal(stops: customRoute.stops),
+                            stopsNum: customRoute.stopsNum
+                        )
                         newLineRoutes.routes.append(route)
                     }
                 }
