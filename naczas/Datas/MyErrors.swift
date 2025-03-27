@@ -13,6 +13,8 @@ enum MyError: Error, LocalizedError, Equatable {
     case wrongURL
     case tooManyAttemptsWhileFetchingMainRoutes
     case tooManyAttemptsWhileFetchingAllLines
+    case unableToFindJSONFile
+    case unableToFetchCustomRoutes
     
     case tooManyAttemptsWhileFetchingAllStops
     case tooManyAttemptsWhileFetchingAllRoutesForAllLines
@@ -23,6 +25,7 @@ enum MyError: Error, LocalizedError, Equatable {
     
     case containerMainContextNotFound
     case unableToInitializeContainer
+    
     var errorDescription: String? {
         switch self {
         case .noLine:
@@ -35,6 +38,10 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: Too many attempts while fetching main routes."
         case .tooManyAttemptsWhileFetchingAllLines:
             return "Error: Too many attempts while fetching all available lines."
+        case .unableToFindJSONFile:
+            return "Error: It was not possible to find JSON file with custom routes."
+        case .unableToFetchCustomRoutes:
+            return "Error: It was not possible to fetch custom routes."
             
             
         case .tooManyAttemptsWhileFetchingAllStops:
