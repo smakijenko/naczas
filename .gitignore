@@ -1,7 +1,9 @@
 # Personal
-Secrets.xcconfig
+Dev.xcconfig
 
 # Xcode
+xcuserstate/
+
 .DS_Store
 build/
 DerivedData/
