@@ -1,0 +1,46 @@
+# Personal
+Secrets.xcconfig
+
+# Xcode
+.DS_Store
+build/
+DerivedData/
+.idea/
+*.xcworkspace/
+*.xccheckout
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+/.swiftpm
+/Package.resolved
+
+# Carthage
+/Carthage/Build/
+
+# CocoaPods
+/Pods/
+*.lock
+*.xcconfig
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Xcode specific user data
+*.xcuserdatad/
+*.xcuserdata/
+
+# Temporary and generated files
+*.swp
+*.swo
+*.orig
+
+# Swift Playgrounds
+playground.xcworkspace/
+playgroundbook/
+
+# Simulator generated files
+*.simruntime/
