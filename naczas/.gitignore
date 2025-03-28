@@ -1,8 +1,0 @@
-# Ignorowanie pliku z kluczami API
-Secrets.xcconfig
-Info.plist
-
-# Ignorowanie plików kompilacji Xcode
-DerivedData/
-*.xcworkspace
-*.xcuserstate
