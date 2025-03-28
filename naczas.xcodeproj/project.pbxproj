@@ -35,6 +35,7 @@
 		32A6A09F2D96EC2000430558 /* DirectionPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */; };
 		32A6A0A12D9749B600430558 /* StopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0A02D9749B600430558 /* StopsView.swift */; };
 		32A6A0A32D9756CE00430558 /* FixStopName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0A22D9756BF00430558 /* FixStopName.swift */; };
+		32A6A0A62D975F6900430558 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 32A6A0A52D975F6900430558 /* Dev.xcconfig */; };
 		32DF13452D63248D00714876 /* LineSearcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13442D63248D00714876 /* LineSearcherView.swift */; };
 		32DF13472D6324B100714876 /* LineSearcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13462D6324A900714876 /* LineSearcherViewModel.swift */; };
 		32DF13492D63B8C400714876 /* TransportTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13482D63B8C400714876 /* TransportTypePickerView.swift */; };
@@ -89,6 +90,7 @@
 		32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionPickerViewModel.swift; sourceTree = "<group>"; };
 		32A6A0A02D9749B600430558 /* StopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsView.swift; sourceTree = "<group>"; };
 		32A6A0A22D9756BF00430558 /* FixStopName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixStopName.swift; sourceTree = "<group>"; };
+		32A6A0A52D975F6900430558 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		32DF13442D63248D00714876 /* LineSearcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSearcherView.swift; sourceTree = "<group>"; };
 		32DF13462D6324A900714876 /* LineSearcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSearcherViewModel.swift; sourceTree = "<group>"; };
 		32DF13482D63B8C400714876 /* TransportTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportTypePickerView.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				3271C8C42D91D9B200369FFA /* SaveToJson.swift */,
 				3209FF092D5D3279001E6458 /* Settings.swift */,
+				32A6A0A52D975F6900430558 /* Dev.xcconfig */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			files = (
 				327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */,
 				327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */,
+				32A6A0A62D975F6900430558 /* Dev.xcconfig in Resources */,
 				32A6A09A2D95D66F00430558 /* customRoutes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
