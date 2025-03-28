@@ -9,22 +9,27 @@ import Foundation
 
 @MainActor
 final class LineStopsViewModel: ObservableObject {
-    @Published var lineRoutes: [LineRouteModel] = []
-    @Published var selectedRoute: LineRouteModel = defaultRoute
     @Published var areRoutesLoaded: Bool = false
-    @Published var linesRoutes: [LineRoutsEntity] = []
+    @Published var lineRoutes: [LineRouteModel] = []
+    @Published var preferredRoutes: [PreferredRouteModel] = []
+    @Published var selectedRoute: PreferredRouteModel = PreferredRouteModel(routeName: "Default", direction: "Default")
     
-    func provideMainRouteForLineFromDB(line: String, entities: [LineRoutsEntity]) {
-        guard let givenLineEntities = entities.first(where: {$0.lineName == line}) else { return }
-        guard !givenLineEntities.routes.isEmpty else { return }
-//        if preferredMainRoute[line] != nil {
-//            lineRoutes = givenLineEntities.routes.sorted(by: {$0.stopsNum > $1.stopsNum})
-//            selectedRoute = givenLineEntities.routes.first(where: {$0.routeName == "Custom25PlNarutowicza"})!
-//        }
-//        else {
-            lineRoutes = givenLineEntities.routes.sorted(by: {$0.stopsNum > $1.stopsNum})
-            selectedRoute = lineRoutes.first!
-//        }
+    func providePreferredRoutesForLine(line: String) {
+        preferredRoutes = preferredMainRoutes[line] ?? []
+        guard let firstRoute = preferredRoutes.first else { return }
+        selectedRoute = firstRoute
+    }
+    
+    func provideRoutes(entities: [LineRoutsEntity], line: String) throws {
+        guard let lineEntites = entities.first(where: { $0.lineName == line }),
+              !lineEntites.routes.isEmpty else { throw MyError.unableToProvideMainRoutes }
+        for route in lineEntites.routes {
+            for preferred in preferredRoutes {
+                if preferred.routeName == route.routeName {
+                    lineRoutes.append(route)
+                }
+            }
+        }
         areRoutesLoaded = true
     }
 }

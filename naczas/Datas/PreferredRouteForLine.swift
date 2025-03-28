@@ -7,7 +7,7 @@
 
 import Foundation
 
-let preferredMainRoute: [String : [PreferredRouteModel]] = [
+let preferredMainRoutes: [String : [PreferredRouteModel]] = [
     "1" : [PreferredRouteModel(routeName: "TD-5NAR", direction: "pl.Narutowicza"), PreferredRouteModel(routeName: "TX-A04ZN", direction: "Annopol")],
     "2" : [PreferredRouteModel(routeName: "TX-11WIN", direction: "Winnica"), PreferredRouteModel(routeName: "TX-MML11", direction: "Metro Młociny")],
     "3" : [PreferredRouteModel(routeName: "TP-GCW", direction: "Gocławek"), PreferredRouteModel(routeName: "TP-ANN", direction: "Annopol")],

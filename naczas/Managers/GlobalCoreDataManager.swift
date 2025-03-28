@@ -28,15 +28,12 @@ class GlobalDataManager: ObservableObject {
             container = nil
             showSwiftDataIssueAlert = true
         }
-        Task {
-//            await updateLineRoutesAndStops()
-        }
     }
     
     func updateLineRoutesAndStops() async {
         do {
-            try deleteAllLineRoutsEntities()
-            try deleteAllStopsEntities()
+//            try deleteAllLineRoutsEntities()
+//            try deleteAllStopsEntities()
             if try areLineRoutsEntitiesInDB() {
                 print("There are LineRouts entities already in the database.")
                 linesRoutes = try fetchLinesRoutes()

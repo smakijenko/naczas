@@ -7,11 +7,18 @@
 
 import Foundation
 
-let defaultRoute = LineRouteModel (
-    routeName: "TZ-SAD70",
-    stops: [
-        RouteStopInfoModel(odleglosc: 0, ulicaID: "1859", nrZespolu: "3065", typ: "3", nrPrzystanku: "03"),
-        RouteStopInfoModel(odleglosc: 6882, ulicaID: "2513", nrZespolu: "R-07", typ: "6", nrPrzystanku: "99")
-    ],
-    stopsNum: 2
-)
+let defaultRoute = LineRouteModel(routeName: "Custom130MetroWilanowska", stops: [
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "0103", nrZespolu: "3079", typ: "1", nrPrzystanku: "04"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "2044", nrZespolu: "3080", typ: "2", nrPrzystanku: "04"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "2044", nrZespolu: "3091", typ: "2", nrPrzystanku: "02"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "0815", nrZespolu: "3090", typ: "1", nrPrzystanku: "02"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "0815", nrZespolu: "3089", typ: "1", nrPrzystanku: "02"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "0815", nrZespolu: "3062", typ: "1", nrPrzystanku: "02"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "Fort Piłsudskiego", nrZespolu: "Idzikowskiego", typ: "1", nrPrzystanku: "00"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "Idzikowskiego", nrZespolu: "Fort Piłsudskiego", typ: "2", nrPrzystanku: "00"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "Bukowińska", nrZespolu: "Płyćwiańska", typ: "2", nrPrzystanku: "00"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "1801", nrZespolu: "3008", typ: "1", nrPrzystanku: "01"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "1801", nrZespolu: "3009", typ: "1", nrPrzystanku: "01"),
+    RouteStopInfoModel(odleglosc: 0, ulicaID: "0125", nrZespolu: "3009", typ: "1", nrPrzystanku: "11"),
+], stopsNum: 12)
+

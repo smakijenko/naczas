@@ -16,21 +16,18 @@ struct LineStopsView: View {
         ZStack {
             BackgroundView()
             VStack {
-                HStack {
-                    RoutePickerView(areRoutesLoaded: $stopsVm.areRoutesLoaded)
-                        .padding()
-                    Spacer()
-                }
+                DirectionPickerView(selectedRoute: $stopsVm.selectedRoute, routes: stopsVm.preferredRoutes, isDataLoaded: stopsVm.areRoutesLoaded)
                 Spacer()
             }
         }
         .environmentObject(stopsVm)
         .onAppear {
+            stopsVm.providePreferredRoutesForLine(line: line)
             Task {
                 do {
-                    stopsVm.provideMainRouteForLineFromDB(line: line, entities: manager.linesRoutes)
-                    print("Decoding stops for line: \(line)")
-                    print(try await StopsManager().decodeRouteStops(route: stopsVm.selectedRoute))
+                    await manager.updateLineRoutesAndStops() // -> for preview
+                    stopsVm.providePreferredRoutesForLine(line: line)
+                    try stopsVm.provideRoutes(entities: manager.linesRoutes, line: line)
                 }
                 catch {
                     print("Alert: Could not fetch main routes.")
@@ -38,15 +35,10 @@ struct LineStopsView: View {
                 }
             }
         }
-        .onChange(of: stopsVm.selectedRoute.routeName) {
-            Task {
-                print(try await StopsManager().decodeRouteStops(route: stopsVm.selectedRoute))
-            }
-        }
     }
 }
 
 #Preview {
-    LineStopsView(line: .constant("189"))
+    LineStopsView(line: .constant("157"))
         .environmentObject(GlobalDataManager())
 }
