@@ -48,7 +48,6 @@
 		32DF13612D66872B00714876 /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13602D66872B00714876 /* LegendView.swift */; };
 		32DF13642D668A7700714876 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13632D668A7100714876 /* Glow.swift */; };
 		32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13652D668ED000714876 /* AvailableLinesManager.swift */; };
-		32DF136A2D6691CC00714876 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 32DF13692D6691CC00714876 /* Dev.xcconfig */; };
 		32DF136D2D689F0E00714876 /* LineStopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF136C2D689F0E00714876 /* LineStopsView.swift */; };
 		32DF136F2D689F1900714876 /* LineStopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF136E2D689F1400714876 /* LineStopsViewModel.swift */; };
 		32DF13712D68A25D00714876 /* LinesScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13702D68A25300714876 /* LinesScheduleManager.swift */; };
@@ -103,7 +102,6 @@
 		32DF13602D66872B00714876 /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		32DF13632D668A7100714876 /* Glow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
 		32DF13652D668ED000714876 /* AvailableLinesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLinesManager.swift; sourceTree = "<group>"; };
-		32DF13692D6691CC00714876 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		32DF136B2D66924C00714876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		32DF136C2D689F0E00714876 /* LineStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopsView.swift; sourceTree = "<group>"; };
 		32DF136E2D689F1400714876 /* LineStopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopsViewModel.swift; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				3271C8C42D91D9B200369FFA /* SaveToJson.swift */,
-				32DF13692D6691CC00714876 /* Dev.xcconfig */,
 				3209FF092D5D3279001E6458 /* Settings.swift */,
 			);
 			path = Settings;
@@ -397,7 +394,6 @@
 				327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */,
 				327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */,
 				32A6A09A2D95D66F00430558 /* customRoutes.json in Resources */,
-				32DF136A2D6691CC00714876 /* Dev.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +458,6 @@
 /* Begin XCBuildConfiguration section */
 		327C1ED52D5BFC3A0014D881 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32DF13692D6691CC00714876 /* Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -526,7 +521,6 @@
 		};
 		327C1ED62D5BFC3A0014D881 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32DF13692D6691CC00714876 /* Dev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
