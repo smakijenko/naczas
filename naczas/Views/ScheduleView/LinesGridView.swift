@@ -67,7 +67,7 @@ extension LinesGridView {
             }
         }
         .sheet(isPresented: $gridVm.isSheetShown) {
-            LineStopsView(line: $gridVm.selectedLine)
+            LineStopsView(isSheetShown: $gridVm.isSheetShown, line: gridVm.selectedLine)
         }
     }
 }

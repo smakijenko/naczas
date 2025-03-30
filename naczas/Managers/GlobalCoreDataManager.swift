@@ -32,8 +32,8 @@ class GlobalDataManager: ObservableObject {
     
     func updateLineRoutesAndStops() async {
         do {
-            try deleteAllLineRoutsEntities()
-            try deleteAllStopsEntities()
+//            try deleteAllLineRoutsEntities()
+//            try deleteAllStopsEntities()
             if try areLineRoutsEntitiesInDB() {
                 print("There are LineRouts entities already in the database.")
                 linesRoutes = try fetchLinesRoutes()
@@ -164,6 +164,11 @@ extension GlobalDataManager
         do {
             let stops = try await StopsManager().provideAllStopsInDict()
             for (key, value) in stops {
+                let newStopEntity = StopEntity(stopKeys: key, stopValues: value)
+                context.insert(newStopEntity)
+            }
+            // Adding unknown stops
+            for (key, value) in unknownStops {
                 let newStopEntity = StopEntity(stopKeys: key, stopValues: value)
                 context.insert(newStopEntity)
             }

@@ -10,35 +10,57 @@ import SwiftUI
 struct LineStopsView: View {
     @EnvironmentObject var manager: GlobalDataManager
     @StateObject var stopsVm = LineStopsViewModel()
-    @Binding var line: String
+    @Binding var isSheetShown: Bool
+    let line: String
     
     var body: some View {
         ZStack {
             BackgroundView()
             VStack {
-                DirectionPickerView(selectedRoute: $stopsVm.selectedRoute, routes: stopsVm.preferredRoutes, isDataLoaded: stopsVm.areRoutesLoaded)
+                DirectionPickerView(selectedRoute: $stopsVm.selectedPref, routes: stopsVm.preferredRoutes, isDataLoaded: stopsVm.areRoutesLoaded)
+                HStack {
+                    if stopsVm.areRoutesLoaded {
+                        RouteStopsView(selectedPref: $stopsVm.selectedPref, route: $stopsVm.selectedRoute)
+                    }
+                    else {
+                        ScrolableStopsListShimmer()
+                    }
+                    Spacer()
+                }
                 Spacer()
             }
         }
         .environmentObject(stopsVm)
         .onAppear {
-            stopsVm.providePreferredRoutesForLine(line: line)
             Task {
                 do {
-                    await manager.updateLineRoutesAndStops() // -> for preview
-                    stopsVm.providePreferredRoutesForLine(line: line)
+//                    await manager.updateLineRoutesAndStops() // -> for preview
+                    try stopsVm.providePreferredRoutesForLine(line: line)
                     try stopsVm.provideRoutes(entities: manager.linesRoutes, line: line)
                 }
                 catch {
                     print("Alert: Could not fetch main routes.")
-                    // Handle alert saying that it was not possible to fetch main routes.
+                    stopsVm.showNoRouteAlert = true
                 }
             }
+        }
+        .onChange(of: stopsVm.selectedPref.routeName) {
+            stopsVm.updateSelectedRoute()
+        }
+        .alert(isPresented: $stopsVm.showNoRouteAlert) {
+            Alert(
+                title: Text("Błąd!"),
+                message: Text(stopsVm.noRouteAlertMessage),
+                dismissButton: .default(Text("Powrót"), action: {
+                    isSheetShown = false
+                }))
         }
     }
 }
 
 #Preview {
-    LineStopsView(line: .constant("157"))
+    LineStopsView (
+        isSheetShown: .constant(true),
+        line: "189")
         .environmentObject(GlobalDataManager())
 }

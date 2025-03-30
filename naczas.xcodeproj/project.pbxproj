@@ -31,11 +31,12 @@
 		3292C58A2D9927290015C620 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3292C5892D9927200015C620 /* Config.plist */; };
 		3292C58C2D9936200015C620 /* DifferenceBetweenDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292C58B2D99361B0015C620 /* DifferenceBetweenDate.swift */; };
 		3292C58E2D99364D0015C620 /* GetApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292C58D2D99363E0015C620 /* GetApiKey.swift */; };
+		3292C5902D9937B00015C620 /* RouteStopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292C58F2D9937AC0015C620 /* RouteStopsViewModel.swift */; };
 		32A6A0982D95D61800430558 /* CustomRoutesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0972D95D61800430558 /* CustomRoutesManager.swift */; };
 		32A6A09A2D95D66F00430558 /* customRoutes.json in Resources */ = {isa = PBXBuildFile; fileRef = 32A6A0992D95D66F00430558 /* customRoutes.json */; };
 		32A6A09D2D96DCD400430558 /* DirectionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A09C2D96DCD400430558 /* DirectionPickerView.swift */; };
 		32A6A09F2D96EC2000430558 /* DirectionPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */; };
-		32A6A0A12D9749B600430558 /* StopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0A02D9749B600430558 /* StopsView.swift */; };
+		32A6A0A12D9749B600430558 /* RouteStopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0A02D9749B600430558 /* RouteStopsView.swift */; };
 		32A6A0A32D9756CE00430558 /* FixStopName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0A22D9756BF00430558 /* FixStopName.swift */; };
 		32DF13452D63248D00714876 /* LineSearcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13442D63248D00714876 /* LineSearcherView.swift */; };
 		32DF13472D6324B100714876 /* LineSearcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13462D6324A900714876 /* LineSearcherViewModel.swift */; };
@@ -59,6 +60,7 @@
 		32DF138D2D6C55FE00714876 /* MyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF138C2D6C55FE00714876 /* MyErrors.swift */; };
 		32DF138F2D6E420C00714876 /* StopsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF138E2D6E420300714876 /* StopsManager.swift */; };
 		32DF13912D6E440C00714876 /* StopsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13902D6E440C00714876 /* StopsModel.swift */; };
+		32FDA0902D996A5D00032436 /* ScrolableStopsListShimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FDA08F2D996A5D00032436 /* ScrolableStopsListShimmer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,11 +89,12 @@
 		3292C5892D9927200015C620 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Config.plist; sourceTree = "<group>"; };
 		3292C58B2D99361B0015C620 /* DifferenceBetweenDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceBetweenDate.swift; sourceTree = "<group>"; };
 		3292C58D2D99363E0015C620 /* GetApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApiKey.swift; sourceTree = "<group>"; };
+		3292C58F2D9937AC0015C620 /* RouteStopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsViewModel.swift; sourceTree = "<group>"; };
 		32A6A0972D95D61800430558 /* CustomRoutesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoutesManager.swift; sourceTree = "<group>"; };
 		32A6A0992D95D66F00430558 /* customRoutes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = customRoutes.json; sourceTree = "<group>"; };
 		32A6A09C2D96DCD400430558 /* DirectionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionPickerView.swift; sourceTree = "<group>"; };
 		32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionPickerViewModel.swift; sourceTree = "<group>"; };
-		32A6A0A02D9749B600430558 /* StopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsView.swift; sourceTree = "<group>"; };
+		32A6A0A02D9749B600430558 /* RouteStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteStopsView.swift; sourceTree = "<group>"; };
 		32A6A0A22D9756BF00430558 /* FixStopName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixStopName.swift; sourceTree = "<group>"; };
 		32DF13442D63248D00714876 /* LineSearcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSearcherView.swift; sourceTree = "<group>"; };
 		32DF13462D6324A900714876 /* LineSearcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSearcherViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		32DF138C2D6C55FE00714876 /* MyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyErrors.swift; sourceTree = "<group>"; };
 		32DF138E2D6E420300714876 /* StopsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsManager.swift; sourceTree = "<group>"; };
 		32DF13902D6E440C00714876 /* StopsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsModel.swift; sourceTree = "<group>"; };
+		32FDA08F2D996A5D00032436 /* ScrolableStopsListShimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolableStopsListShimmer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 			children = (
 				3209FEF92D5D2581001E6458 /* BackgroundView.swift */,
 				3209FF102D5D66E0001E6458 /* LunchView.swift */,
+				32FDA08F2D996A5D00032436 /* ScrolableStopsListShimmer.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -318,7 +323,7 @@
 			children = (
 				32DF136C2D689F0E00714876 /* LineStopsView.swift */,
 				32A6A09C2D96DCD400430558 /* DirectionPickerView.swift */,
-				32A6A0A02D9749B600430558 /* StopsView.swift */,
+				32A6A0A02D9749B600430558 /* RouteStopsView.swift */,
 			);
 			path = LinesStopsView;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			children = (
 				32DF136E2D689F1400714876 /* LineStopsViewModel.swift */,
 				32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */,
+				3292C58F2D9937AC0015C620 /* RouteStopsViewModel.swift */,
 			);
 			path = LinesStopsView;
 			sourceTree = "<group>";
@@ -419,7 +425,9 @@
 				32DF13532D63CE5C00714876 /* LinesGridView.swift in Sources */,
 				32DF13452D63248D00714876 /* LineSearcherView.swift in Sources */,
 				3209FF162D628F89001E6458 /* CityPickerViewModel.swift in Sources */,
+				3292C5902D9937B00015C620 /* RouteStopsViewModel.swift in Sources */,
 				3292C58C2D9936200015C620 /* DifferenceBetweenDate.swift in Sources */,
+				32FDA0902D996A5D00032436 /* ScrolableStopsListShimmer.swift in Sources */,
 				32DF134B2D63B8D200714876 /* TransportTypePickerViewModel.swift in Sources */,
 				32DF136F2D689F1900714876 /* LineStopsViewModel.swift in Sources */,
 				3209FF182D628FB7001E6458 /* ScheduleViewModel.swift in Sources */,
@@ -438,7 +446,7 @@
 				3209FF0A2D5D3281001E6458 /* Settings.swift in Sources */,
 				32DF13642D668A7700714876 /* Glow.swift in Sources */,
 				32DF135D2D665AB100714876 /* AllBusLines.swift in Sources */,
-				32A6A0A12D9749B600430558 /* StopsView.swift in Sources */,
+				32A6A0A12D9749B600430558 /* RouteStopsView.swift in Sources */,
 				32DF136D2D689F0E00714876 /* LineStopsView.swift in Sources */,
 				3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */,
 				32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */,

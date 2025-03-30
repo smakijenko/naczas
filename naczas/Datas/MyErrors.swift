@@ -16,6 +16,7 @@ enum MyError: Error, LocalizedError, Equatable {
     case unableToFindJSONFile
     case unableToFetchCustomRoutes
     case unableToProvideMainRoutes
+    case unableToLoadPreferredRoutes
     
     case tooManyAttemptsWhileFetchingAllStops
     case tooManyAttemptsWhileFetchingAllRoutesForAllLines
@@ -45,6 +46,8 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: It was not possible to fetch custom routes."
         case .unableToProvideMainRoutes:
             return "Error: It was not possible to provide main routes."
+        case .unableToLoadPreferredRoutes:
+            return "Error: It was not possible to provide preferred routes for given line."
             
             
         case .tooManyAttemptsWhileFetchingAllStops:

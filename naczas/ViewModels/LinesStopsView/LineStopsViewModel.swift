@@ -12,17 +12,20 @@ final class LineStopsViewModel: ObservableObject {
     @Published var areRoutesLoaded: Bool = false
     @Published var lineRoutes: [LineRouteModel] = []
     @Published var preferredRoutes: [PreferredRouteModel] = []
-    @Published var selectedRoute: PreferredRouteModel = PreferredRouteModel(routeName: "Default", direction: "Default")
-    
-    func providePreferredRoutesForLine(line: String) {
+    @Published var selectedPref: PreferredRouteModel = PreferredRouteModel(routeName: "Default", direction: "Default")
+    @Published var selectedRoute: LineRouteModel = defaultRoute
+    @Published var showNoRouteAlert: Bool = false
+    let noRouteAlertMessage: String = "Przepraszamy, ale w tym momencie nie możemy wyświetlić rozkładu tej lini. Spróbuj ponownie lub zrestartuj aplikacje."
+
+    func providePreferredRoutesForLine(line: String) throws {
         preferredRoutes = preferredMainRoutes[line] ?? []
-        guard let firstRoute = preferredRoutes.first else { return }
-        selectedRoute = firstRoute
+        guard let firstRoute = preferredRoutes.first else { throw MyError.unableToLoadPreferredRoutes }
+        selectedPref = firstRoute
     }
     
     func provideRoutes(entities: [LineRoutsEntity], line: String) throws {
         guard let lineEntites = entities.first(where: { $0.lineName == line }),
-              !lineEntites.routes.isEmpty else { throw MyError.unableToProvideMainRoutes }
+              lineEntites.routes.count >= 2 else { throw MyError.unableToProvideMainRoutes }
         for route in lineEntites.routes {
             for preferred in preferredRoutes {
                 if preferred.routeName == route.routeName {
@@ -30,6 +33,12 @@ final class LineStopsViewModel: ObservableObject {
                 }
             }
         }
+        updateSelectedRoute()
         areRoutesLoaded = true
+    }
+    
+    func updateSelectedRoute() {
+        guard let route = lineRoutes.first(where: {$0.routeName == selectedPref.routeName}) else { return }
+        selectedRoute = route
     }
 }

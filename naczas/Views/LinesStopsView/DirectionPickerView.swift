@@ -58,7 +58,7 @@ extension DirectionPickerView {
             }
         } label: {
             Text(route.direction)
-                .font(.system(size: 20))
+                .font(.system(size: 18))
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(route.routeName == selectedRoute.routeName ? .white : dimmedWhiteColor)

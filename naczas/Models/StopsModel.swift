@@ -6,6 +6,7 @@
 //
 
 import SwiftData
+import Foundation
 
 struct AllStopsApiResponse: Codable {
     let result: [StopValuesModel]
@@ -41,12 +42,16 @@ struct StopInfoKeyModel: Codable, Hashable {
     }
 }
 
-struct StopInfoValueModel: Codable {
+struct StopInfoValueModel: Codable, Hashable {
     let nazwaZespolu: String
     let szerGeo: String
     let dlugGeo: String
     let kierunek: String
     let obowiazujeOd: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(szerGeo + dlugGeo)
+    }
 }
 
 @Model
