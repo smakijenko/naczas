@@ -28,13 +28,15 @@
 		327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327C1EDC2D5BFDB20014D881 /* Assets.xcassets */; };
 		327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C1EDD2D5BFDB20014D881 /* MainView.swift */; };
 		327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327C1EDE2D5BFDB20014D881 /* naczasApp.swift */; };
+		3292C58A2D9927290015C620 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3292C5892D9927200015C620 /* Config.plist */; };
+		3292C58C2D9936200015C620 /* DifferenceBetweenDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292C58B2D99361B0015C620 /* DifferenceBetweenDate.swift */; };
+		3292C58E2D99364D0015C620 /* GetApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292C58D2D99363E0015C620 /* GetApiKey.swift */; };
 		32A6A0982D95D61800430558 /* CustomRoutesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0972D95D61800430558 /* CustomRoutesManager.swift */; };
 		32A6A09A2D95D66F00430558 /* customRoutes.json in Resources */ = {isa = PBXBuildFile; fileRef = 32A6A0992D95D66F00430558 /* customRoutes.json */; };
 		32A6A09D2D96DCD400430558 /* DirectionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A09C2D96DCD400430558 /* DirectionPickerView.swift */; };
 		32A6A09F2D96EC2000430558 /* DirectionPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */; };
 		32A6A0A12D9749B600430558 /* StopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0A02D9749B600430558 /* StopsView.swift */; };
 		32A6A0A32D9756CE00430558 /* FixStopName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A6A0A22D9756BF00430558 /* FixStopName.swift */; };
-		32A6A0A62D975F6900430558 /* Dev.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 32A6A0A52D975F6900430558 /* Dev.xcconfig */; };
 		32DF13452D63248D00714876 /* LineSearcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13442D63248D00714876 /* LineSearcherView.swift */; };
 		32DF13472D6324B100714876 /* LineSearcherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13462D6324A900714876 /* LineSearcherViewModel.swift */; };
 		32DF13492D63B8C400714876 /* TransportTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13482D63B8C400714876 /* TransportTypePickerView.swift */; };
@@ -82,13 +84,15 @@
 		327C1EDC2D5BFDB20014D881 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		327C1EDD2D5BFDB20014D881 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		327C1EDE2D5BFDB20014D881 /* naczasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = naczasApp.swift; sourceTree = "<group>"; };
+		3292C5892D9927200015C620 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Config.plist; sourceTree = "<group>"; };
+		3292C58B2D99361B0015C620 /* DifferenceBetweenDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceBetweenDate.swift; sourceTree = "<group>"; };
+		3292C58D2D99363E0015C620 /* GetApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApiKey.swift; sourceTree = "<group>"; };
 		32A6A0972D95D61800430558 /* CustomRoutesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoutesManager.swift; sourceTree = "<group>"; };
 		32A6A0992D95D66F00430558 /* customRoutes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = customRoutes.json; sourceTree = "<group>"; };
 		32A6A09C2D96DCD400430558 /* DirectionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionPickerView.swift; sourceTree = "<group>"; };
 		32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionPickerViewModel.swift; sourceTree = "<group>"; };
 		32A6A0A02D9749B600430558 /* StopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsView.swift; sourceTree = "<group>"; };
 		32A6A0A22D9756BF00430558 /* FixStopName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixStopName.swift; sourceTree = "<group>"; };
-		32A6A0A52D975F6900430558 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
 		32DF13442D63248D00714876 /* LineSearcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSearcherView.swift; sourceTree = "<group>"; };
 		32DF13462D6324A900714876 /* LineSearcherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSearcherViewModel.swift; sourceTree = "<group>"; };
 		32DF13482D63B8C400714876 /* TransportTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportTypePickerView.swift; sourceTree = "<group>"; };
@@ -216,7 +220,7 @@
 				327C1EDB2D5BFDB20014D881 /* Preview Content */,
 				327C1EDC2D5BFDB20014D881 /* Assets.xcassets */,
 				327C1EDE2D5BFDB20014D881 /* naczasApp.swift */,
-				32DF13722D68A27000714876 /* Settings */,
+				32DF13722D68A27000714876 /* SettingsAndGlobals */,
 				32DF13622D668A5800714876 /* Extensions */,
 				327C1EE62D5BFDF60014D881 /* Datas */,
 				327C1EE52D5BFDED0014D881 /* Managers */,
@@ -298,13 +302,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		32DF13722D68A27000714876 /* Settings */ = {
+		32DF13722D68A27000714876 /* SettingsAndGlobals */ = {
 			isa = PBXGroup;
 			children = (
+				3292C5892D9927200015C620 /* Config.plist */,
 				3209FF092D5D3279001E6458 /* Settings.swift */,
-				32A6A0A52D975F6900430558 /* Dev.xcconfig */,
+				3292C58B2D99361B0015C620 /* DifferenceBetweenDate.swift */,
+				3292C58D2D99363E0015C620 /* GetApiKey.swift */,
 			);
-			path = Settings;
+			path = SettingsAndGlobals;
 			sourceTree = "<group>";
 		};
 		32DF13752D69C1F000714876 /* LinesStopsView */ = {
@@ -391,9 +397,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3292C58A2D9927290015C620 /* Config.plist in Resources */,
 				327C1EE02D5BFDB20014D881 /* Preview Assets.xcassets in Resources */,
 				327C1EE12D5BFDB20014D881 /* Assets.xcassets in Resources */,
-				32A6A0A62D975F6900430558 /* Dev.xcconfig in Resources */,
 				32A6A09A2D95D66F00430558 /* customRoutes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,12 +412,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DF13552D63CE8E00714876 /* LinesGridViewModel.swift in Sources */,
+				3292C58E2D99364D0015C620 /* GetApiKey.swift in Sources */,
 				32DF13612D66872B00714876 /* LegendView.swift in Sources */,
 				3209FEFA2D5D2581001E6458 /* BackgroundView.swift in Sources */,
 				3209FF112D5D66E0001E6458 /* LunchView.swift in Sources */,
 				32DF13532D63CE5C00714876 /* LinesGridView.swift in Sources */,
 				32DF13452D63248D00714876 /* LineSearcherView.swift in Sources */,
 				3209FF162D628F89001E6458 /* CityPickerViewModel.swift in Sources */,
+				3292C58C2D9936200015C620 /* DifferenceBetweenDate.swift in Sources */,
 				32DF134B2D63B8D200714876 /* TransportTypePickerViewModel.swift in Sources */,
 				32DF136F2D689F1900714876 /* LineStopsViewModel.swift in Sources */,
 				3209FF182D628FB7001E6458 /* ScheduleViewModel.swift in Sources */,

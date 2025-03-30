@@ -10,7 +10,7 @@ import Foundation
 class LinesScheduleManager {
     func fetchAllSchedules() async throws -> [String: [String: [String: RouteStopInfoModel]]] {
         print("Started fetching all schedules.")
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else { throw MyError.wrongKey }
+        let apiKey = try getApiKey()
         guard let url = URL(string: "https://api.um.warszawa.pl/api/action/public_transport_routes/?apikey=\(apiKey)") else { throw MyError.wrongURL }
         let (data, _) = try await URLSession.shared.data(from: url)
         let decodedSchedules = try JSONDecoder().decode(LinesScheduleApiResponse.self, from: data)
