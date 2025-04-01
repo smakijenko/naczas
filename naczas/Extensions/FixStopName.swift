@@ -6,12 +6,12 @@
 //
 
 extension String {
-    func fixStopName(stopName: String) -> String {
+    func fixStopName() -> String {
         let upperCaseWords = Set(["PIMOT", "PKP", "POLMO", "ICDS", "KŁM", "POD-IMGW", "DKS", "ONZ", "DS", "RKS", "WAT"])
         var fixedStopName = ""
         var currentWord = ""
         
-        for (index, char) in stopName.enumerated() {
+        for (index, char) in self.enumerated() {
             if char == "\"" {
                 if !currentWord.isEmpty {
                     if upperCaseWords.contains(currentWord.uppercased()) {
@@ -37,7 +37,7 @@ extension String {
                 fixedStopName.append(char)
             } else {
                 currentWord.append(char)
-                if index == stopName.count - 1 {
+                if index == self.count - 1 {
                     if upperCaseWords.contains(currentWord.uppercased()) {
                         fixedStopName.append(currentWord.uppercased())
                     } else {

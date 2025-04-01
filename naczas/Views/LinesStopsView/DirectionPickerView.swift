@@ -57,7 +57,7 @@ extension DirectionPickerView {
                 selectedRoute = route
             }
         } label: {
-            Text(route.direction)
+            Text(route.direction.fixStopName())
                 .font(.system(size: 18))
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)

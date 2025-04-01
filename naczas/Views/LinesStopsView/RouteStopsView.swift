@@ -24,7 +24,7 @@ struct RouteStopsView: View {
                                 Button {
                                     //TODO
                                 } label: {
-                                    Text(routeStopVm.encodedStops[index].nazwaZespołu)
+                                    Text(routeStopVm.encodedStops[index].nazwaZespołu.fixStopName())
                                         .font(.system(size: 16))
                                         .foregroundStyle(.white)
                                         .offset(y: 2)

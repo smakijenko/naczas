@@ -7,20 +7,6 @@
 
 import SwiftData
 
-struct DecodedStopInfoModel: Codable, Hashable {
-    let ulicaId: String
-    let nrZespołu: String
-    let nrPrzystanku: String
-    let typ: String
-    let szerGeo: String
-    let dluGeo: String
-    let nazwaZespołu: String
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(szerGeo + dluGeo)
-    }
-}
-
 struct LinesScheduleApiResponse: Codable {
     let result: [String: [String: [String: RouteStopInfoModel]]]
 }

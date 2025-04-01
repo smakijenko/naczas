@@ -243,9 +243,7 @@
 				32DF13902D6E440C00714876 /* StopsModel.swift */,
 				32DF13732D68A2D200714876 /* LinesScheduleModel.swift */,
 				32DF13582D64F0CF00714876 /* AvailableLinesModel.swift */,
-				32DF134E2D63C28F00714876 /* AvailableTransportTypes.swift */,
-				3209FF192D62919C001E6458 /* AvailableCitiesToPick.swift */,
-				3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */,
+				32FDA0912D9BE34600032436 /* Enums */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +334,16 @@
 				3292C58F2D9937AC0015C620 /* RouteStopsViewModel.swift */,
 			);
 			path = LinesStopsView;
+			sourceTree = "<group>";
+		};
+		32FDA0912D9BE34600032436 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				32DF134E2D63C28F00714876 /* AvailableTransportTypes.swift */,
+				3209FF192D62919C001E6458 /* AvailableCitiesToPick.swift */,
+				3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

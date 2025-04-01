@@ -54,53 +54,27 @@ struct StopInfoValueModel: Codable, Hashable {
     }
 }
 
+struct DecodedStopInfoModel: Codable, Hashable {
+    let ulicaId: String
+    let nrZespołu: String
+    let nrPrzystanku: String
+    let typ: String
+    let szerGeo: String
+    let dluGeo: String
+    let nazwaZespołu: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(szerGeo + dluGeo)
+    }
+}
+
 @Model
 class StopEntity {
     var stopKeys: StopInfoKeyModel
     var stopValues: StopInfoValueModel
-
+    
     init(stopKeys: StopInfoKeyModel, stopValues: StopInfoValueModel) {
         self.stopKeys = stopKeys
         self.stopValues = stopValues
     }
 }
-
-//}
-//  "result": [
-//    {
-//      "values": [
-//        {
-//          "value": "1001",
-//          "key": "zespol"
-//        },
-//        {
-//          "value": "01",
-//          "key": "slupek"
-//        },
-//        {
-//          "value": "Kijowska",
-//          "key": "nazwa_zespolu"
-//        },
-//        {
-//          "value": "2201",
-//          "key": "id_ulicy"
-//        },
-//        {
-//          "value": "52.248455",
-//          "key": "szer_geo"
-//        },
-//        {
-//          "value": "21.044827",
-//          "key": "dlug_geo"
-//        },
-//        {
-//          "value": "al.Zieleniecka",
-//          "key": "kierunek"
-//        },
-//        {
-//          "value": "2024-12-14 00:00:00.0",
-//          "key": "obowiazuje_od"
-//        }
-//      ]
-//    }
-//}

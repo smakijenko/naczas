@@ -5,6 +5,9 @@
 //  Created by Stanisław Makijenko on 18/02/2025.
 //
 
+struct AvailableLinesApiResponse: Codable {
+    let result: [AvailableLineInfoModel]
+}
 
 struct AvailableLineInfoModel: Codable {
     let lines: String
@@ -22,8 +25,4 @@ struct AvailableLineInfoModel: Codable {
         case lat = "Lat"
         case brigade = "Brigade"
     }
-}
-
-struct AvailableLinesApiResponse: Codable {
-    let result: [AvailableLineInfoModel]
 }
