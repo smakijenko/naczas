@@ -9,44 +9,21 @@ import Foundation
 
 class StopsManager {
     func fetchAllStops() async throws -> [StopValuesModel]{
-        print("Started fetching all stops.")
+        print("Started fetching all stops from API.")
         let apiKey = try getApiKey()
-        guard let url = URL(string: "https://api.um.warszawa.pl/api/action/dbstore_get/?id=ab75c33d-3a26-4342-b36a-6e5fef0a3ac3&apikey=\(apiKey)") else { throw MyError.wrongURL }
+        guard let url = URL(string: "https://api.um.warszawa.pl/api/action/dbstore_get/?id=ab75c33d-3a26-4342-b36a-6e5fef0a3ac3&apikey=\(apiKey)") else {
+            print("fetchAllStops: \(MyError.wrongURL.localizedDescription)")
+            throw MyError.wrongURL
+        }
         let (data, _) = try await URLSession.shared.data(from: url)
         let decodedAllStops = try JSONDecoder().decode(AllStopsApiResponse.self, from: data)
+        if decodedAllStops.result.isEmpty {
+            print("fetchAllStops: \(MyError.APIResponseEmpty.localizedDescription)")
+            throw MyError.APIResponseEmpty
+        }
         return decodedAllStops.result
     }
-    
-    func decodeRouteStops(route: LineRouteModel) async throws -> [String] {
-        print("Decoding stops for route: \(route.routeName)")
-        var stops: [String] = []
-        do {
-            let allStopsDict = try await provideAllStopsInDict()
-            for stop in route.stops {
-                let key = StopInfoKeyModel (
-                    zespol: stop.nrZespolu,
-                    idUlicy: stop.ulicaID,
-                    slupek: stop.nrPrzystanku
-                )
-                if let value = allStopsDict[key] {
-                    stops.append(value.nazwaZespolu)
-                }
-                else {
-                    if let value = unknownStops[key] {
-                        stops.append(value.nazwaZespolu)
-                    }
-                    else {
-                        stops.append("Nieznany")
-                    }
-                }
-            }
-        }
-        catch {
-            print(error)
-        }
-        return stops
-    }
-    
+        
     func provideAllStopsInDict() async throws -> [StopInfoKeyModel: StopInfoValueModel] {
         print("Started fetching all stops into dictionary.")
         var allStopsDict: [StopInfoKeyModel : StopInfoValueModel] = [:]
@@ -77,10 +54,10 @@ class StopsManager {
             }
             catch {
                 print("Attempt \(attempt) failed with error: \(error)")
-                // Still trying to provide all stops in dict.
             }
-            try await Task.sleep(nanoseconds: 1_250_000_000)
+            try await Task.sleep(nanoseconds: 1_500_000_000)
         }
+        print("provideAllStopsInDict: \(MyError.tooManyAttemptsWhileFetchingAllStops.localizedDescription)")
         throw MyError.tooManyAttemptsWhileFetchingAllStops
     }
 }

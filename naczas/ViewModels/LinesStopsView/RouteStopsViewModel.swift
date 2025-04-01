@@ -10,7 +10,7 @@ import Foundation
 class RouteStopsViewModel: ObservableObject {
     @Published var encodedStops: [DecodedStopInfoModel] = []
     @Published var isDataLoaded: Bool = false
-    func encodeStopValues(stops: [RouteStopInfoModel], enteties: [StopEntity]) {
+    func encodeStopValues(stops: [StopInRouteInfoModel], enteties: [StopEntity]) {
         for stop in stops {
             if let entity = enteties.first(where: { $0.stopKeys.idUlicy == stop.ulicaID && $0.stopKeys.zespol == stop.nrZespolu && $0.stopKeys.slupek == stop.nrPrzystanku }) {
                 encodedStops.append(DecodedStopInfoModel(

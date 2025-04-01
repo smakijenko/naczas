@@ -11,7 +11,7 @@ struct RouteStopsView: View {
     @EnvironmentObject var manager: GlobalDataManager
     @StateObject var routeStopVm = RouteStopsViewModel()
     @Binding var selectedPref: PreferredRouteModel
-    @Binding var route: LineRouteModel
+    @Binding var route: RouteForLineModel
     
     var body: some View {
         ScrollView {

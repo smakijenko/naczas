@@ -17,6 +17,7 @@ enum MyError: Error, LocalizedError, Equatable {
     case unableToFetchCustomRoutes
     case unableToProvideMainRoutes
     case unableToLoadPreferredRoutes
+    case APIResponseEmpty
     
     case tooManyAttemptsWhileFetchingAllStops
     case tooManyAttemptsWhileFetchingAllRoutesForAllLines
@@ -48,6 +49,8 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: It was not possible to provide main routes."
         case .unableToLoadPreferredRoutes:
             return "Error: It was not possible to provide preferred routes for given line."
+        case .APIResponseEmpty:
+            return "Error: Routes for lines API response is empty."
             
             
         case .tooManyAttemptsWhileFetchingAllStops:

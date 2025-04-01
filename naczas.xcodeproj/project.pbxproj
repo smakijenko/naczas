@@ -53,8 +53,8 @@
 		32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13652D668ED000714876 /* AvailableLinesManager.swift */; };
 		32DF136D2D689F0E00714876 /* LineStopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF136C2D689F0E00714876 /* LineStopsView.swift */; };
 		32DF136F2D689F1900714876 /* LineStopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF136E2D689F1400714876 /* LineStopsViewModel.swift */; };
-		32DF13712D68A25D00714876 /* LinesScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13702D68A25300714876 /* LinesScheduleManager.swift */; };
-		32DF13742D68A2DC00714876 /* LinesScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13732D68A2D200714876 /* LinesScheduleModel.swift */; };
+		32DF13712D68A25D00714876 /* RoutesForLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13702D68A25300714876 /* RoutesForLinesManager.swift */; };
+		32DF13742D68A2DC00714876 /* RoutesForLinesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13732D68A2D200714876 /* RoutesForLinesModel.swift */; };
 		32DF137C2D6B213800714876 /* DefaultInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF137B2D6B212400714876 /* DefaultInstances.swift */; };
 		32DF13812D6B367B00714876 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 32DF13802D6B367B00714876 /* Shimmer */; };
 		32DF138D2D6C55FE00714876 /* MyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF138C2D6C55FE00714876 /* MyErrors.swift */; };
@@ -112,8 +112,8 @@
 		32DF136B2D66924C00714876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		32DF136C2D689F0E00714876 /* LineStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopsView.swift; sourceTree = "<group>"; };
 		32DF136E2D689F1400714876 /* LineStopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopsViewModel.swift; sourceTree = "<group>"; };
-		32DF13702D68A25300714876 /* LinesScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesScheduleManager.swift; sourceTree = "<group>"; };
-		32DF13732D68A2D200714876 /* LinesScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesScheduleModel.swift; sourceTree = "<group>"; };
+		32DF13702D68A25300714876 /* RoutesForLinesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesForLinesManager.swift; sourceTree = "<group>"; };
+		32DF13732D68A2D200714876 /* RoutesForLinesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesForLinesModel.swift; sourceTree = "<group>"; };
 		32DF137B2D6B212400714876 /* DefaultInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultInstances.swift; sourceTree = "<group>"; };
 		32DF138C2D6C55FE00714876 /* MyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyErrors.swift; sourceTree = "<group>"; };
 		32DF138E2D6E420300714876 /* StopsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsManager.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			children = (
 				32757CD52D74EC4A006FA0AB /* PreferredRouteModel.swift */,
 				32DF13902D6E440C00714876 /* StopsModel.swift */,
-				32DF13732D68A2D200714876 /* LinesScheduleModel.swift */,
+				32DF13732D68A2D200714876 /* RoutesForLinesModel.swift */,
 				32DF13582D64F0CF00714876 /* AvailableLinesModel.swift */,
 				32FDA0912D9BE34600032436 /* Enums */,
 			);
@@ -254,7 +254,7 @@
 				32A6A0972D95D61800430558 /* CustomRoutesManager.swift */,
 				32DF138E2D6E420300714876 /* StopsManager.swift */,
 				32DF13652D668ED000714876 /* AvailableLinesManager.swift */,
-				32DF13702D68A25300714876 /* LinesScheduleManager.swift */,
+				32DF13702D68A25300714876 /* RoutesForLinesManager.swift */,
 				32757CC62D728F5F006FA0AB /* GlobalCoreDataManager.swift */,
 			);
 			path = Managers;
@@ -443,7 +443,7 @@
 				32DF13912D6E440C00714876 /* StopsModel.swift in Sources */,
 				3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */,
 				32DF137C2D6B213800714876 /* DefaultInstances.swift in Sources */,
-				32DF13742D68A2DC00714876 /* LinesScheduleModel.swift in Sources */,
+				32DF13742D68A2DC00714876 /* RoutesForLinesModel.swift in Sources */,
 				327C1EE22D5BFDB20014D881 /* MainView.swift in Sources */,
 				32A6A09F2D96EC2000430558 /* DirectionPickerViewModel.swift in Sources */,
 				32DF135F2D66611A00714876 /* AllTramsLines.swift in Sources */,
@@ -469,7 +469,7 @@
 				32A6A0A32D9756CE00430558 /* FixStopName.swift in Sources */,
 				32DF13492D63B8C400714876 /* TransportTypePickerView.swift in Sources */,
 				3209FEFE2D5D2611001E6458 /* MainViewModel.swift in Sources */,
-				32DF13712D68A25D00714876 /* LinesScheduleManager.swift in Sources */,
+				32DF13712D68A25D00714876 /* RoutesForLinesManager.swift in Sources */,
 				32DF138D2D6C55FE00714876 /* MyErrors.swift in Sources */,
 				32DF13472D6324B100714876 /* LineSearcherViewModel.swift in Sources */,
 				32757CC72D728F5F006FA0AB /* GlobalCoreDataManager.swift in Sources */,

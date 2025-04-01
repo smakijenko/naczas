@@ -10,10 +10,10 @@ import Foundation
 @MainActor
 final class LineStopsViewModel: ObservableObject {
     @Published var areRoutesLoaded: Bool = false
-    @Published var lineRoutes: [LineRouteModel] = []
+    @Published var lineRoutes: [RouteForLineModel] = []
     @Published var preferredRoutes: [PreferredRouteModel] = []
     @Published var selectedPref: PreferredRouteModel = PreferredRouteModel(routeName: "Default", direction: "Default")
-    @Published var selectedRoute: LineRouteModel = defaultRoute
+    @Published var selectedRoute: RouteForLineModel = defaultRoute
     @Published var showNoRouteAlert: Bool = false
     let noRouteAlertMessage: String = "Przepraszamy, ale w tym momencie nie możemy wyświetlić rozkładu tej lini. Spróbuj ponownie lub zrestartuj aplikacje."
 

@@ -1,5 +1,5 @@
 //
-//  LinesScheduleModel.swift
+//  RoutesForLinesModel.swift
 //  naczas
 //
 //  Created by Stanisław Makijenko on 21/02/2025.
@@ -7,11 +7,11 @@
 
 import SwiftData
 
-struct LinesScheduleApiResponse: Codable {
-    let result: [String: [String: [String: RouteStopInfoModel]]]
+struct RoutesForLinesApiResponse: Codable {
+    let result: [String: [String: [String: StopInRouteInfoModel]]]
 }
 
-struct RouteStopInfoModel: Codable {
+struct StopInRouteInfoModel: Codable {
     let odleglosc: Int
     let ulicaID: String
     let nrZespolu: String
@@ -27,13 +27,13 @@ struct RouteStopInfoModel: Codable {
     }
 }
 
-struct LineRouteModel: Codable {
+struct RouteForLineModel: Codable {
     let routeName: String
-    let stops: [RouteStopInfoModel]
+    let stops: [StopInRouteInfoModel]
     let stopsNum: Int
 }
 
-struct CustomRouteStopInfoModel: Codable {
+struct CustomStopInRouteInfoModel: Codable {
     let odleglosc: Int
     let ulicaID: String
     let nrZespolu: String
@@ -41,23 +41,23 @@ struct CustomRouteStopInfoModel: Codable {
     let nrPrzystanku: String
 }
 
-struct LineCustomRouteModel: Codable {
+struct CustomRouteForLineModel: Codable {
     let routeName: String
-    let stops: [CustomRouteStopInfoModel]
+    let stops: [CustomStopInRouteInfoModel]
     let stopsNum: Int
 }
 
-struct LineRoutesModel: Codable {
+struct AllRoutesForLineModel: Codable {
     let lineName: String
-    let routes: [LineRouteModel]
+    let routes: [RouteForLineModel]
 }
 
 @Model
 class LineRoutsEntity {
     var lineName: String
-    var routes: [LineRouteModel]
+    var routes: [RouteForLineModel]
 
-    init(lineName: String, routes: [LineRouteModel]) {
+    init(lineName: String, routes: [RouteForLineModel]) {
         self.lineName = lineName
         self.routes = routes
     }

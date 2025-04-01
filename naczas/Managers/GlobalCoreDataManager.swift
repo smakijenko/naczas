@@ -76,13 +76,13 @@ extension GlobalDataManager
             throw MyError.containerMainContextNotFound
         }
         do {
-            let linesRoutes = try await LinesScheduleManager().provideAllRoutsForLines()
+            let linesRoutes = try await RoutesForLinesManager().provideAllRoutsForLines()
             for lineRoutes in linesRoutes {
                 let newLineRoutes = LineRoutsEntity(lineName: lineRoutes.lineName, routes: lineRoutes.routes)
                 // Adding custom lineRoutes
                 if let customRoutes = try CustomRoutesManager().fetchRoutesFromJson()[lineRoutes.lineName] {
                     for customRoute in customRoutes {
-                        let route = LineRouteModel (
+                        let route = RouteForLineModel (
                             routeName: customRoute.routeName,
                             stops: CustomRoutesManager().convertCustomToNormal(stops: customRoute.stops),
                             stopsNum: customRoute.stopsNum
