@@ -40,4 +40,5 @@ struct ScheduleView: View {
 
 #Preview {
     ScheduleView()
+        .environmentObject(ActiveBusTramManager())
 }

@@ -9,11 +9,11 @@ import SwiftUI
 
 @MainActor
 class GlobalDataManager: ObservableObject {
+    static let shared = GlobalDataManager()
     @Published var showSwiftDataIssueAlert: Bool = false
     @Published var isDatasAvailable: Bool = false
     @Published var linesRoutes: [LineRoutsEntity] = []
     @Published var stops: [StopEntity] = []
-    static let shared = GlobalDataManager()
     private let container: ModelContainer?
     let swiftDataIssuealertMessage: String = "Wystąpił problem z załadowaniem danych. Spróbuj ponownie lub zrestartuj aplikacje."
     

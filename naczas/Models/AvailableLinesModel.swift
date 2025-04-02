@@ -5,11 +5,11 @@
 //  Created by Stanisław Makijenko on 18/02/2025.
 //
 
-struct AvailableLinesApiResponse: Codable {
-    let result: [AvailableLineInfoModel]
+struct ActiveBusTramApiResponse: Codable {
+    let result: [ActiveBusTramModel]
 }
 
-struct AvailableLineInfoModel: Codable {
+struct ActiveBusTramModel: Codable {
     let lines: String
     let lon: Double
     let vehicleNumber: String

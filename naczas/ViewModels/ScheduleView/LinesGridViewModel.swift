@@ -46,7 +46,7 @@ class LinesGridViewModel: ObservableObject {
             triesCount += 1
             if triesCount > 10 {
                 print("Error while fetching available transports.")
-                throw MyError.tooManyAttemptsWhileFetchingAllLines
+                throw MyError.tooManyAttemptsWhileProvidingActiveLines
             }
             print("Attempt: \(triesCount)")
             do {

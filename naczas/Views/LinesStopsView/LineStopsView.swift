@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LineStopsView: View {
-    @EnvironmentObject var manager: GlobalDataManager
+    @EnvironmentObject var gdManager: GlobalDataManager
     @StateObject var stopsVm = LineStopsViewModel()
     @Binding var isSheetShown: Bool
     let line: String
@@ -34,9 +34,9 @@ struct LineStopsView: View {
         .onAppear {
             Task {
                 do {
-//                    await manager.updateLineRoutesAndStops() // -> for preview
+//                    await gdManager.updateLineRoutesAndStops() // -> for preview
                     try stopsVm.providePreferredRoutesForLine(line: line)
-                    try stopsVm.provideRoutes(entities: manager.linesRoutes, line: line)
+                    try stopsVm.provideRoutes(entities: gdManager.linesRoutes, line: line)
                 }
                 catch {
                     print("Alert: Could not fetch main routes.")

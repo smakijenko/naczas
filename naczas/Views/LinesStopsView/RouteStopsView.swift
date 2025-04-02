@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RouteStopsView: View {
-    @EnvironmentObject var manager: GlobalDataManager
+    @EnvironmentObject var gdManager: GlobalDataManager
     @StateObject var routeStopVm = RouteStopsViewModel()
     @Binding var selectedPref: PreferredRouteModel
     @Binding var route: RouteForLineModel
@@ -58,13 +58,13 @@ struct RouteStopsView: View {
         .onAppear {
             Task {
 //                await manager.updateLineRoutesAndStops() // for preview
-                routeStopVm.encodeStopValues(stops: route.stops, enteties: manager.stops)
+                routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
             }
         }
         .onChange(of: route.routeName, {
             routeStopVm.isDataLoaded = true
             routeStopVm.encodedStops.removeAll()
-            routeStopVm.encodeStopValues(stops: route.stops, enteties: manager.stops)
+            routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
         })
     }
 }

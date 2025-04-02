@@ -9,7 +9,7 @@ import Foundation
 
 class AvailableLinesManager {
     // Type: 1 - Buses, 2 - Trams
-    func fetchAllAvailableLines(type: String) async throws -> [AvailableLineInfoModel] {
+    func fetchAllAvailableLines(type: String) async throws -> [ActiveBusTramModel] {
         print("Started fetching all available lines.")
         let apiKey = try getApiKey()
         guard let url = URL(string: "https://api.um.warszawa.pl/api/action/busestrams_get/?resource_id=%20f2e5503e927d-4ad3-9500-4ab9e55deb59&apikey=\(apiKey)&type=\(type)") else {
@@ -17,7 +17,7 @@ class AvailableLinesManager {
             throw MyError.wrongURL
         }
         let (data, _) = try await URLSession.shared.data(from: url)
-        let decodedAvailableLines = try JSONDecoder().decode(AvailableLinesApiResponse.self, from: data)
+        let decodedAvailableLines = try JSONDecoder().decode(ActiveBusTramApiResponse.self, from: data)
         if decodedAvailableLines.result.isEmpty {
             print("fetchAllAvailableLines: \(MyError.APIResponseEmpty.localizedDescription)")
             throw MyError.APIResponseEmpty

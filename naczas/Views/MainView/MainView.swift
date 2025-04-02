@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var manager: GlobalDataManager
+    @EnvironmentObject var gdManager: GlobalDataManager
+    @EnvironmentObject var btManager: ActiveBusTramManager
     @StateObject var mainVm = MainViewModel()
     var body: some View {
         ZStack {
@@ -29,15 +30,28 @@ struct MainView: View {
         .animation(.linear(duration: 0.1), value: mainVm.selectedTab)
         .environmentObject(mainVm)
         .task {
-            await manager.updateLineRoutesAndStops()
+            await gdManager.updateLineRoutesAndStops()
+            await btManager.loadActiveBusesTrams()
         }
-        .alert(isPresented: $manager.showSwiftDataIssueAlert) {
+        .alert(isPresented: $gdManager.showSwiftDataIssueAlert) {
             Alert(
                 title: Text("Błąd!"),
-                message: Text(manager.swiftDataIssuealertMessage),
+                message: Text(gdManager.swiftDataIssuealertMessage),
                 primaryButton: .default(Text("Spróbuj ponownie"), action: {
                     Task {
-                        await manager.retryUpdate()
+                        await gdManager.retryUpdate()
+                    }
+                }),
+                secondaryButton: .cancel(Text("Ok"))
+                )
+        }
+        .alert(isPresented: $btManager.showNoBusTramsAlert) {
+            Alert(
+                title: Text("Błąd!"),
+                message: Text(btManager.noBusTramsAlertMessage),
+                primaryButton: .default(Text("Spróbuj ponownie"), action: {
+                    Task {
+                        await btManager.loadActiveBusesTrams()
                     }
                 }),
                 secondaryButton: .cancel(Text("Ok"))
@@ -49,4 +63,5 @@ struct MainView: View {
 #Preview {
     MainView()
         .environmentObject(GlobalDataManager())
+        .environmentObject(ActiveBusTramManager())
 }

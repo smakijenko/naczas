@@ -37,7 +37,10 @@ struct LegendView: View {
 }
 
 #Preview {
-    LegendView(isOnlineTransportLoaded: .constant(false))
+    ZStack {
+        BackgroundView()
+        LegendView(isOnlineTransportLoaded: .constant(false))
+    }
 }
 
 extension LegendView {

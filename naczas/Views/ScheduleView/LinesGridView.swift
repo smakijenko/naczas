@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct LinesGridView: View {
-    @EnvironmentObject var manager: GlobalDataManager
+    @EnvironmentObject var gdManager: GlobalDataManager
+    @EnvironmentObject var btManager: ActiveBusTramManager
     @StateObject var gridVm = LinesGridViewModel()
     @Binding var searchedText: String
     @Binding var transportType: AvailableTransportTypes
@@ -28,19 +29,11 @@ struct LinesGridView: View {
         .onChange(of: searchedText) {
             gridVm.searchedText = searchedText
         }
-        .onChange(of: gridVm.isOnlineDataLoaded) {
-            isOnlineTransportLoaded = true
+        .onChange(of: btManager.isDataLoaded) {
+            loadActiveBusesTrams()
         }
         .onAppear {
-            Task {
-                do {
-                    try await gridVm.loadAvailableLines()
-                }
-                catch {
-                    print("Alert: Could not fetch all available lines.")
-                    // Handle alert saying that it was not possible to fetch all available lines.
-                }
-            }
+            loadActiveBusesTrams()
         }
     }
 }
@@ -48,13 +41,14 @@ struct LinesGridView: View {
 #Preview {
     LinesGridView(searchedText: .constant(""), transportType: .constant(.Autobusy), isOnlineTransportLoaded: .constant(false))
         .environmentObject(GlobalDataManager())
+        .environmentObject(ActiveBusTramManager())
 }
 
 extension LinesGridView {
     private func createLineTile(line: String, transportType: AvailableTransportTypes) -> some View {
         return ZStack {
             Button {
-                guard manager.isDatasAvailable else { return }
+                guard gdManager.isDatasAvailable else { return }
                 gridVm.isSheetShown.toggle()
                 gridVm.selectedLine = line
             } label: {
@@ -69,5 +63,12 @@ extension LinesGridView {
         .sheet(isPresented: $gridVm.isSheetShown) {
             LineStopsView(isSheetShown: $gridVm.isSheetShown, line: gridVm.selectedLine)
         }
+    }
+    
+    private func loadActiveBusesTrams() {
+        guard !btManager.activeBuses.isEmpty && !btManager.activeTrams.isEmpty else { return }
+        gridVm.availableBusLines = Set(btManager.activeBuses.keys)
+        gridVm.availableTramsLines = Set(btManager.activeTrams.keys)
+        isOnlineTransportLoaded = true
     }
 }

@@ -12,12 +12,13 @@ enum MyError: Error, LocalizedError, Equatable {
     case wrongKey
     case wrongURL
     case tooManyAttemptsWhileFetchingMainRoutes
-    case tooManyAttemptsWhileFetchingAllLines
+    case tooManyAttemptsWhileProvidingActiveLines
     case unableToFindJSONFile
     case unableToFetchCustomRoutes
     case unableToProvideMainRoutes
     case unableToLoadPreferredRoutes
     case APIResponseEmpty
+    case activeBusesTramsNotFound
     
     case tooManyAttemptsWhileFetchingAllStops
     case tooManyAttemptsWhileFetchingAllRoutesForAllLines
@@ -39,8 +40,8 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: Given URL is wrong."
         case .tooManyAttemptsWhileFetchingMainRoutes:
             return "Error: Too many attempts while fetching main routes."
-        case .tooManyAttemptsWhileFetchingAllLines:
-            return "Error: Too many attempts while fetching all available lines."
+        case .tooManyAttemptsWhileProvidingActiveLines:
+            return "Error: Too many attempts while providing active lines."
         case .unableToFindJSONFile:
             return "Error: It was not possible to find JSON file with custom routes."
         case .unableToFetchCustomRoutes:
@@ -51,6 +52,8 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: It was not possible to provide preferred routes for given line."
         case .APIResponseEmpty:
             return "Error: Routes for lines API response is empty."
+        case .activeBusesTramsNotFound:
+            return "Error: Could not find active buses and trams."
             
             
         case .tooManyAttemptsWhileFetchingAllStops:

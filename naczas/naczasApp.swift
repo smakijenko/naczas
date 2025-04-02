@@ -9,7 +9,8 @@ import SwiftUI
 
 @main
 struct naczasApp: App {
-    @StateObject private var manager = GlobalDataManager.shared
+    @StateObject private var globalDataManager = GlobalDataManager.shared
+    @StateObject private var activeBusTramDataManager = ActiveBusTramManager.shared
     @State var showLunchView: Bool = false
     var body: some Scene {
         WindowGroup {
@@ -24,7 +25,8 @@ struct naczasApp: App {
                         .zIndex(1)
                 }
             }
-            .environmentObject(manager)
+            .environmentObject(globalDataManager)
+            .environmentObject(activeBusTramDataManager)
             .preferredColorScheme(.dark)
             .animation(.linear(duration: 0.2), value: showLunchView)
         }
