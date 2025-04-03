@@ -12,7 +12,7 @@ struct RouteStopsView: View {
     @StateObject var routeStopVm = RouteStopsViewModel()
     @Binding var selectedPref: PreferredRouteModel
     @Binding var route: RouteForLineModel
-    
+    let line: String
     var body: some View {
         ScrollView {
             ScrollViewReader { proxy in
@@ -22,7 +22,21 @@ struct RouteStopsView: View {
                             HStack(alignment: .top) {
                                 circleIndicator(type: routeStopVm.encodedStops[index].typ, count: routeStopVm.encodedStops.count, index: index)
                                 Button {
-                                    //TODO
+                                    Task {
+                                        do {
+                                            let arr = try await LineDeparturesForStopManager().fetchAllAvailableLines(
+                                                stopGroupName: routeStopVm.encodedStops[index].nrZespołu,
+                                                stopNr: routeStopVm.encodedStops[index].nrPrzystanku,
+                                                lineNr: line
+                                            )
+                                            for item in arr.sorted(by: { $0.czas < $1.czas }) {
+                                                print(item)
+                                            }
+                                        }
+                                        catch {
+                                            print(error)
+                                        }
+                                    }
                                 } label: {
                                     Text(routeStopVm.encodedStops[index].nazwaZespołu.fixStopName())
                                         .font(.system(size: 16))
@@ -57,7 +71,7 @@ struct RouteStopsView: View {
         }
         .onAppear {
             Task {
-//                await manager.updateLineRoutesAndStops() // for preview
+                //                await manager.updateLineRoutesAndStops() // for preview
                 routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
             }
         }
@@ -74,7 +88,7 @@ struct RouteStopsView: View {
         BackgroundView()
         RouteStopsView (
             selectedPref: .constant(PreferredRouteModel(routeName: "Default", direction: "Default")),
-            route: .constant(defaultRoute))
+            route: .constant(defaultRoute), line: "189")
         .environmentObject(GlobalDataManager())
     }
 }

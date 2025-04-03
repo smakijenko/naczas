@@ -20,7 +20,7 @@ struct LineStopsView: View {
                 DirectionPickerView(selectedRoute: $stopsVm.selectedPref, routes: stopsVm.preferredRoutes, isDataLoaded: stopsVm.areRoutesLoaded)
                 HStack {
                     if stopsVm.areRoutesLoaded {
-                        RouteStopsView(selectedPref: $stopsVm.selectedPref, route: $stopsVm.selectedRoute)
+                        RouteStopsView(selectedPref: $stopsVm.selectedPref, route: $stopsVm.selectedRoute, line: line)
                     }
                     else {
                         ScrolableStopsListShimmer()
