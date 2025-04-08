@@ -46,7 +46,6 @@ class ActiveBusTramManager: ObservableObject {
     }
     
     private func provideActiveBuses() async throws {
-        showNoBusTramsAlert = false
         print("Started providing active buses in dict.")
         for attempt in 1 ... 10 {
             print("Attempt: \(attempt)")
@@ -93,13 +92,17 @@ class ActiveBusTramManager: ObservableObject {
     }
     
     func loadActiveBusesTrams() async {
-        isDataLoaded = false
-        showNoBusTramsAlert = false
+        await MainActor.run {
+            isDataLoaded = false
+            showNoBusTramsAlert = false
+        }
         do {
             try await provideActiveBuses()
             try await provideActiveTrams()
-            if !activeBuses.isEmpty && !activeTrams.isEmpty {
-                isDataLoaded = true
+            await MainActor.run {
+                if !activeBuses.isEmpty && !activeTrams.isEmpty {
+                    isDataLoaded = true
+                }
             }
         }
         catch {

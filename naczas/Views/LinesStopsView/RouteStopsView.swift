@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Shimmer
 
 struct RouteStopsView: View {
     @EnvironmentObject var gdManager: GlobalDataManager
@@ -13,6 +14,7 @@ struct RouteStopsView: View {
     @Binding var selectedPref: PreferredRouteModel
     @Binding var route: RouteForLineModel
     let line: String
+    
     var body: some View {
         ScrollView {
             ScrollViewReader { proxy in
@@ -21,36 +23,9 @@ struct RouteStopsView: View {
                         ForEach(routeStopVm.encodedStops.indices, id: \.self) { index in
                             HStack(alignment: .top) {
                                 circleIndicator(type: routeStopVm.encodedStops[index].typ, count: routeStopVm.encodedStops.count, index: index)
-                                Button {
-                                    Task {
-                                        do {
-                                            let arr = try await LineDeparturesForStopManager().fetchAllAvailableLines(
-                                                stopGroupName: routeStopVm.encodedStops[index].nrZespołu,
-                                                stopNr: routeStopVm.encodedStops[index].nrPrzystanku,
-                                                lineNr: line
-                                            )
-                                            for item in arr.sorted(by: { $0.czas < $1.czas }) {
-                                                print(item)
-                                            }
-                                        }
-                                        catch {
-                                            print(error)
-                                        }
-                                    }
-                                } label: {
-                                    Text(routeStopVm.encodedStops[index].nazwaZespołu.fixStopName())
-                                        .font(.system(size: 16))
-                                        .foregroundStyle(.white)
-                                        .offset(y: 2)
-                                    if routeStopVm.encodedStops[index].typ == "2" {
-                                        Text("NŻ")
-                                            .font(.system(size: 16))
-                                            .fontWeight(.heavy)
-                                            .foregroundStyle(.gray)
-                                            .offset(y: 3)
-                                    }
-                                }
+                                createStopForList(index: index)
                                 Spacer()
+                                scheduleIndicator(index: index, isData: routeStopVm.departuresAvailable[index] ?? false)
                             }
                             .frame(maxWidth: .infinity)
                             .id(index)
@@ -66,20 +41,24 @@ struct RouteStopsView: View {
                             proxy.scrollTo(0, anchor: .top)
                         }
                     }
+                    routeStopVm.resetSettings()
+                    routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
+                    Task {
+                        await routeStopVm.provideDeparturesForStops(line: line)
+                    }
                 }
             }
         }
         .onAppear {
             Task {
-                //                await manager.updateLineRoutesAndStops() // for preview
+                //await gdManager.updateLineRoutesAndStops() // for preview
+                routeStopVm.resetSettings()
                 routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
+                Task {
+                    await routeStopVm.provideDeparturesForStops(line: line)
+                }
             }
         }
-        .onChange(of: route.routeName, {
-            routeStopVm.isDataLoaded = true
-            routeStopVm.encodedStops.removeAll()
-            routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
-        })
     }
 }
 
@@ -94,7 +73,29 @@ struct RouteStopsView: View {
 }
 
 extension RouteStopsView {
-    func circleIndicator(type: String, count: Int, index: Int) -> some View {
+    private func createStopForList(index: Int) -> some View {
+        return Button {
+            guard let departures = routeStopVm.stopDepartures[index] else { return }
+            for item in departures.sorted(by: { $0.czas < $1.czas }) {
+                print(item)
+                
+            }
+        } label: {
+            Text(routeStopVm.encodedStops[index].nazwaZespołu.fixStopName())
+                .font(.system(size: 16))
+                .foregroundStyle(.white)
+                .offset(y: 2)
+            if routeStopVm.encodedStops[index].typ == "2" {
+                Text("NŻ")
+                    .font(.system(size: 16))
+                    .fontWeight(.heavy)
+                    .foregroundStyle(.gray)
+                    .offset(y: 3)
+            }
+        }
+    }
+    
+    private func circleIndicator(type: String, count: Int, index: Int) -> some View {
         return VStack(spacing: 0) {
             if type == "2" {
                 Circle()
@@ -114,5 +115,34 @@ extension RouteStopsView {
                     .frame(width: 3, height: 40)
             }
         }
+    }
+    
+    private func scheduleIndicator(index: Int, isData: Bool) -> some View {
+        return ZStack {
+            if routeStopVm.unloadedArray.contains(index) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 5)
+                        .foregroundStyle(.red)
+                        .glow()
+                    Image(systemName: "xmark")
+                        .frame(width: 20, height: 20)
+                }
+            }
+            else if routeStopVm.departuresAvailable[index] != nil {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 5)
+                        .foregroundStyle(.green)
+                        .glow()
+                    Text(routeStopVm.howMuchToNext(index: index))
+                }
+            }
+            else {
+                RoundedRectangle(cornerRadius: 5)
+                    .foregroundStyle(.shimmerGray)
+                    .shimmering(bandSize: 1)
+            }
+        }
+        .frame(width: 50, height: 25)
+        .padding(.trailing)
     }
 }
