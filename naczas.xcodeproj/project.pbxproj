@@ -22,6 +22,7 @@
 		3209FF1A2D6291A2001E6458 /* AvailableCitiesToPick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF192D62919C001E6458 /* AvailableCitiesToPick.swift */; };
 		320DE0B72D9E63F40072D4CE /* ScheduleForStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */; };
 		320DE0B92D9E640A0072D4CE /* ScheduleForStopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DE0B82D9E64000072D4CE /* ScheduleForStopModel.swift */; };
+		324A0B202DA5B57200DC892B /* LineStopBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A0B1F2DA5B55B00DC892B /* LineStopBridge.swift */; };
 		32757CC72D728F5F006FA0AB /* GlobalCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CC62D728F5F006FA0AB /* GlobalCoreDataManager.swift */; };
 		32757CD22D74970D006FA0AB /* PreferredRouteForLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CD12D74970D006FA0AB /* PreferredRouteForLine.swift */; };
 		32757CD42D74A160006FA0AB /* UnknownStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CD32D74A160006FA0AB /* UnknownStops.swift */; };
@@ -82,6 +83,7 @@
 		3209FF192D62919C001E6458 /* AvailableCitiesToPick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCitiesToPick.swift; sourceTree = "<group>"; };
 		320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleForStopManager.swift; sourceTree = "<group>"; };
 		320DE0B82D9E64000072D4CE /* ScheduleForStopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleForStopModel.swift; sourceTree = "<group>"; };
+		324A0B1F2DA5B55B00DC892B /* LineStopBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopBridge.swift; sourceTree = "<group>"; };
 		32757CC62D728F5F006FA0AB /* GlobalCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCoreDataManager.swift; sourceTree = "<group>"; };
 		32757CD12D74970D006FA0AB /* PreferredRouteForLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferredRouteForLine.swift; sourceTree = "<group>"; };
 		32757CD32D74A160006FA0AB /* UnknownStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownStops.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 		327C1EE52D5BFDED0014D881 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				324A0B1F2DA5B55B00DC892B /* LineStopBridge.swift */,
 				320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */,
 				32A6A0972D95D61800430558 /* CustomRoutesManager.swift */,
 				32DF138E2D6E420300714876 /* StopsManager.swift */,
@@ -449,6 +452,7 @@
 				32DF136F2D689F1900714876 /* LineStopsViewModel.swift in Sources */,
 				3209FF182D628FB7001E6458 /* ScheduleViewModel.swift in Sources */,
 				3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */,
+				324A0B202DA5B57200DC892B /* LineStopBridge.swift in Sources */,
 				32DF13912D6E440C00714876 /* StopsModel.swift in Sources */,
 				3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */,
 				32DF137C2D6B213800714876 /* DefaultInstances.swift in Sources */,

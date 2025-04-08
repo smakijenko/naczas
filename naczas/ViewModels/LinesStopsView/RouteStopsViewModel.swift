@@ -31,11 +31,11 @@ class RouteStopsViewModel: ObservableObject {
         if !encodedStops.isEmpty { isDataLoaded = true }
     }
     
-    func howMuchToNext(index: Int) -> String {
+    func howMuchToNext(index: Int) -> Int? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"
         let currentTimeString = dateFormatter.string(from: Date())
-        guard let departures = stopDepartures[index]?.sorted(by: { $0.czas < $1.czas }) else { return "?" }
+        guard let departures = stopDepartures[index]?.sorted(by: { $0.czas < $1.czas }) else { return nil }
         for dep in departures {
             if dep.czas > currentTimeString {
                 let splitedCurrent = currentTimeString.split(separator: ":").map { Int($0)! }
@@ -43,10 +43,17 @@ class RouteStopsViewModel: ObservableObject {
                 guard splitedCurrent.count == 3, splittedDep.count == 3 else { continue }
                 let minutes1 = splitedCurrent[0] * 60 + splitedCurrent[1]
                 let minutes2 = splittedDep[0] * 60 + splittedDep[1]
-                return "\(minutes2 - minutes1)"
+                return (minutes2 - minutes1)
             }
         }
-        return "?"
+        return nil
+    }
+    
+    func convertToNextTime(index: Int) -> String {
+        let minutes = howMuchToNext(index: index)
+        guard let minutes = minutes else { return "?" }
+        if minutes <= 60 { return "\(minutes)min"}
+        else { return ">60min" }
     }
     
     func resetSettings() {

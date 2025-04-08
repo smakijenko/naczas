@@ -10,10 +10,11 @@ import SwiftUI
 
 struct Glow: ViewModifier {
     @State var isAnimating: Bool = false
+    let radius: CGFloat
     func body(content: Content) -> some View {
         ZStack {
             content
-                .blur(radius: isAnimating ? 15 : 0)
+                .blur(radius: isAnimating ? radius : 0)
                 .animation(.easeInOut(duration: 1).repeatForever(), value: isAnimating)
                 .onAppear {
                     isAnimating.toggle()
@@ -24,7 +25,7 @@ struct Glow: ViewModifier {
 }
 
 extension View {
-    func glow() -> some View {
-        modifier(Glow())
+    func glow(radius: CGFloat) -> some View {
+        modifier(Glow(radius: radius))
     }
 }

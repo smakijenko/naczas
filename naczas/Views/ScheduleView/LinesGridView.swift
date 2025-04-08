@@ -10,6 +10,7 @@ import SwiftUI
 struct LinesGridView: View {
     @EnvironmentObject var gdManager: GlobalDataManager
     @EnvironmentObject var btManager: ActiveBusTramManager
+    @EnvironmentObject var bridge: LineStopBridge
     @StateObject var gridVm = LinesGridViewModel()
     @Binding var searchedText: String
     @Binding var transportType: AvailableTransportTypes
@@ -42,6 +43,7 @@ struct LinesGridView: View {
     LinesGridView(searchedText: .constant(""), transportType: .constant(.Autobusy), isOnlineTransportLoaded: .constant(false))
         .environmentObject(GlobalDataManager())
         .environmentObject(ActiveBusTramManager())
+        .environmentObject(LineStopBridge())
 }
 
 extension LinesGridView {
@@ -49,8 +51,9 @@ extension LinesGridView {
         return ZStack {
             Button {
                 guard gdManager.isDatasAvailable else { return }
-                gridVm.isSheetShown.toggle()
-                gridVm.selectedLine = line
+                bridge.wasLineStopsSelected = true
+                bridge.showLineStopsView.0.toggle()
+                bridge.showLineStopsView.1 = line
             } label: {
                 Text(line)
                     .foregroundStyle(.white)
@@ -59,9 +62,6 @@ extension LinesGridView {
                     .cornerRadius(10)
                     .shadow(color: gridVm.checkIfLineAvailable(line: line, transportType: transportType), radius: 5)
             }
-        }
-        .sheet(isPresented: $gridVm.isSheetShown) {
-            LineStopsView(isSheetShown: $gridVm.isSheetShown, line: gridVm.selectedLine)
         }
     }
     

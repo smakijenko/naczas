@@ -106,7 +106,9 @@ class ActiveBusTramManager: ObservableObject {
             }
         }
         catch {
-            showNoBusTramsAlert = true
+            await MainActor.run {
+                showNoBusTramsAlert = true
+            }
         }
     }
 }

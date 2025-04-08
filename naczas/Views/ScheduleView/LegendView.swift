@@ -49,7 +49,7 @@ extension LegendView {
             RoundedRectangle(cornerRadius: 5)
                 .fill(color)
                 .frame(width: 50, height: 5)
-                .glow()
+                .glow(radius: 15)
         }
     }
 }

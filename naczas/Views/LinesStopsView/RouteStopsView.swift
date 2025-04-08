@@ -35,6 +35,7 @@ struct RouteStopsView: View {
                         ScrolableStopsListShimmer()
                     }
                 }
+                .padding(.vertical)
                 .onChange(of: route.routeName) {
                     if routeStopVm.isDataLoaded {
                         withAnimation(.linear(duration: 0.2)) {
@@ -51,7 +52,7 @@ struct RouteStopsView: View {
         }
         .onAppear {
             Task {
-                //await gdManager.updateLineRoutesAndStops() // for preview
+//                await gdManager.updateLineRoutesAndStops() // for preview
                 routeStopVm.resetSettings()
                 routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
                 Task {
@@ -78,7 +79,6 @@ extension RouteStopsView {
             guard let departures = routeStopVm.stopDepartures[index] else { return }
             for item in departures.sorted(by: { $0.czas < $1.czas }) {
                 print(item)
-                
             }
         } label: {
             Text(routeStopVm.encodedStops[index].nazwaZespołu.fixStopName())
@@ -123,7 +123,7 @@ extension RouteStopsView {
                 ZStack {
                     RoundedRectangle(cornerRadius: 5)
                         .foregroundStyle(.red)
-                        .glow()
+                        .glow(radius: 10)
                     Image(systemName: "xmark")
                         .frame(width: 20, height: 20)
                 }
@@ -132,8 +132,11 @@ extension RouteStopsView {
                 ZStack {
                     RoundedRectangle(cornerRadius: 5)
                         .foregroundStyle(.green)
-                        .glow()
-                    Text(routeStopVm.howMuchToNext(index: index))
+                        .glow(radius: 10)
+                    Text(routeStopVm.convertToNextTime(index: index))
+                        .font(.system(size: 20))
+                        .foregroundStyle(.white)
+                        .minimumScaleFactor(0.1)
                 }
             }
             else {
@@ -142,7 +145,7 @@ extension RouteStopsView {
                     .shimmering(bandSize: 1)
             }
         }
-        .frame(width: 50, height: 25)
+        .frame(width: 75, height: 30)
         .padding(.trailing)
     }
 }
