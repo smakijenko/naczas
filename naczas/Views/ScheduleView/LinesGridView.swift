@@ -56,6 +56,8 @@ extension LinesGridView {
                 bridge.showLineStopsView.1 = line
             } label: {
                 Text(line)
+                    .font(.system(size: 20))
+                    .minimumScaleFactor(0.1)
                     .foregroundStyle(.white)
                     .frame(width: 50, height: 40)
                     .background(customTranslucentMaterial)

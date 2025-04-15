@@ -27,7 +27,8 @@ class LineDeparturesForStopManager {
                 brygada: departureDict["brygada"] ?? "",
                 kierunek: departureDict["kierunek"] ?? "",
                 trasa: departureDict["trasa"] ?? "",
-                czas: departureDict["czas"] ?? ""
+                czas: departureDict["czas"] ?? "",
+                line: lineNr
             ))
         }
         if lineDeparturesForStop.isEmpty {

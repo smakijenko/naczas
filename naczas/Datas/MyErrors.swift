@@ -19,6 +19,8 @@ enum MyError: Error, LocalizedError, Equatable {
     case unableToLoadPreferredRoutes
     case APIResponseEmpty
     case activeBusesTramsNotFound
+    case tooManyAttemptsWhileProvidingLinesFromStop
+
     
     case tooManyAttemptsWhileFetchingAllStops
     case tooManyAttemptsWhileFetchingAllRoutesForAllLines
@@ -54,6 +56,8 @@ enum MyError: Error, LocalizedError, Equatable {
             return "Error: Routes for lines API response is empty."
         case .activeBusesTramsNotFound:
             return "Error: Could not find active buses and trams."
+        case .tooManyAttemptsWhileProvidingLinesFromStop:
+            return "Error: It was not possible to provide lines from stop."
             
             
         case .tooManyAttemptsWhileFetchingAllStops:

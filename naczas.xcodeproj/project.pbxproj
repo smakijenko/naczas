@@ -23,6 +23,11 @@
 		320DE0B72D9E63F40072D4CE /* ScheduleForStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */; };
 		320DE0B92D9E640A0072D4CE /* ScheduleForStopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DE0B82D9E64000072D4CE /* ScheduleForStopModel.swift */; };
 		324A0B202DA5B57200DC892B /* LineStopBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A0B1F2DA5B55B00DC892B /* LineStopBridge.swift */; };
+		324DF4822DA6484C003943D7 /* StopDeparturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF4812DA6484C003943D7 /* StopDeparturesView.swift */; };
+		324DF4842DA70A42003943D7 /* LinesFromStopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF4832DA70A1C003943D7 /* LinesFromStopModel.swift */; };
+		324DF4862DA70B77003943D7 /* LinesFromStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF4852DA70B69003943D7 /* LinesFromStopManager.swift */; };
+		324DF4882DA7A241003943D7 /* TrimTimeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF4872DA7A229003943D7 /* TrimTimeString.swift */; };
+		324DF48A2DA8529B003943D7 /* StopDeparturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF4892DA8529B003943D7 /* StopDeparturesViewModel.swift */; };
 		32757CC72D728F5F006FA0AB /* GlobalCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CC62D728F5F006FA0AB /* GlobalCoreDataManager.swift */; };
 		32757CD22D74970D006FA0AB /* PreferredRouteForLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CD12D74970D006FA0AB /* PreferredRouteForLine.swift */; };
 		32757CD42D74A160006FA0AB /* UnknownStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32757CD32D74A160006FA0AB /* UnknownStops.swift */; };
@@ -84,6 +89,11 @@
 		320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleForStopManager.swift; sourceTree = "<group>"; };
 		320DE0B82D9E64000072D4CE /* ScheduleForStopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleForStopModel.swift; sourceTree = "<group>"; };
 		324A0B1F2DA5B55B00DC892B /* LineStopBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopBridge.swift; sourceTree = "<group>"; };
+		324DF4812DA6484C003943D7 /* StopDeparturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDeparturesView.swift; sourceTree = "<group>"; };
+		324DF4832DA70A1C003943D7 /* LinesFromStopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesFromStopModel.swift; sourceTree = "<group>"; };
+		324DF4852DA70B69003943D7 /* LinesFromStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesFromStopManager.swift; sourceTree = "<group>"; };
+		324DF4872DA7A229003943D7 /* TrimTimeString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrimTimeString.swift; sourceTree = "<group>"; };
+		324DF4892DA8529B003943D7 /* StopDeparturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDeparturesViewModel.swift; sourceTree = "<group>"; };
 		32757CC62D728F5F006FA0AB /* GlobalCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCoreDataManager.swift; sourceTree = "<group>"; };
 		32757CD12D74970D006FA0AB /* PreferredRouteForLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferredRouteForLine.swift; sourceTree = "<group>"; };
 		32757CD32D74A160006FA0AB /* UnknownStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownStops.swift; sourceTree = "<group>"; };
@@ -247,6 +257,8 @@
 		327C1EE42D5BFDD60014D881 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				324DF4832DA70A1C003943D7 /* LinesFromStopModel.swift */,
+				320DE0B82D9E64000072D4CE /* ScheduleForStopModel.swift */,
 				32757CD52D74EC4A006FA0AB /* PreferredRouteModel.swift */,
 				32DF13902D6E440C00714876 /* StopsModel.swift */,
 				32DF13732D68A2D200714876 /* RoutesForLinesModel.swift */,
@@ -259,6 +271,7 @@
 		327C1EE52D5BFDED0014D881 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				324DF4852DA70B69003943D7 /* LinesFromStopManager.swift */,
 				324A0B1F2DA5B55B00DC892B /* LineStopBridge.swift */,
 				320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */,
 				32A6A0972D95D61800430558 /* CustomRoutesManager.swift */,
@@ -274,7 +287,6 @@
 		327C1EE62D5BFDF60014D881 /* Datas */ = {
 			isa = PBXGroup;
 			children = (
-				320DE0B82D9E64000072D4CE /* ScheduleForStopModel.swift */,
 				32A6A0992D95D66F00430558 /* customRoutes.json */,
 				32DF138C2D6C55FE00714876 /* MyErrors.swift */,
 				32DF137B2D6B212400714876 /* DefaultInstances.swift */,
@@ -311,6 +323,7 @@
 		32DF13622D668A5800714876 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				324DF4872DA7A229003943D7 /* TrimTimeString.swift */,
 				32A6A0A22D9756BF00430558 /* FixStopName.swift */,
 				32DF13632D668A7100714876 /* Glow.swift */,
 			);
@@ -334,6 +347,7 @@
 				32DF136C2D689F0E00714876 /* LineStopsView.swift */,
 				32A6A09C2D96DCD400430558 /* DirectionPickerView.swift */,
 				32A6A0A02D9749B600430558 /* RouteStopsView.swift */,
+				324DF4812DA6484C003943D7 /* StopDeparturesView.swift */,
 			);
 			path = LinesStopsView;
 			sourceTree = "<group>";
@@ -344,6 +358,7 @@
 				32DF136E2D689F1400714876 /* LineStopsViewModel.swift */,
 				32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */,
 				3292C58F2D9937AC0015C620 /* RouteStopsViewModel.swift */,
+				324DF4892DA8529B003943D7 /* StopDeparturesViewModel.swift */,
 			);
 			path = LinesStopsView;
 			sourceTree = "<group>";
@@ -443,6 +458,7 @@
 				3209FEFA2D5D2581001E6458 /* BackgroundView.swift in Sources */,
 				3209FF112D5D66E0001E6458 /* LunchView.swift in Sources */,
 				32DF13532D63CE5C00714876 /* LinesGridView.swift in Sources */,
+				324DF4882DA7A241003943D7 /* TrimTimeString.swift in Sources */,
 				32DF13452D63248D00714876 /* LineSearcherView.swift in Sources */,
 				3209FF162D628F89001E6458 /* CityPickerViewModel.swift in Sources */,
 				3292C5902D9937B00015C620 /* RouteStopsViewModel.swift in Sources */,
@@ -455,6 +471,7 @@
 				324A0B202DA5B57200DC892B /* LineStopBridge.swift in Sources */,
 				32DF13912D6E440C00714876 /* StopsModel.swift in Sources */,
 				3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */,
+				324DF48A2DA8529B003943D7 /* StopDeparturesViewModel.swift in Sources */,
 				32DF137C2D6B213800714876 /* DefaultInstances.swift in Sources */,
 				32DF13742D68A2DC00714876 /* RoutesForLinesModel.swift in Sources */,
 				320DE0B72D9E63F40072D4CE /* ScheduleForStopManager.swift in Sources */,
@@ -464,7 +481,9 @@
 				32A6A09D2D96DCD400430558 /* DirectionPickerView.swift in Sources */,
 				32DF138F2D6E420C00714876 /* StopsManager.swift in Sources */,
 				32A6A0982D95D61800430558 /* CustomRoutesManager.swift in Sources */,
+				324DF4822DA6484C003943D7 /* StopDeparturesView.swift in Sources */,
 				32757CD22D74970D006FA0AB /* PreferredRouteForLine.swift in Sources */,
+				324DF4862DA70B77003943D7 /* LinesFromStopManager.swift in Sources */,
 				3209FF0A2D5D3281001E6458 /* Settings.swift in Sources */,
 				320DE0B92D9E640A0072D4CE /* ScheduleForStopModel.swift in Sources */,
 				32DF13642D668A7700714876 /* Glow.swift in Sources */,
@@ -472,6 +491,7 @@
 				32A6A0A12D9749B600430558 /* RouteStopsView.swift in Sources */,
 				32DF136D2D689F0E00714876 /* LineStopsView.swift in Sources */,
 				3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */,
+				324DF4842DA70A42003943D7 /* LinesFromStopModel.swift in Sources */,
 				32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */,
 				32757CD62D74EC54006FA0AB /* PreferredRouteModel.swift in Sources */,
 				32B83BE32D9C7E0A00B17B5F /* ActiveBusTramManager.swift in Sources */,

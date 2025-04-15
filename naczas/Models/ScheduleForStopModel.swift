@@ -19,4 +19,5 @@ struct LineDeparturesForStopModel: Codable {
     let kierunek: String
     let trasa: String
     let czas: String
+    let line: String
 }

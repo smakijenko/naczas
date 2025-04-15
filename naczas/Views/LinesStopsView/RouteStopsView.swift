@@ -80,6 +80,7 @@ extension RouteStopsView {
             for item in departures.sorted(by: { $0.czas < $1.czas }) {
                 print(item)
             }
+            print(routeStopVm.encodedStops[index])
         } label: {
             Text(routeStopVm.encodedStops[index].nazwaZespołu.fixStopName())
                 .font(.system(size: 16))
