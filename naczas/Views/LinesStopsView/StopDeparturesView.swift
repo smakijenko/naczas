@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StopDeparturesView: View {
+    @Environment(\.dismiss) var dismiss
     @StateObject var departuresVm = StopDeparturesViewModel()
     let mainDepartures: [LineDeparturesForStopModel]
     let stopInfo: DecodedStopInfoModel
@@ -16,8 +17,15 @@ struct StopDeparturesView: View {
         ZStack {
             BackgroundView()
             VStack {
-                possibleLinesForStop()
-                    .padding(.horizontal, 8)
+                HStack {
+                    possibleLinesForStop()
+                        .padding(.horizontal, 8)
+                        .zIndex(0)
+                    Spacer()
+                    dismissButton
+                        .padding(.horizontal, 17)
+                        .zIndex(1)
+                }
                 departuresList()
                     .padding(.horizontal, 5)
                 Spacer()
@@ -107,6 +115,22 @@ extension StopDeparturesView {
                     proxy.scrollTo(departuresVm.findClosestDeparture(), anchor: .center)
                 }
             }
+        }
+    }
+    
+    var dismissButton: some View {
+        Button {
+            touchVibrates.impactOccurred()
+            dismiss()
+        } label: {
+            Image(systemName: "arrow.down")
+                .font(.system(size: 22))
+                .fontWeight(.bold)
+                .minimumScaleFactor(0.1)
+                .foregroundStyle(.white)
+                .frame(width: 50, height: 40)
+                .background(customTranslucentMaterial)
+                .cornerRadius(10)
         }
     }
 }

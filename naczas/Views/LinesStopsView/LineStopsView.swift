@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LineStopsView: View {
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var gdManager: GlobalDataManager
     @StateObject var stopsVm = LineStopsViewModel()
     @Binding var isSheetShown: Bool
@@ -55,6 +56,8 @@ struct LineStopsView: View {
                     isSheetShown = false
                 }))
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
     }
 }
 
@@ -63,4 +66,16 @@ struct LineStopsView: View {
         isSheetShown: .constant(true),
         line: "189")
         .environmentObject(GlobalDataManager())
+}
+
+extension LineStopsView {
+    var btnBack : some View {
+        Button {
+            dismiss()
+        } label: {
+            Text("<Wstecz")
+                .aspectRatio(contentMode: .fit)
+                .foregroundStyle(.white)
+        }
+    }
 }

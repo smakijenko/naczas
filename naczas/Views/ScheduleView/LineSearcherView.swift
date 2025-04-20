@@ -51,6 +51,12 @@ extension LineSearcherView {
             Spacer()
             TextField("Numer lini...", text: $searchedText)
                 .padding()
+                .onChange(of: searchedText) { oldValue, newValue in
+                    let filtered = newValue.lowercased().filter { allowedCharsInSearchFiled.contains($0) }
+                    if filtered != newValue {
+                        searchedText = ""
+                    }
+                }
             Divider()
         }
         .frame(maxWidth: .infinity)

@@ -14,3 +14,4 @@ let customTranslucentMaterial: Color = .gray.opacity(0.3)
 let customThinTranslucentMaterial: Color = .gray.opacity(0.6)
 let dimmedWhiteColor: Color = .white.opacity(0.3)
 
+let allowedCharsInSearchFiled: [Character] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "n"]

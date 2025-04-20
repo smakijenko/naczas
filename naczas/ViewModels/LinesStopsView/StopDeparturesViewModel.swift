@@ -26,11 +26,12 @@ class StopDeparturesViewModel: ObservableObject {
     }
     
     func provideLinesFromStop(stopGroupName: String, stopNr: String) async {
-        showOnlyMainLineAvailableAlert = false
         do {
             let resultlinesFromStop: [String] = try await LinesFromStopManager().provideLinesFromStop(stopGroupName: stopGroupName, stopNr: stopNr)
-            for line in resultlinesFromStop {
-                linesAndDepartures[line] = []
+            await MainActor.run {
+                for line in resultlinesFromStop {
+                    linesAndDepartures[line] = []
+                }
             }
         }
         catch {
