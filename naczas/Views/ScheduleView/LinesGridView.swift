@@ -50,6 +50,7 @@ extension LinesGridView {
     private func createLineTile(line: String, transportType: AvailableTransportTypes) -> some View {
         return ZStack {
             Button {
+                touchVibrates.impactOccurred()
                 guard gdManager.isDatasAvailable else { return }
                 bridge.wasLineStopsSelected = true
                 bridge.showLineStopsView.0.toggle()

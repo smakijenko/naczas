@@ -14,10 +14,14 @@ struct KeyValuePairForStopModel: Codable {
     let value: String?
 }
 
-struct LineDeparturesForStopModel: Codable {
+struct LineDeparturesForStopModel: Codable, Hashable {
     let brygada: String
     let kierunek: String
     let trasa: String
     let czas: String
     let line: String
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(kierunek + trasa + czas)
+    }
 }

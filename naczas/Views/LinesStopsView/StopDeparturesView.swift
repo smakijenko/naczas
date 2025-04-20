@@ -17,15 +17,16 @@ struct StopDeparturesView: View {
             BackgroundView()
             VStack {
                 possibleLinesForStop()
-                    .padding(.horizontal)
+                    .padding(.horizontal, 8)
                 departuresList()
-                    .padding(.horizontal)
+                    .padding(.horizontal, 5)
                 Spacer()
             }
         }
         .onAppear {
+            departuresVm.setMainLineMainDepartures(mainLine: mainLine, mainDepartures: mainDepartures)
             Task {
-                await departuresVm.provideLinesFromStop(stopGroupName: stopInfo.nrZespołu, stopNr: stopInfo.nrPrzystanku, mainLine: mainLine)
+                await departuresVm.provideLinesFromStop(stopGroupName: stopInfo.nrZespołu, stopNr: stopInfo.nrPrzystanku)
             }
         }
     }
@@ -40,13 +41,14 @@ extension StopDeparturesView {
         return ZStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(departuresVm.linesFromStop, id: \.self) { line in
+                    ForEach(departuresVm.provideSortedKeyes(), id: \.self) { line in
                         Button {
-                            if departuresVm.selectedLines.contains(line) && mainLine != line{
-                                departuresVm.selectedLines.removeAll(where: { $0 == line })
-                            }
-                            else {
-                                departuresVm.selectedLines.append(line)
+                            touchVibrates.impactOccurred()
+                            Task {
+                                await departuresVm.checkForLineDepartures(stopGroupName: stopInfo.nrZespołu, stopNr: stopInfo.nrPrzystanku, lineNr: line)
+                                await MainActor.run {
+                                    departuresVm.updateDeparturesArray(lineNr: line)
+                                }
                             }
                         } label: {
                             Text(line)
@@ -58,7 +60,6 @@ extension StopDeparturesView {
                                 .cornerRadius(10)
                                 .shadow(color: departuresVm.selectedLines.contains(line) ? .white : .clear, radius: 0)
                         }
-
                     }
                 }
             }
@@ -68,25 +69,42 @@ extension StopDeparturesView {
     }
     
     func departuresList() -> some View {
-        return ScrollView {
-            VStack(alignment: .leading, spacing: 25) {
-                ForEach(mainDepartures, id: \.czas) { departure in
-                    HStack {
-                        Image(systemName: (allTramsLines.contains(mainLine) ? "tram" : "bus") + ".fill")
-                        Text(departure.line)
-                            .frame(width: 50, height: 35)
-                            .background(customTranslucentMaterial)
-                            .cornerRadius(10)
-                        Image(systemName: "arrow.right")
-                            .resizable()
-                            .frame(width: 25, height: 10)
-                        Text(departure.kierunek)
-                        Spacer()
-                        Text(departure.czas.trimTime())
+        return ScrollViewReader { proxy in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 5) {
+                    ForEach(departuresVm.departuresArray, id: \.self) { departure in
+                        HStack {
+                            Image(systemName: (allTramsLines.contains(mainLine) ? "tram" : "bus") + ".fill")
+                            Text(departure.line)
+                                .font(.system(size: 20))
+                                .frame(width: 50, height: 35)
+                                .background(customTranslucentMaterial)
+                                .cornerRadius(10)
+                            Image(systemName: "arrow.right")
+                                .resizable()
+                                .frame(width: 25, height: 10)
+                            Text(departure.kierunek.fixStopName())
+                            Spacer()
+                            Text(departuresVm.convertToNextTime(depTime: departure.czas))
+                                .font(.system(size: 14))
+                            Text(departure.czas.trimTime())
+                        }
+                        .font(.system(size: 18))
+                        .foregroundStyle(.white)
+                        .minimumScaleFactor(0.1)
+                        .padding(.horizontal, 5)
+                        .frame(height: 60)
+                        .background(departure.line == mainLine && departuresVm.selectedLines.count > 1 ? .white.opacity(0.05) : .clear)
+                        .cornerRadius(10)
+                        .padding(.trailing, 7.5)
+                        .id(departure.czas)
                     }
-                    .font(.system(size: 20))
-                    .foregroundStyle(.white)
-                    .minimumScaleFactor(0.1)
+                }
+            }
+            .onChange(of: departuresVm.departuresArray) {
+                withAnimation(.linear(duration: 0.4)) {
+                    guard departuresVm.findClosestDeparture() != nil else { return }
+                    proxy.scrollTo(departuresVm.findClosestDeparture(), anchor: .center)
                 }
             }
         }

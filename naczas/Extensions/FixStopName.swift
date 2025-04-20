@@ -24,7 +24,7 @@ extension String {
                 }
                 continue
             }
-            if char == " " || char == "." || char == "-" {
+            if char == " " || char == "." || char == "-" || char == "("{
                 if !currentWord.isEmpty {
                     if upperCaseWords.contains(currentWord.uppercased()) {
                         fixedStopName.append(currentWord.uppercased())

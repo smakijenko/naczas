@@ -54,6 +54,7 @@ extension CityPickerView {
                 VStack(alignment: .leading, spacing: 7){
                     ForEach(cityVm.unselectedCities, id: \.self) { city in
                         Button {
+                            touchVibrates.impactOccurred()
                             cityVm.selectedCity = city
                             withAnimation(.easeInOut(duration: 0.2)) {
                                 isCityPickerShown.toggle()

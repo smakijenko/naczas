@@ -53,6 +53,7 @@ extension DirectionPickerView {
     
     func route(route: PreferredRouteModel) -> some View {
         return Button {
+            touchVibrates.impactOccurred()
             withAnimation(.easeInOut(duration: 0.2)) {
                 selectedRoute = route
             }

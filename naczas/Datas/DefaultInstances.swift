@@ -23,13 +23,9 @@ let defaultRoute = RouteForLineModel(routeName: "Custom130MetroWilanowska", stop
 ], stopsNum: 12)
 
 let defaultDepartures = [
-    LineDeparturesForStopModel(brygada: "018", kierunek: "Sadyba", trasa: "Td-1sad", czas: "04:14:00", line: "189"),
-    LineDeparturesForStopModel(brygada: "6", kierunek: "Sadyba", trasa: "Td-1sad", czas: "04:29:00", line: "189"),
-    LineDeparturesForStopModel(brygada: "020", kierunek: "Sadyba", trasa: "TD-1SAX", czas: "04:44:00", line: "189"),
-    LineDeparturesForStopModel(brygada: "021", kierunek: "Sadyba", trasa: "TD-1SAX", czas: "04:59:00", line: "189"),
-    LineDeparturesForStopModel(brygada: "11", kierunek: "Sadyba", trasa: "TX-SADG", czas: "05:09:00", line: "189"),
+    LineDeparturesForStopModel(brygada: "0242", kierunek: "Sadyba", trasa: "TX-SADG", czas: "00:24:00", line: "189"),
     LineDeparturesForStopModel(brygada: "024", kierunek: "Sadyba", trasa: "TX-SADG", czas: "05:24:00", line: "189"),
-    LineDeparturesForStopModel(brygada: "15", kierunek: "Sadyba", trasa: "TX-SADG", czas: "05:32:00", line: "189"),
+    LineDeparturesForStopModel(brygada: "15", kierunek: "Dw. Wschodni (Kijowska)", trasa: "TX-SADG", czas: "05:32:00", line: "189"),
     LineDeparturesForStopModel(brygada: "025", kierunek: "Sadyba", trasa: "TO-SAD", czas: "05:39:00", line: "189"),
     LineDeparturesForStopModel(brygada: "026", kierunek: "Sadyba", trasa: "TO-SAD", czas: "05:47:00", line: "189"),
     LineDeparturesForStopModel(brygada: "1", kierunek: "Sadyba", trasa: "TO-SAD", czas: "05:53:00", line: "189"),

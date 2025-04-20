@@ -16,8 +16,8 @@ struct RouteStopsView: View {
     let line: String
     
     var body: some View {
-        ScrollView {
-            ScrollViewReader { proxy in
+        ScrollViewReader { proxy in
+            ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     if routeStopVm.isDataLoaded {
                         ForEach(routeStopVm.encodedStops.indices, id: \.self) { index in
@@ -52,12 +52,17 @@ struct RouteStopsView: View {
         }
         .onAppear {
             Task {
-//                await gdManager.updateLineRoutesAndStops() // for preview
+                //                await gdManager.updateLineRoutesAndStops() // for preview
                 routeStopVm.resetSettings()
                 routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
                 Task {
                     await routeStopVm.provideDeparturesForStops(line: line)
                 }
+            }
+        }
+        .sheet(isPresented: $routeStopVm.showStopDepartures.0) {
+            if let dep = routeStopVm.stopDepartures[routeStopVm.showStopDepartures.1]{
+                StopDeparturesView(mainDepartures: dep.sorted( by: { $0.czas < $1.czas }), stopInfo: routeStopVm.encodedStops[routeStopVm.showStopDepartures.1], mainLine: line)
             }
         }
     }
@@ -76,11 +81,9 @@ struct RouteStopsView: View {
 extension RouteStopsView {
     private func createStopForList(index: Int) -> some View {
         return Button {
-            guard let departures = routeStopVm.stopDepartures[index] else { return }
-            for item in departures.sorted(by: { $0.czas < $1.czas }) {
-                print(item)
-            }
-            print(routeStopVm.encodedStops[index])
+            touchVibrates.impactOccurred()
+            routeStopVm.showStopDepartures.1 = index
+            routeStopVm.showStopDepartures.0.toggle()
         } label: {
             Text(routeStopVm.encodedStops[index].nazwaZespołu.fixStopName())
                 .font(.system(size: 16))

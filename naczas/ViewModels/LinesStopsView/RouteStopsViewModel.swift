@@ -13,6 +13,7 @@ class RouteStopsViewModel: ObservableObject {
     @Published var stopDepartures: [Int: [LineDeparturesForStopModel]] = [:]
     @Published var departuresAvailable: [Int: Bool] = [:]
     @Published var unloadedArray: [Int] = []
+    @Published var showStopDepartures: (Bool, Int) = (false, 0)
     
     func encodeStopValues(stops: [StopInRouteInfoModel], enteties: [StopEntity]) {
         for stop in stops {
@@ -31,7 +32,7 @@ class RouteStopsViewModel: ObservableObject {
         if !encodedStops.isEmpty { isDataLoaded = true }
     }
     
-    func howMuchToNext(index: Int) -> Int? {
+    func howMuchToNextByIndex(index: Int) -> Int? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"
         let currentTimeString = dateFormatter.string(from: Date())
@@ -50,7 +51,7 @@ class RouteStopsViewModel: ObservableObject {
     }
     
     func convertToNextTime(index: Int) -> String {
-        let minutes = howMuchToNext(index: index)
+        let minutes = howMuchToNextByIndex(index: index)
         guard let minutes = minutes else { return "?" }
         if minutes <= 60 { return "\(minutes)min"}
         else { return ">60min" }
