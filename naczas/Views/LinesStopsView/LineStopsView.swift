@@ -21,7 +21,7 @@ struct LineStopsView: View {
                 DirectionPickerView(selectedRoute: $stopsVm.selectedPref, routes: stopsVm.preferredRoutes, isDataLoaded: stopsVm.areRoutesLoaded)
                 HStack {
                     if stopsVm.areRoutesLoaded {
-                        RouteStopsView(selectedPref: $stopsVm.selectedPref, route: $stopsVm.selectedRoute, line: line)
+                        RouteStopsView(selectedPref: $stopsVm.selectedPref, route: $stopsVm.selectedRoute, showStopDepartures: $stopsVm.showStopDepartures, showMap: $stopsVm.showMap, line: line, showTabBar: stopsVm.showTabBar)
                     }
                     else {
                         ScrolableStopsListShimmer()
@@ -29,6 +29,19 @@ struct LineStopsView: View {
                     Spacer()
                 }
                 Spacer()
+            }
+            if stopsVm.isTabBarShown {
+                withAnimation(.linear(duration: 0.2)) {
+                    Rectangle()
+                        .foregroundStyle(.black.opacity(0.6))
+                        .gesture(slideGesture())
+                        .ignoresSafeArea()
+                }
+            }
+            VStack {
+                Spacer()
+                SchedMapTabBarView(showStopDepartures: $stopsVm.showStopDepartures, showMap: $stopsVm.showMap, hideTabBar: stopsVm.hideTabBar)
+                    .offset(y: stopsVm.tabOffset)
             }
         }
         .environmentObject(stopsVm)
@@ -58,6 +71,7 @@ struct LineStopsView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 
@@ -65,17 +79,40 @@ struct LineStopsView: View {
     LineStopsView (
         isSheetShown: .constant(true),
         line: "189")
-        .environmentObject(GlobalDataManager())
+    .environmentObject(GlobalDataManager())
 }
 
 extension LineStopsView {
     var btnBack : some View {
         Button {
+            touchVibrates.impactOccurred()
             dismiss()
         } label: {
-            Text("<Wstecz")
-                .aspectRatio(contentMode: .fit)
-                .foregroundStyle(.white)
+            HStack(spacing: 2) {
+                Image(systemName: "chevron.backward")
+                Text("Wstecz")
+            }
+            .aspectRatio(contentMode: .fit)
+            .foregroundStyle(.white)
         }
+    }
+    
+    func slideGesture() -> some Gesture {
+        DragGesture()
+            .onChanged { gesture in
+                if (0...200).contains(gesture.translation.height) {
+                    stopsVm.tabOffset = gesture.translation.height
+                }
+            }
+            .onEnded { _ in
+                withAnimation(.linear(duration: 0.2)){
+                    if stopsVm.tabOffset > 125 {
+                        stopsVm.hideTabBar()
+                    }
+                    else{
+                        stopsVm.tabOffset = -25
+                    }
+                }
+            }
     }
 }

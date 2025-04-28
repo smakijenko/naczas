@@ -11,9 +11,8 @@
 		3209FEFE2D5D2611001E6458 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FEFD2D5D2611001E6458 /* MainViewModel.swift */; };
 		3209FF002D5D30F0001E6458 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FEFF2D5D30F0001E6458 /* MapView.swift */; };
 		3209FF042D5D311C001E6458 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF032D5D311C001E6458 /* ScheduleView.swift */; };
-		3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF052D5D316A001E6458 /* TabBarView.swift */; };
 		3209FF0A2D5D3281001E6458 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF092D5D3279001E6458 /* Settings.swift */; };
-		3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */; };
+		3209FF0D2D5D3806001E6458 /* SchedMapTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF0C2D5D37F9001E6458 /* SchedMapTabBarViewModel.swift */; };
 		3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */; };
 		3209FF112D5D66E0001E6458 /* LunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF102D5D66E0001E6458 /* LunchView.swift */; };
 		3209FF132D627815001E6458 /* CityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF122D627815001E6458 /* CityPickerView.swift */; };
@@ -22,6 +21,10 @@
 		3209FF1A2D6291A2001E6458 /* AvailableCitiesToPick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209FF192D62919C001E6458 /* AvailableCitiesToPick.swift */; };
 		320DE0B72D9E63F40072D4CE /* ScheduleForStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */; };
 		320DE0B92D9E640A0072D4CE /* ScheduleForStopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320DE0B82D9E64000072D4CE /* ScheduleForStopModel.swift */; };
+		321251092DB5C34F00E53BF9 /* SchedMapTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321251082DB5C34F00E53BF9 /* SchedMapTabBarView.swift */; };
+		3212510B2DB8107200E53BF9 /* SheetDismissButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212510A2DB8107200E53BF9 /* SheetDismissButtonView.swift */; };
+		3212510D2DB82E0900E53BF9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212510C2DB82E0900E53BF9 /* LocationManager.swift */; };
+		321251102DB82FD000E53BF9 /* UserLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3212510F2DB82FD000E53BF9 /* UserLocationAnnotation.swift */; };
 		324A0B202DA5B57200DC892B /* LineStopBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A0B1F2DA5B55B00DC892B /* LineStopBridge.swift */; };
 		324DF4822DA6484C003943D7 /* StopDeparturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF4812DA6484C003943D7 /* StopDeparturesView.swift */; };
 		324DF4842DA70A42003943D7 /* LinesFromStopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF4832DA70A1C003943D7 /* LinesFromStopModel.swift */; };
@@ -60,7 +63,6 @@
 		32DF135F2D66611A00714876 /* AllTramsLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF135E2D66611300714876 /* AllTramsLines.swift */; };
 		32DF13612D66872B00714876 /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13602D66872B00714876 /* LegendView.swift */; };
 		32DF13642D668A7700714876 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13632D668A7100714876 /* Glow.swift */; };
-		32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13652D668ED000714876 /* AvailableLinesManager.swift */; };
 		32DF136D2D689F0E00714876 /* LineStopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF136C2D689F0E00714876 /* LineStopsView.swift */; };
 		32DF136F2D689F1900714876 /* LineStopsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF136E2D689F1400714876 /* LineStopsViewModel.swift */; };
 		32DF13712D68A25D00714876 /* RoutesForLinesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13702D68A25300714876 /* RoutesForLinesManager.swift */; };
@@ -70,6 +72,13 @@
 		32DF138D2D6C55FE00714876 /* MyErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF138C2D6C55FE00714876 /* MyErrors.swift */; };
 		32DF138F2D6E420C00714876 /* StopsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF138E2D6E420300714876 /* StopsManager.swift */; };
 		32DF13912D6E440C00714876 /* StopsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DF13902D6E440C00714876 /* StopsModel.swift */; };
+		32EBB4182DBA0DF5004D1DCB /* FirstCameraPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB4172DBA0DEB004D1DCB /* FirstCameraPosition.swift */; };
+		32EBB41C2DBAB159004D1DCB /* StopAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB41B2DBAB159004D1DCB /* StopAnnotation.swift */; };
+		32EBB41F2DBAB376004D1DCB /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB41E2DBAB371004D1DCB /* MapViewModel.swift */; };
+		32EBB4212DBAB46C004D1DCB /* BusTramAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB4202DBAB46C004D1DCB /* BusTramAnnotation.swift */; };
+		32EBB4232DBB674C004D1DCB /* OnChangeWithInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB4222DBB6743004D1DCB /* OnChangeWithInitial.swift */; };
+		32EBB4252DC009CE004D1DCB /* BusTramInfoAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB4242DC009CE004D1DCB /* BusTramInfoAnnotation.swift */; };
+		32EBB4272DC00A4F004D1DCB /* DownwardTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB4262DC00A4A004D1DCB /* DownwardTriangle.swift */; };
 		32FDA0902D996A5D00032436 /* ScrolableStopsListShimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FDA08F2D996A5D00032436 /* ScrolableStopsListShimmer.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,9 +87,8 @@
 		3209FEFD2D5D2611001E6458 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3209FEFF2D5D30F0001E6458 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3209FF032D5D311C001E6458 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
-		3209FF052D5D316A001E6458 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		3209FF092D5D3279001E6458 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		3209FF0C2D5D37F9001E6458 /* SchedMapTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedMapTabBarViewModel.swift; sourceTree = "<group>"; };
 		3209FF0E2D5D3C1F001E6458 /* AvailableTabsInTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableTabsInTabBar.swift; sourceTree = "<group>"; };
 		3209FF102D5D66E0001E6458 /* LunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchView.swift; sourceTree = "<group>"; };
 		3209FF122D627815001E6458 /* CityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPickerView.swift; sourceTree = "<group>"; };
@@ -89,6 +97,10 @@
 		3209FF192D62919C001E6458 /* AvailableCitiesToPick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCitiesToPick.swift; sourceTree = "<group>"; };
 		320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleForStopManager.swift; sourceTree = "<group>"; };
 		320DE0B82D9E64000072D4CE /* ScheduleForStopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleForStopModel.swift; sourceTree = "<group>"; };
+		321251082DB5C34F00E53BF9 /* SchedMapTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedMapTabBarView.swift; sourceTree = "<group>"; };
+		3212510A2DB8107200E53BF9 /* SheetDismissButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDismissButtonView.swift; sourceTree = "<group>"; };
+		3212510C2DB82E0900E53BF9 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3212510F2DB82FD000E53BF9 /* UserLocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationAnnotation.swift; sourceTree = "<group>"; };
 		324A0B1F2DA5B55B00DC892B /* LineStopBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopBridge.swift; sourceTree = "<group>"; };
 		324DF4812DA6484C003943D7 /* StopDeparturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDeparturesView.swift; sourceTree = "<group>"; };
 		324DF4832DA70A1C003943D7 /* LinesFromStopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesFromStopModel.swift; sourceTree = "<group>"; };
@@ -128,7 +140,6 @@
 		32DF135E2D66611300714876 /* AllTramsLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTramsLines.swift; sourceTree = "<group>"; };
 		32DF13602D66872B00714876 /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
 		32DF13632D668A7100714876 /* Glow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
-		32DF13652D668ED000714876 /* AvailableLinesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLinesManager.swift; sourceTree = "<group>"; };
 		32DF136B2D66924C00714876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		32DF136C2D689F0E00714876 /* LineStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopsView.swift; sourceTree = "<group>"; };
 		32DF136E2D689F1400714876 /* LineStopsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStopsViewModel.swift; sourceTree = "<group>"; };
@@ -138,6 +149,13 @@
 		32DF138C2D6C55FE00714876 /* MyErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyErrors.swift; sourceTree = "<group>"; };
 		32DF138E2D6E420300714876 /* StopsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsManager.swift; sourceTree = "<group>"; };
 		32DF13902D6E440C00714876 /* StopsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsModel.swift; sourceTree = "<group>"; };
+		32EBB4172DBA0DEB004D1DCB /* FirstCameraPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCameraPosition.swift; sourceTree = "<group>"; };
+		32EBB41B2DBAB159004D1DCB /* StopAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopAnnotation.swift; sourceTree = "<group>"; };
+		32EBB41E2DBAB371004D1DCB /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		32EBB4202DBAB46C004D1DCB /* BusTramAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTramAnnotation.swift; sourceTree = "<group>"; };
+		32EBB4222DBB6743004D1DCB /* OnChangeWithInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnChangeWithInitial.swift; sourceTree = "<group>"; };
+		32EBB4242DC009CE004D1DCB /* BusTramInfoAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTramInfoAnnotation.swift; sourceTree = "<group>"; };
+		32EBB4262DC00A4A004D1DCB /* DownwardTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownwardTriangle.swift; sourceTree = "<group>"; };
 		32FDA08F2D996A5D00032436 /* ScrolableStopsListShimmer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolableStopsListShimmer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,9 +174,11 @@
 		3209FEFB2D5D25AB001E6458 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				32EBB4262DC00A4A004D1DCB /* DownwardTriangle.swift */,
 				3209FEF92D5D2581001E6458 /* BackgroundView.swift */,
 				3209FF102D5D66E0001E6458 /* LunchView.swift */,
 				32FDA08F2D996A5D00032436 /* ScrolableStopsListShimmer.swift */,
+				3212510A2DB8107200E53BF9 /* SheetDismissButtonView.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -167,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				327C1EDD2D5BFDB20014D881 /* MainView.swift */,
-				3209FF052D5D316A001E6458 /* TabBarView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -197,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				3209FEFD2D5D2611001E6458 /* MainViewModel.swift */,
-				3209FF0C2D5D37F9001E6458 /* TabBarViewModel.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -212,6 +230,17 @@
 				32DF13542D63CE8D00714876 /* LinesGridViewModel.swift */,
 			);
 			path = ScheduleView;
+			sourceTree = "<group>";
+		};
+		3212510E2DB82FB900E53BF9 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				3212510F2DB82FD000E53BF9 /* UserLocationAnnotation.swift */,
+				32EBB41B2DBAB159004D1DCB /* StopAnnotation.swift */,
+				32EBB4202DBAB46C004D1DCB /* BusTramAnnotation.swift */,
+				32EBB4242DC009CE004D1DCB /* BusTramInfoAnnotation.swift */,
+			);
+			path = Annotations;
 			sourceTree = "<group>";
 		};
 		327C1EC02D5BFC390014D881 = {
@@ -278,10 +307,10 @@
 				320DE0B62D9E63DD0072D4CE /* ScheduleForStopManager.swift */,
 				32A6A0972D95D61800430558 /* CustomRoutesManager.swift */,
 				32DF138E2D6E420300714876 /* StopsManager.swift */,
-				32DF13652D668ED000714876 /* AvailableLinesManager.swift */,
 				32DF13702D68A25300714876 /* RoutesForLinesManager.swift */,
 				32757CC62D728F5F006FA0AB /* GlobalCoreDataManager.swift */,
 				32B83BE22D9C7E0A00B17B5F /* ActiveBusTramManager.swift */,
+				3212510C2DB82E0900E53BF9 /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -303,10 +332,11 @@
 		327C1EE72D5BFDFB0014D881 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3212510E2DB82FB900E53BF9 /* Annotations */,
 				3209FEFB2D5D25AB001E6458 /* Widgets */,
 				3209FEFC2D5D25FC001E6458 /* MainView */,
-				3209FF012D5D30F7001E6458 /* MapView */,
 				3209FF022D5D3104001E6458 /* ScheduleView */,
+				3209FF012D5D30F7001E6458 /* MapView */,
 				32DF13752D69C1F000714876 /* LinesStopsView */,
 			);
 			path = Views;
@@ -317,6 +347,7 @@
 			children = (
 				3209FF0B2D5D37EE001E6458 /* MainView */,
 				3209FF142D628F5B001E6458 /* ScheduleView */,
+				32EBB41D2DBAB363004D1DCB /* MapView */,
 				32DF13762D69C21100714876 /* LinesStopsView */,
 			);
 			path = ViewModels;
@@ -325,6 +356,8 @@
 		32DF13622D668A5800714876 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				32EBB4222DBB6743004D1DCB /* OnChangeWithInitial.swift */,
+				32EBB4172DBA0DEB004D1DCB /* FirstCameraPosition.swift */,
 				324DF4872DA7A229003943D7 /* TrimTimeString.swift */,
 				32A6A0A22D9756BF00430558 /* FixStopName.swift */,
 				32DF13632D668A7100714876 /* Glow.swift */,
@@ -351,6 +384,7 @@
 				32A6A09C2D96DCD400430558 /* DirectionPickerView.swift */,
 				32A6A0A02D9749B600430558 /* RouteStopsView.swift */,
 				324DF4812DA6484C003943D7 /* StopDeparturesView.swift */,
+				321251082DB5C34F00E53BF9 /* SchedMapTabBarView.swift */,
 			);
 			path = LinesStopsView;
 			sourceTree = "<group>";
@@ -362,8 +396,17 @@
 				32A6A09E2D96EC0900430558 /* DirectionPickerViewModel.swift */,
 				3292C58F2D9937AC0015C620 /* RouteStopsViewModel.swift */,
 				324DF4892DA8529B003943D7 /* StopDeparturesViewModel.swift */,
+				3209FF0C2D5D37F9001E6458 /* SchedMapTabBarViewModel.swift */,
 			);
 			path = LinesStopsView;
+			sourceTree = "<group>";
+		};
+		32EBB41D2DBAB363004D1DCB /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				32EBB41E2DBAB371004D1DCB /* MapViewModel.swift */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		32FDA0912D9BE34600032436 /* Enums */ = {
@@ -459,6 +502,7 @@
 				3292C58E2D99364D0015C620 /* GetApiKey.swift in Sources */,
 				32DF13612D66872B00714876 /* LegendView.swift in Sources */,
 				3209FEFA2D5D2581001E6458 /* BackgroundView.swift in Sources */,
+				32EBB4232DBB674C004D1DCB /* OnChangeWithInitial.swift in Sources */,
 				3209FF112D5D66E0001E6458 /* LunchView.swift in Sources */,
 				32DF13532D63CE5C00714876 /* LinesGridView.swift in Sources */,
 				324DF4882DA7A241003943D7 /* TrimTimeString.swift in Sources */,
@@ -470,7 +514,7 @@
 				32DF134B2D63B8D200714876 /* TransportTypePickerViewModel.swift in Sources */,
 				32DF136F2D689F1900714876 /* LineStopsViewModel.swift in Sources */,
 				3209FF182D628FB7001E6458 /* ScheduleViewModel.swift in Sources */,
-				3209FF0D2D5D3806001E6458 /* TabBarViewModel.swift in Sources */,
+				3209FF0D2D5D3806001E6458 /* SchedMapTabBarViewModel.swift in Sources */,
 				324A0B202DA5B57200DC892B /* LineStopBridge.swift in Sources */,
 				32DF13912D6E440C00714876 /* StopsModel.swift in Sources */,
 				3209FF0F2D5D3C33001E6458 /* AvailableTabsInTabBar.swift in Sources */,
@@ -487,6 +531,8 @@
 				32A6A0982D95D61800430558 /* CustomRoutesManager.swift in Sources */,
 				324DF4822DA6484C003943D7 /* StopDeparturesView.swift in Sources */,
 				32757CD22D74970D006FA0AB /* PreferredRouteForLine.swift in Sources */,
+				32EBB4272DC00A4F004D1DCB /* DownwardTriangle.swift in Sources */,
+				32EBB4252DC009CE004D1DCB /* BusTramInfoAnnotation.swift in Sources */,
 				324DF4862DA70B77003943D7 /* LinesFromStopManager.swift in Sources */,
 				3209FF0A2D5D3281001E6458 /* Settings.swift in Sources */,
 				320DE0B92D9E640A0072D4CE /* ScheduleForStopModel.swift in Sources */,
@@ -494,22 +540,28 @@
 				32DF135D2D665AB100714876 /* AllBusLines.swift in Sources */,
 				32A6A0A12D9749B600430558 /* RouteStopsView.swift in Sources */,
 				32DF136D2D689F0E00714876 /* LineStopsView.swift in Sources */,
-				3209FF062D5D316A001E6458 /* TabBarView.swift in Sources */,
+				32EBB4182DBA0DF5004D1DCB /* FirstCameraPosition.swift in Sources */,
 				324DF4842DA70A42003943D7 /* LinesFromStopModel.swift in Sources */,
-				32DF13662D668EDB00714876 /* AvailableLinesManager.swift in Sources */,
 				32757CD62D74EC54006FA0AB /* PreferredRouteModel.swift in Sources */,
 				32B83BE32D9C7E0A00B17B5F /* ActiveBusTramManager.swift in Sources */,
 				3209FF002D5D30F0001E6458 /* MapView.swift in Sources */,
 				32757CD42D74A160006FA0AB /* UnknownStops.swift in Sources */,
 				327C1EE32D5BFDB20014D881 /* naczasApp.swift in Sources */,
 				3209FF1A2D6291A2001E6458 /* AvailableCitiesToPick.swift in Sources */,
+				32EBB41C2DBAB159004D1DCB /* StopAnnotation.swift in Sources */,
 				3209FF132D627815001E6458 /* CityPickerView.swift in Sources */,
+				3212510D2DB82E0900E53BF9 /* LocationManager.swift in Sources */,
 				32DF13592D64F0FC00714876 /* AvailableLinesModel.swift in Sources */,
+				321251092DB5C34F00E53BF9 /* SchedMapTabBarView.swift in Sources */,
+				32EBB4212DBAB46C004D1DCB /* BusTramAnnotation.swift in Sources */,
 				32DF134F2D63C29900714876 /* AvailableTransportTypes.swift in Sources */,
 				32A6A0A32D9756CE00430558 /* FixStopName.swift in Sources */,
 				32DF13492D63B8C400714876 /* TransportTypePickerView.swift in Sources */,
+				32EBB41F2DBAB376004D1DCB /* MapViewModel.swift in Sources */,
+				321251102DB82FD000E53BF9 /* UserLocationAnnotation.swift in Sources */,
 				3209FEFE2D5D2611001E6458 /* MainViewModel.swift in Sources */,
 				32DF13712D68A25D00714876 /* RoutesForLinesManager.swift in Sources */,
+				3212510B2DB8107200E53BF9 /* SheetDismissButtonView.swift in Sources */,
 				32DF138D2D6C55FE00714876 /* MyErrors.swift in Sources */,
 				32DF13472D6324B100714876 /* LineSearcherViewModel.swift in Sources */,
 				32757CC72D728F5F006FA0AB /* GlobalCoreDataManager.swift in Sources */,
@@ -652,6 +704,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = naczas/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Aplikacja potrzebuje twojej lokalizacji do poprawnej działania mapy.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -682,6 +735,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = naczas/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Aplikacja potrzebuje twojej lokalizacji do poprawnej działania mapy.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

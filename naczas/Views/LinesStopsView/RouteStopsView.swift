@@ -13,56 +13,49 @@ struct RouteStopsView: View {
     @StateObject var routeStopVm = RouteStopsViewModel()
     @Binding var selectedPref: PreferredRouteModel
     @Binding var route: RouteForLineModel
+    @Binding var showStopDepartures: Bool
+    @Binding var showMap: Bool
     let line: String
+    let showTabBar: () -> Void
     
     var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView {
-                VStack(alignment: .leading, spacing: 0) {
-                    if routeStopVm.isDataLoaded {
-                        ForEach(routeStopVm.encodedStops.indices, id: \.self) { index in
-                            HStack(alignment: .top) {
-                                circleIndicator(type: routeStopVm.encodedStops[index].typ, count: routeStopVm.encodedStops.count, index: index)
-                                createStopForList(index: index)
-                                Spacer()
-                                scheduleIndicator(index: index, isData: routeStopVm.departuresAvailable[index] ?? false)
+        ZStack {
+            ScrollViewReader { proxy in
+                ScrollView {
+                    stopsList
+                        .padding(.vertical)
+                        .onChange(of: route.routeName) {
+                            if routeStopVm.isDataLoaded {
+                                withAnimation(.linear(duration: 0.2)) {
+                                    proxy.scrollTo(0, anchor: .top)
+                                }
                             }
-                            .frame(maxWidth: .infinity)
-                            .id(index)
+                            routeStopVm.resetSettings()
+                            routeStopVm.provideDecodedStops(stops: route.stops, enteties: gdManager.stops)
+                            Task {
+                                await routeStopVm.provideDeparturesForStops(line: line)
+                            }
                         }
-                    }
-                    else {
-                        ScrolableStopsListShimmer()
-                    }
-                }
-                .padding(.vertical)
-                .onChange(of: route.routeName) {
-                    if routeStopVm.isDataLoaded {
-                        withAnimation(.linear(duration: 0.2)) {
-                            proxy.scrollTo(0, anchor: .top)
-                        }
-                    }
-                    routeStopVm.resetSettings()
-                    routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
-                    Task {
-                        await routeStopVm.provideDeparturesForStops(line: line)
-                    }
                 }
             }
         }
+        .ignoresSafeArea(edges: .bottom)
         .onAppear {
             Task {
-                //                await gdManager.updateLineRoutesAndStops() // for preview
+//                await gdManager.updateLineRoutesAndStops() // for preview
                 routeStopVm.resetSettings()
-                routeStopVm.encodeStopValues(stops: route.stops, enteties: gdManager.stops)
-                Task {
-                    await routeStopVm.provideDeparturesForStops(line: line)
-                }
+                routeStopVm.provideDecodedStops(stops: route.stops, enteties: gdManager.stops)
+                await routeStopVm.provideDeparturesForStops(line: line)
             }
         }
-        .sheet(isPresented: $routeStopVm.showStopDepartures.0) {
-            if let dep = routeStopVm.stopDepartures[routeStopVm.showStopDepartures.1]{
-                StopDeparturesView(mainDepartures: dep.sorted( by: { $0.czas < $1.czas }), stopInfo: routeStopVm.encodedStops[routeStopVm.showStopDepartures.1], mainLine: line)
+        .sheet(isPresented: $showStopDepartures) {
+            if let dep = routeStopVm.stopDepartures[routeStopVm.indexForNextView] {
+                StopDeparturesView(mainDepartures: dep.sorted( by: { $0.czas < $1.czas }), stopInfo: routeStopVm.decodedStops[routeStopVm.indexForNextView], mainLine: line)
+            }
+        }
+        .sheet(isPresented: $showMap) {
+            if let dep = routeStopVm.stopDepartures[routeStopVm.indexForNextView] {
+                MapView(departures: dep.sorted( by: { $0.czas < $1.czas }), selectedIndex: routeStopVm.indexForNextView, stops: routeStopVm.decodedStops, line: line)
             }
         }
     }
@@ -73,23 +66,43 @@ struct RouteStopsView: View {
         BackgroundView()
         RouteStopsView (
             selectedPref: .constant(PreferredRouteModel(routeName: "Default", direction: "Default")),
-            route: .constant(defaultRoute), line: "189")
+            route: .constant(defaultRoute),showStopDepartures: .constant(false), showMap: .constant(false), line: "189", showTabBar: {})
         .environmentObject(GlobalDataManager())
     }
 }
 
 extension RouteStopsView {
+    var stopsList: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            if routeStopVm.isDataLoaded {
+                ForEach(routeStopVm.decodedStops.indices, id: \.self) { index in
+                    HStack(alignment: .top) {
+                        circleIndicator(type: routeStopVm.decodedStops[index].typ, count: routeStopVm.decodedStops.count, index: index)
+                        createStopForList(index: index)
+                        Spacer()
+                        scheduleIndicator(index: index, isData: routeStopVm.departuresAvailable[index] ?? false)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .id(index)
+                }
+            }
+            else {
+                ScrolableStopsListShimmer()
+            }
+        }
+    }
+    
     private func createStopForList(index: Int) -> some View {
         return Button {
             touchVibrates.impactOccurred()
-            routeStopVm.showStopDepartures.1 = index
-            routeStopVm.showStopDepartures.0.toggle()
+            routeStopVm.indexForNextView = index
+            showTabBar()
         } label: {
-            Text(routeStopVm.encodedStops[index].nazwaZespołu.fixStopName())
+            Text(routeStopVm.decodedStops[index].nazwaZespołu.fixStopName())
                 .font(.system(size: 16))
                 .foregroundStyle(.white)
                 .offset(y: 2)
-            if routeStopVm.encodedStops[index].typ == "2" {
+            if routeStopVm.decodedStops[index].typ == "2" {
                 Text("NŻ")
                     .font(.system(size: 16))
                     .fontWeight(.heavy)

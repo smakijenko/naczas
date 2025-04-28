@@ -54,3 +54,18 @@ let defaultDepartures = [
     LineDeparturesForStopModel(brygada: "11", kierunek: "Sadyba", trasa: "TO-SAD", czas: "13:05:00", line: "189")
 ]
 
+let defaultDecodedStops: [DecodedStopInfoModel] = [
+    DecodedStopInfoModel(ulicaId: "0103", nrZespołu: "3079", nrPrzystanku: "04", typ: "1", szerGeo: "52.193336", dluGeo: "21.085129", nazwaZespołu: "EC Siekierki"),
+    DecodedStopInfoModel(ulicaId: "2044", nrZespołu: "3080", nrPrzystanku: "04", typ: "2", szerGeo: "52.190524", dluGeo: "21.082555", nazwaZespołu: "Statkowskiego"),
+    DecodedStopInfoModel(ulicaId: "2044", nrZespołu: "3091", nrPrzystanku: "02", typ: "2", szerGeo: "52.190900", dluGeo: "21.074444", nazwaZespołu: "Sypniewska"),
+    DecodedStopInfoModel(ulicaId: "0815", nrZespołu: "3090", nrPrzystanku: "02", typ: "1", szerGeo: "52.191965", dluGeo: "21.067787", nazwaZespołu: "Jeziorko Czerniakowskie"),
+    DecodedStopInfoModel(ulicaId: "0815", nrZespołu: "3089", nrPrzystanku: "02", typ: "1", szerGeo: "52.192567", dluGeo: "21.062495", nazwaZespołu: "os.Bernardyńska"),
+    DecodedStopInfoModel(ulicaId: "0815", nrZespołu: "3062", nrPrzystanku: "02", typ: "1", szerGeo: "52.193049", dluGeo: "21.058357", nazwaZespołu: "Gołkowska"),
+    DecodedStopInfoModel(ulicaId: "Fort Piłsudskiego", nrZespołu: "Idzikowskiego", nrPrzystanku: "00", typ: "1", szerGeo: "52.19215221182929", dluGeo: "21.04612963743095", nazwaZespołu: "Idzikowskiego"),
+    DecodedStopInfoModel(ulicaId: "Idzikowskiego", nrZespołu: "Fort Piłsudskiego", nrPrzystanku: "00", typ: "2", szerGeo: "52.19018009851533", dluGeo: "21.038734905876133", nazwaZespołu: "Fort Piłsudskiego"),
+    DecodedStopInfoModel(ulicaId: "Bukowińska", nrZespołu: "Płyćwiańska", nrPrzystanku: "00", typ: "2", szerGeo: "52.18862914821462", dluGeo: "21.031926405384553", nazwaZespołu: "Płyćwiańska"),
+    DecodedStopInfoModel(ulicaId: "1801", nrZespołu: "3008", nrPrzystanku: "01", typ: "1", szerGeo: "52.185930", dluGeo: "21.024223", nazwaZespołu: "Bukowińska"),
+    DecodedStopInfoModel(ulicaId: "1801", nrZespołu: "3009", nrPrzystanku: "01", typ: "1", szerGeo: "52.181520", dluGeo: "21.022030", nazwaZespołu: "Metro Wilanowska"),
+    DecodedStopInfoModel(ulicaId: "0125", nrZespołu: "3009", nrPrzystanku: "11", typ: "1", szerGeo: "52.179952", dluGeo: "21.023723", nazwaZespołu: "Metro Wilanowska")
+]
+

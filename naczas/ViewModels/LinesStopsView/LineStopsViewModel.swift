@@ -6,8 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
 
-@MainActor
 final class LineStopsViewModel: ObservableObject {
     @Published var areRoutesLoaded: Bool = false
     @Published var lineRoutes: [RouteForLineModel] = []
@@ -15,6 +15,10 @@ final class LineStopsViewModel: ObservableObject {
     @Published var selectedPref: PreferredRouteModel = PreferredRouteModel(routeName: "Default", direction: "Default")
     @Published var selectedRoute: RouteForLineModel = defaultRoute
     @Published var showNoRouteAlert: Bool = false
+    @Published var showStopDepartures: Bool = false
+    @Published var showMap: Bool = false
+    @Published var isTabBarShown: Bool = false
+    @Published var tabOffset: CGFloat = 200
     let noRouteAlertMessage: String = "Przepraszamy, ale w tym momencie nie możemy wyświetlić rozkładu tej lini. Spróbuj ponownie lub zrestartuj aplikacje."
 
     func providePreferredRoutesForLine(line: String) throws {
@@ -40,5 +44,20 @@ final class LineStopsViewModel: ObservableObject {
     func updateSelectedRoute() {
         guard let route = lineRoutes.first(where: {$0.routeName == selectedPref.routeName}) else { return }
         selectedRoute = route
+    }
+    
+    func showTabBar() {
+        withAnimation(.linear(duration: 0.2)) {
+            tabOffset = -25
+            isTabBarShown = true
+        }
+    }
+    
+    func hideTabBar() {
+        withAnimation(.linear(duration: 0.2)) {
+            tabOffset = 200
+            isTabBarShown = false
+            touchVibrates.impactOccurred()
+        }
     }
 }

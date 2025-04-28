@@ -5,20 +5,21 @@
 //  Created by Stanisław Makijenko on 30/03/2025.
 //
 
+import SwiftUI
 import Foundation
 
 class RouteStopsViewModel: ObservableObject {
-    @Published var encodedStops: [DecodedStopInfoModel] = []
+    @Published var decodedStops: [DecodedStopInfoModel] = []
     @Published var isDataLoaded: Bool = false
     @Published var stopDepartures: [Int: [LineDeparturesForStopModel]] = [:]
     @Published var departuresAvailable: [Int: Bool] = [:]
     @Published var unloadedArray: [Int] = []
-    @Published var showStopDepartures: (Bool, Int) = (false, 0)
+    @Published var indexForNextView: Int = 0
     
-    func encodeStopValues(stops: [StopInRouteInfoModel], enteties: [StopEntity]) {
+    func provideDecodedStops(stops: [StopInRouteInfoModel], enteties: [StopEntity]) {
         for stop in stops {
             if let entity = enteties.first(where: { $0.stopKeys.idUlicy == stop.ulicaID && $0.stopKeys.zespol == stop.nrZespolu && $0.stopKeys.slupek == stop.nrPrzystanku }) {
-                encodedStops.append(DecodedStopInfoModel(
+                decodedStops.append(DecodedStopInfoModel(
                     ulicaId: stop.ulicaID,
                     nrZespołu: stop.nrZespolu,
                     nrPrzystanku: stop.nrPrzystanku,
@@ -29,7 +30,7 @@ class RouteStopsViewModel: ObservableObject {
                 ))
             }
         }
-        if !encodedStops.isEmpty { isDataLoaded = true }
+        if !decodedStops.isEmpty { isDataLoaded = true }
     }
     
     func howMuchToNextByIndex(index: Int) -> Int? {
@@ -59,7 +60,7 @@ class RouteStopsViewModel: ObservableObject {
     
     func resetSettings() {
         isDataLoaded = false
-        encodedStops.removeAll()
+        decodedStops.removeAll()
         stopDepartures = [:]
         departuresAvailable = [:]
         unloadedArray = []
@@ -67,13 +68,13 @@ class RouteStopsViewModel: ObservableObject {
     
     func provideDeparturesForStops(line: String) async {
         print("Started providing departure times for stops.")
-        for index in 0 ..< encodedStops.count {
+        for index in 0 ..< decodedStops.count {
             for attempt in 1 ... 5 {
                 print("Attempt \(attempt) for index \(index)")
                 do {
                     let departuresTimesResponse = try await LineDeparturesForStopManager().fetchAllAvailableLines(
-                        stopGroupName: encodedStops[index].nrZespołu,
-                        stopNr: encodedStops[index].nrPrzystanku,
+                        stopGroupName: decodedStops[index].nrZespołu,
+                        stopNr: decodedStops[index].nrPrzystanku,
                         lineNr: line)
                     await MainActor.run {
                         stopDepartures[index] = departuresTimesResponse

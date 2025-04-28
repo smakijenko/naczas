@@ -35,6 +35,7 @@ class ActiveBusTramManager: ObservableObject {
     private func convertIntoDict(actives: [ActiveBusTramModel]) -> [String : [ActiveBusTramModel]] {
         var dict: [String : [ActiveBusTramModel]] = [:]
         for active in actives {
+            guard let timeBetween = differenceBetweenDate(lastUpdateString: active.time), timeBetween < 5 else { continue }
             if dict[active.lines] == nil {
                 dict[active.lines] = [active]
             }
@@ -45,7 +46,7 @@ class ActiveBusTramManager: ObservableObject {
         return dict
     }
     
-    private func provideActiveBuses() async throws {
+    func provideActiveBuses() async throws {
         print("Started providing active buses in dict.")
         for attempt in 1 ... 10 {
             print("Attempt: \(attempt)")
@@ -68,7 +69,7 @@ class ActiveBusTramManager: ObservableObject {
         throw MyError.tooManyAttemptsWhileProvidingActiveLines
     }
     
-    private func provideActiveTrams() async throws {
+    func provideActiveTrams() async throws {
         print("Started providing active trams in dict.")
         for attempt in 1 ... 10 {
             print("Attempt: \(attempt)")

@@ -39,39 +39,6 @@ class LinesGridViewModel: ObservableObject {
         return searchedLines
     }
     
-    func loadAvailableLines() async throws {
-        var isDataLoaded: Bool = false
-        var triesCount: Int = 0
-        while !isDataLoaded {
-            triesCount += 1
-            if triesCount > 10 {
-                print("Error while fetching available transports.")
-                throw MyError.tooManyAttemptsWhileProvidingActiveLines
-            }
-            print("Attempt: \(triesCount)")
-            do {
-                let buses = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Autobusy)
-                let trams = try await AvailableLinesManager().provideOnlineUniqueLines(transportType: .Tramwaje)
-                await MainActor.run {
-                    if !buses.isEmpty && !trams.isEmpty {
-                        availableBusLines = Set(buses)
-                        availableTramsLines = Set(trams)
-                    }
-                }
-                if !availableBusLines.isEmpty && !availableTramsLines.isEmpty {
-                    isDataLoaded = true
-                    isOnlineDataLoaded = true
-                }
-            }
-            catch {
-                print("Attempt \(triesCount) failed with error: \(error)")
-                // Still trying to provide all available lines
-            }
-            try await Task.sleep(nanoseconds: 1_250_000_000)
-        }
-    }
-    
-    
     func checkIfLineAvailable(line: String, transportType: AvailableTransportTypes) -> Color {
         var blurColor: Color = .clear
         if availableBusLines.isEmpty && availableTramsLines.isEmpty {

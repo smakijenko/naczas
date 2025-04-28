@@ -17,21 +17,11 @@ struct MainView: View {
         NavigationStack {
             ZStack {
                 BackgroundView()
-                if mainVm.selectedTab == .Mapa {
-                    MapView()
-                }
-                else if mainVm.selectedTab == .Rozkład {
-                    ScheduleView()
-                }
-                VStack {
-                    Spacer()
-                    TabBarView()
-                }
-                .ignoresSafeArea()
+                ScheduleView()
             }
             .transition(.opacity)
             .animation(.linear(duration: 0.1), value: mainVm.selectedTab)
-            .environmentObject(mainVm)
+            .environmentObject(btManager)
             .environmentObject(bridge)
             .onAppear {
                 if !bridge.wasLineStopsSelected {
@@ -41,29 +31,13 @@ struct MainView: View {
                     }
                 }
             }
-            .alert(isPresented: $gdManager.showSwiftDataIssueAlert) {
-                Alert(
-                    title: Text("Błąd!"),
-                    message: Text(gdManager.swiftDataIssuealertMessage),
-                    primaryButton: .default(Text("Spróbuj ponownie"), action: {
-                        Task {
-                            await gdManager.retryUpdate()
-                        }
-                    }),
-                    secondaryButton: .cancel(Text("Ok"))
-                )
-            }
-            .alert(isPresented: $btManager.showNoBusTramsAlert) {
-                Alert(
-                    title: Text("Błąd!"),
-                    message: Text(btManager.noBusTramsAlertMessage),
-                    primaryButton: .default(Text("Spróbuj ponownie"), action: {
-                        Task {
-                            await btManager.loadActiveBusesTrams()
-                        }
-                    }),
-                    secondaryButton: .cancel(Text("Ok"))
-                )
+            .alert(isPresented: .constant(gdManager.showSwiftDataIssueAlert || btManager.showNoBusTramsAlert)) {
+                if gdManager.showSwiftDataIssueAlert {
+                    swiftDataAlert
+                }
+                else {
+                    noBusTramAlert
+                }
             }
             .navigationDestination(isPresented: $bridge.showLineStopsView.0) {
                 LineStopsView(isSheetShown: $bridge.showLineStopsView.0, line: bridge.showLineStopsView.1)
@@ -77,4 +51,32 @@ struct MainView: View {
     MainView()
         .environmentObject(GlobalDataManager())
         .environmentObject(ActiveBusTramManager())
+}
+
+extension MainView {
+    private var noBusTramAlert: Alert {
+        Alert(
+            title: Text("Błąd!"),
+            message: Text(btManager.noBusTramsAlertMessage),
+            primaryButton: .default(Text("Spróbuj ponownie"), action: {
+                Task {
+                    await btManager.loadActiveBusesTrams()
+                }
+            }),
+            secondaryButton: .cancel(Text("Ok"))
+        )
+    }
+    
+    private var swiftDataAlert: Alert {
+        Alert(
+            title: Text("Błąd!"),
+            message: Text(gdManager.swiftDataIssuealertMessage),
+            primaryButton: .default(Text("Spróbuj ponownie"), action: {
+                Task {
+                    await gdManager.retryUpdate()
+                }
+            }),
+            secondaryButton: .cancel(Text("Ok"))
+        )
+    }
 }

@@ -28,10 +28,6 @@ struct ScheduleView: View {
                 LegendView(isOnlineTransportLoaded: $isOnlineTransportLoaded)
                     .padding(.horizontal)
                 LinesGridView(searchedText: $searchedText, transportType: $transportType, isOnlineTransportLoaded: $isOnlineTransportLoaded)
-                Rectangle()
-                    .foregroundStyle(.clear)
-                    .frame(width: screenSize.width, height: 85)
-                Spacer()
             }
         }
         .ignoresSafeArea(edges: .bottom)
